@@ -51,7 +51,7 @@ const Contact = ({ contactData }) => {
   // console.log(contact_nav);
 
   return (
-    <div className="main_conatiner">
+    <div className="">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

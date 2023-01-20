@@ -14,7 +14,7 @@ const breadcumbData = {
 };
 const News = ({ lateNews, moreNews }) => {
   return (
-    <div className="main_conatiner">
+    <div className="">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

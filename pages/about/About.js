@@ -8,7 +8,7 @@ import OurValue from "../../components/about/OurValue";
 import Advantages from "../../components/about/Advantages";
 const About = () => {
   return (
-    <div className="main_conatiner">
+    <div className="">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

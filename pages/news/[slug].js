@@ -44,18 +44,16 @@ const NewsDetails = ({ newsInfo }) => {
   // const { id } = router.query;
   return (
     <div>
-      <div className="main_conatiner">
-        <div className={"header"}>
-          <Navbar />
-          <HeaderBannerNews bgUrl={PREFIX_IMG + newsInfo.news.img} />
-        </div>
-        <div className={styles.newsDetails_container}>
-          <NewsDetailsComponent newsdetail={newsInfo?.news} />
-          <MoreNews moreNews={newsInfo?.more_news} />
-        </div>
-
-        <Footer />
+      <div className={"header"}>
+        <Navbar />
+        <HeaderBannerNews bgUrl={PREFIX_IMG + newsInfo.news.img} />
       </div>
+      <div className={styles.newsDetails_container}>
+        <NewsDetailsComponent newsdetail={newsInfo?.news} />
+        <MoreNews moreNews={newsInfo?.more_news} />
+      </div>
+
+      <Footer />
     </div>
   );
 };

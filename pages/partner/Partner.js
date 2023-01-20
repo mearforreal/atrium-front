@@ -16,7 +16,7 @@ const breadcumbData = {
 };
 const Partner = () => {
   return (
-    <div className="main_conatiner">
+    <div className="">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

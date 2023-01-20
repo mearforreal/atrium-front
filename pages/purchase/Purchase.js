@@ -73,7 +73,7 @@ const Purchase = ({ projectData }) => {
     sliderRef.current.swiper.slideNext();
   }, []);
   return (
-    <div className="main_conatiner">
+    <div className="">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

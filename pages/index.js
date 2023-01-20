@@ -64,7 +64,7 @@ export default function Home({ projectData, oversea, lateNews }) {
     new WOW.WOW().init();
   }, []);
   return (
-    <div className="main_conatiner">
+    <div className="">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner
