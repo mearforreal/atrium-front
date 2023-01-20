@@ -78,7 +78,9 @@ export default function Home({ projectData, oversea, lateNews }) {
 
       <div className={styles.blockOne + " " + styles.block_container}>
         <div className="wow fadeInUp" data-wow-offset="20">
-          <BlockOneSlider projectData={projectData} />{" "}
+          <BlockOneSlider
+            projectData={projectData ? projectData : [0, 1, 2, 3, 4]}
+          />{" "}
         </div>{" "}
         <div className="wow slideInLeft" data-wow-offset="20">
           <BlockOneText />
@@ -91,12 +93,16 @@ export default function Home({ projectData, oversea, lateNews }) {
         </div>
 
         <div className="wow bounceInUp" data-wow-offset="20">
-          <OverseaSlider isDark={false} oversea={oversea} />
+          {oversea?.length > 0 ? (
+            <OverseaSlider isDark={false} oversea={oversea} />
+          ) : (
+            ""
+          )}
         </div>
         {/* <BuildComplex projectData={projectData} />
         <Gallery projectData={projectData} /> */}
       </div>
-      <VirtualTour projectData={projectData} />
+      <VirtualTour projectData={projectData ? projectData : [0, 1, 2, 3, 4]} />
       <div className="wow slideInRight" data-wow-offset="20">
         <ActualNews lateNews={lateNews ? lateNews : [0, 1, 2, 3, 4]} />
       </div>

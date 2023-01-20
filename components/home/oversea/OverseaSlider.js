@@ -101,16 +101,18 @@ const OverseaSlider = ({ oversea, isDark }) => {
           // lazy={{ loadPrevNext: true }}
           // modules={[EffectCoverflow]}
         >
-          {oversea?.overseaProjects?.map((item, index) => (
-            <SwiperSlide>
-              <OverseaSliderItem
-                key={item.id}
-                item={item}
-                img={PREFIX_IMG + item.oversea_images[0].img}
-                current={index === 1}
-              />
-            </SwiperSlide>
-          ))}
+          {oversea?.overseaProjects
+            ? oversea?.overseaProjects?.map((item, index) => (
+                <SwiperSlide>
+                  <OverseaSliderItem
+                    key={item.id}
+                    item={item}
+                    img={PREFIX_IMG + item.oversea_images[0].img}
+                    current={index === 1}
+                  />
+                </SwiperSlide>
+              ))
+            : ""}
         </Swiper>
       </div>
       {/* todo page num */}
