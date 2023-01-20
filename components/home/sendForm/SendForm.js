@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../../../styles/home/sendForm/SendForm.module.scss";
 import Image from "next/image";
 import map from "../../../assets/map.png";
 import { Map, Placemark } from "react-yandex-maps";
+import { DataContext } from "../../../context/DataContext";
+import { PREFIX_IMG } from "../../../config";
 
 // console.log(map);
 
 const SendForm = () => {
   // const [zoom, setZoom] = React.useState(17.5);
+
+  const data = useContext(DataContext);
+  let [setting, setSetting] = data;
+
+  console.log(setting);
 
   const mapState = React.useMemo(
     // 43.225254, 76.959614
@@ -45,8 +52,7 @@ const SendForm = () => {
           <Placemark
             options={{
               iconLayout: "default#image",
-              iconImageHref:
-                "https://toppng.com/uploads/preview/mouse-pointer-icon-symbol-vector-black-free-vector-cursor-icon-11562920663w8buxh43go.png",
+              iconImageHref: `${PREFIX_IMG + setting?.pointer}`,
               iconImageSize: [32, 32],
             }}
             geometry={mapState.center}
