@@ -3,7 +3,7 @@ import styles from "../../styles/header/Navbar.module.scss";
 import logo from "../../assets/logo.svg";
 import Image from "next/image";
 import useScreen from "../../hooks/useScreen";
-import { Burger } from "@mantine/core";
+import { Burger, HoverCard } from "@mantine/core";
 import NavLink from "next/link";
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
@@ -32,7 +32,26 @@ const Navbar = () => {
           {screen.isDesktop ? (
             <>
               <li>
-                <a href={"/about"}>о нас</a>
+                <HoverCard.Target>
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                    }}
+                    href={""}
+                  >
+                    о нас
+                  </a>
+                </HoverCard.Target>
+                <HoverCard.Dropdown>
+                  <>
+                    <li>
+                      <a href={"/about"}>о нас</a>
+                    </li>
+                    <li>
+                      <a href={"/oversea"}>Tavros</a>
+                    </li>
+                  </>
+                </HoverCard.Dropdown>
               </li>
 
               <li>
