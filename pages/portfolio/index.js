@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
 };
 
 const PortfolioIndex = ({ projectData, oversea }) => {
-  return <Portfolio projectData={projectData} oversea={oversea} />;
+  return  <Portfolio projectData={projectData} oversea={oversea} />;
 };
 
 export default PortfolioIndex;
