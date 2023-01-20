@@ -78,9 +78,7 @@ export default function Home({ projectData, oversea, lateNews }) {
 
       <div className={styles.blockOne + " " + styles.block_container}>
         <div className="wow fadeInUp" data-wow-offset="20">
-          <BlockOneSlider
-            projectData={projectData ? projectData : [0, 1, 2, 3, 4]}
-          />{" "}
+          <BlockOneSlider projectData={projectData} />{" "}
         </div>{" "}
         <div className="wow slideInLeft" data-wow-offset="20">
           <BlockOneText />
