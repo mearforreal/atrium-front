@@ -1,0 +1,31 @@
+.subNav {
+  display: flex;
+  gap: 50px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  /* body text */
+
+  color: #727272;
+
+  &_active {
+    color: #bc6d41;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: "";
+      margin-left: 9px;
+      width: 4px;
+      height: 4px;
+      background-color: #bf8154;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.contactView {
+  &_card {
+    background-color: #fff;
+    padding-top: 89px;
+    padding-bottom: 100px;
+    padding-left: calc(73px / 320px * 100%);
+    padding-right: calc(79px / 320px * 100%);
+    h3 {
+      margin-bottom: 59.68px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.map {
+  width: 100%;
+  height: 280px;
+}
+
+@media screen and (min-width: 750px) {
+  .contactView {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 41px;
+    margin-bottom: 102px;
+    &_card {
+      background-color: #fff;
+      padding-top: 72.28px;
+      padding-bottom: 121.1px;
+      width: calc(360px / 1000px * 100%);
+      height: 434px;
+      padding-left: calc(81.76px / 1000px * 100%);
+      padding-right: calc(42.24px / 1000px * 100%);
+      h3 {
+        margin-bottom: 59.68px;
+      }
+    }
+  }
+
+  .map {
+    width: calc(610px / 1000px * 100%);
+    height: 505px;
+  }
+}

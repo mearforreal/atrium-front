@@ -1,0 +1,124 @@
+.missions {
+  height: 1230px;
+  font-family: var(--font-main-family);
+  position: relative;
+  padding-top: 215px;
+
+  //   background: linear-gradient(0deg, rgba(50, 50, 50, 0.95), rgba(50, 50, 50, 0.95)), url(.jpg);
+  background-image: url("/assets/img/about/bg_dark.png");
+  background-size: cover;
+  &_top {
+    display: flex;
+    margin-bottom: 199px;
+    gap: 201px;
+    justify-content: flex-end;
+    position: relative;
+    // margin-right: 264px;
+    // margin-left: 235px;
+    margin-right: 14.333vw;
+    margin-left: 12.319vw;
+    p {
+      margin-top: 49px;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 33px;
+      line-height: 40px;
+    }
+    &_left {
+      position: absolute;
+      left: 0;
+      bottom: 60px;
+    }
+  }
+}
+
+.decorativeText {
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+
+  font-size: 10vw;
+  line-height: 10vh;
+  /* identical to box height */
+  //   display: grid;
+  //   place-items: center;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.missions_images {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.missions_images_container {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+.missions_images_current {
+  height: 486px;
+}
+.missions_image {
+  height: 400px;
+}
+
+@media screen and (max-width: 1000px) {
+  .missions {
+    height: auto;
+  }
+  .missions_top {
+    p {
+      max-width: 320px;
+    }
+  }
+  .missions_images_current {
+    height: 420px;
+  }
+  .missions_image {
+    height: 345px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .missions {
+    display: flex;
+    flex-direction: column;
+    padding-top: 85.37px;
+    background-repeat: no-repeat;
+  }
+
+  .missions_images {
+    margin-bottom: 111px;
+    gap: 30px;
+  }
+
+  .missions_image_current {
+    height: 179px;
+  }
+  .missions_image {
+    height: 130px;
+  }
+  .decorativeText {
+    top: 35%;
+  }
+  .missions_top {
+    flex-direction: column;
+    margin-bottom: 72px;
+    gap: 180px;
+    &_left {
+      position: static;
+    }
+    p {
+      max-width: 320px;
+    }
+  }
+}

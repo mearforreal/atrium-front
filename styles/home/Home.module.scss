@@ -1,0 +1,29 @@
+.blockOne {
+  background: linear-gradient(-90deg, #fff 55.9%, rgba(0, 0, 0, 0) 30%),
+    var(--color-primary-bg-main);
+
+  padding-top: 87px;
+  //   display: flex;
+  //   flex-direction: column;
+}
+
+.block_container {
+  padding-left: calc(205px / 1440px * 100%);
+  padding-right: calc(135px / 1440px * 100%);
+}
+
+@media screen and (max-width: 1325px) {
+  .block_container {
+    padding-left: 115px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .blockOne {
+    background-color: #fff;
+  }
+  .block_container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

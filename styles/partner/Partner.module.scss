@@ -1,0 +1,230 @@
+.partnerMain {
+  position: relative;
+  padding-top: 250px;
+  padding-bottom: 344px;
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 190px;
+    position: relative;
+  }
+  &_head_title {
+    display: flex;
+    flex-direction: column;
+    &_first {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      /* identical to box height */
+
+      letter-spacing: 0.1em;
+
+      /* body text */
+
+      color: var(--color-text-body);
+    }
+    &_second {
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 43px;
+      /* identical to box height */
+      color: #fff;
+      letter-spacing: 0.1em;
+      -webkit-text-stroke: 1px var(--color-text-body);
+      text-stroke: 0.378309px var(--color-text-body);
+      text-shadow: none;
+      font-family: Arial, Helvetica, sans-serif;
+      /* body text */
+
+      //   border: 0.378309px solid #727272;
+    }
+    &_third {
+      font-size: 26px;
+      line-height: 32px;
+      /* identical to box height */
+
+      letter-spacing: 0.1em;
+
+      color: #bfbfbf;
+      text-align: end;
+    }
+  }
+  &_img1 {
+    position: absolute;
+    width: 145px;
+    height: 93px;
+    left: 0px;
+    top: 70px;
+  }
+  &_img2 {
+    position: absolute;
+    width: 217px;
+    height: 117px;
+    right: -30px;
+    bottom: calc(224px + 36px);
+  }
+  &_img3 {
+    position: absolute;
+    width: 159px;
+    height: 132px;
+    left: 0px;
+    bottom: 133px;
+  }
+  &_img4 {
+    position: absolute;
+    width: 159px;
+    height: 132px;
+    right: 0px;
+    bottom: 0;
+  }
+}
+
+.partnerTender_container {
+  padding: 52px 30px 60px;
+  background-size: cover;
+  img {
+    display: none;
+  }
+  p {
+    margin-top: 32px;
+  }
+  &_first {
+    .partnerTender_content {
+      background-color: var(--color-primary);
+    }
+    p {
+      color: #fff;
+    }
+    button {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.38),
+        rgba(0, 0, 0, 0.38)
+      ),
+      url("../../assets/partner/tender/image1.png");
+  }
+  &_second {
+    .partnerTender_content {
+      background-color: #fff;
+    }
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.38),
+        rgba(0, 0, 0, 0.38)
+      ),
+      url("../../assets/partner/tender/image2.png");
+  }
+}
+.partnerTender_content {
+  padding: 40px;
+  button {
+    padding: 12.5px 22.5px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .partnerMain {
+    &_content {
+      flex-direction: row;
+      gap: 80px;
+    }
+    &_head_title {
+      max-width: 275px;
+    }
+    &_img1 {
+      width: 165px;
+      height: 134px;
+      top: 70px;
+    }
+
+    &_img3 {
+      width: 210px;
+      height: 132px;
+      left: 20%;
+    }
+    &_img4 {
+      width: 245px;
+      height: 150px;
+    }
+  }
+
+  .partnerTender_container {
+    display: flex;
+    gap: 30px;
+    padding: 75px 35px 82px;
+    img {
+      width: 50%;
+      display: block;
+    }
+
+    &_first {
+      background-image: unset;
+      background-color: #404040;
+    }
+    &_second {
+      flex-direction: row-reverse;
+      .partnerTender_content {
+        background-color: #fff;
+      }
+      background-image: unset;
+    }
+  }
+
+  .partnerTender_content {
+    padding: 70.68px 63px 70.68px 81px;
+    button {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .partnerMain {
+    &_content {
+      justify-content: center;
+    }
+    &_head_title {
+      max-width: 275px;
+      margin: 0 auto;
+    }
+    &_img1 {
+      width: 235px;
+      height: 192px;
+      top: 70px;
+    }
+    &_img2 {
+      width: 305px;
+      height: 220px;
+      top: -200px;
+      right: -135px;
+    }
+    &_img3 {
+      width: 300px;
+      height: 190px;
+      left: 20%;
+      bottom: 95px;
+    }
+    &_img4 {
+      width: 300px;
+      height: 190px;
+    }
+  }
+
+  .partnerTender_container {
+    padding: 94px 120px 100px 120px;
+  }
+
+  .partnerTender_content {
+    padding: 92px 100px 91px 115px;
+    button {
+      margin-top: 48px;
+    }
+    p {
+      margin-top: 54px;
+    }
+  }
+}

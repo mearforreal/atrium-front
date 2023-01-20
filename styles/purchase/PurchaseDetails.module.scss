@@ -1,0 +1,138 @@
+.purchaseDesc {
+  background: #404040;
+  padding-left: calc(30px / 320px * 100%);
+  padding-right: calc(30px / 320px * 100%);
+  padding-top: 126px;
+  padding-bottom: 161px;
+  margin-top: 181px;
+  //   &_content{
+
+  //   }
+}
+
+.breadcumb__mainBtn {
+  display: block;
+  padding-top: 37px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: #fff;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    li {
+      padding: 7.5px 14.5px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.roomInfoCard {
+  margin-top: 48px;
+  button {
+    padding: 14.5px 62px;
+    width: 100%;
+  }
+}
+
+.roomInfoCard_content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  padding-bottom: 62px;
+  background-color: #fff;
+  span {
+    margin-top: 17px;
+    margin-bottom: 30px;
+  }
+  //   p {
+  //   }
+}
+
+@media screen and (min-width: 650px) {
+  .breadcumb__mainBtn {
+    background-color: #f8f8f8;
+
+    ul {
+      margin-bottom: 67.47px;
+      margin-top: 120.53px;
+      display: flex;
+      gap: 50px;
+      align-items: flex-end;
+      justify-content: flex-start;
+      li {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border: none !important;
+        background-color: unset;
+
+        /* body text */
+
+        color: #727272;
+      }
+    }
+    &_un_active {
+    }
+    &_active {
+      color: #bc6d41 !important;
+      display: flex;
+      align-items: center;
+
+      &:after {
+        content: "";
+        margin-left: 9px;
+        width: 4px;
+        height: 4px;
+        background-color: #bf8154;
+      }
+    }
+  }
+  .roomInfoCard {
+    display: flex;
+    gap: 30px;
+  }
+  .roomInfoCard {
+    margin-top: 0;
+    button {
+      padding: 14.5px 24.58px;
+      width: auto;
+      margin-top: 46.92px;
+    }
+  }
+  .roomInfoCard_wrapper {
+    min-height: 454px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: #fff;
+  }
+  .roomInfoCard_content {
+    width: 50%;
+    span {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &_area {
+      margin-bottom: 35.16px;
+    }
+
+    &_price {
+      display: flex;
+      align-items: center;
+      gap: 18.6px;
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+}

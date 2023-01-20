@@ -1,0 +1,56 @@
+import React from "react";
+import styles from "../../styles/partner/Partner.module.scss";
+import img1 from "../../assets/partner/tender/image1.png";
+import img2 from "../../assets/partner/tender/image2.png";
+
+const Tender = () => {
+  return (
+    <div className={styles.partnerTender_wrapper}>
+      <div
+        className={
+          styles.partnerTender_container +
+          " " +
+          styles.partnerTender_container_first
+        }
+      >
+        <div className={styles.partnerTender_content}>
+          <span className="caption caption_dark">О СОТРУДНИЧЕСТВЕ</span>
+          <h2 className="h2 h2_light">ТЕНДЕРЫ</h2>
+          <p className="text_body text_body_dark">
+            Компания «Atrium Plus» проводит тендеры на проектные и
+            строительно-монтажные работы, продукцию, товары и услуги. По
+            вопросам, касающихся проведения закупок, просим обращаться по
+            телефону.
+            <br />
+            <span>+7 (727) 390 00 67</span>
+          </p>
+          <button className="btn_outline">заказать звонок</button>
+        </div>
+        <img src={img1.src} alt="image1" />
+      </div>
+      <div
+        className={
+          styles.partnerTender_container +
+          " " +
+          styles.partnerTender_container_second
+        }
+      >
+        <div className={styles.partnerTender_content}>
+          <span className="caption caption_dark">О СОТРУДНИЧЕСТВЕ</span>
+          <h2 className="h2 h2_dark">СОИСКАТЕЛЯМ</h2>
+          <p className="text_body text_body_dark">
+            В нашей компании мы приветствуем как опытных профессионалов, так и
+            молодых перспективных специалистов, готовых развиваться и достигать
+            высоких результатов. Мы предоставляем сотрудникам возможность
+            реализовать свой потенциал, совершенствовать уже имеющиеся знания и
+            навыки и участвовать в новых масштабных проектах
+          </p>
+          <button className="btn_outline">заказать звонок</button>
+        </div>
+        <img src={img2.src} alt="image2" />
+      </div>
+    </div>
+  );
+};
+
+export default Tender;

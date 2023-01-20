@@ -1,0 +1,40 @@
+.advantages {
+  background: linear-gradient(-90deg, #fff 55.9%, rgba(0, 0, 0, 0) 30%),
+    var(--color-primary-bg-main);
+  // height: 805px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.advantageItem {
+  max-width: 370px;
+  padding: 59.57px 46px 55px 47px;
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  h6 {
+    color: var(--color-text-body);
+  }
+  p {
+    font-weight: 400;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+.white_bg {
+  background-color: #fff;
+}
+
+.grey_bg {
+  background-color: var(--color-primary-bg-main);
+}
+
+@media screen and (max-width: 900px) {
+}

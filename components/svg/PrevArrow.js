@@ -1,0 +1,20 @@
+import React from "react";
+
+const PrevArrow = ({ innerRef }) => (
+  <div className="arrowSlider arrowSlider__prev" ref={innerRef}>
+    <svg
+      width="30"
+      height="15"
+      viewBox="0 0 30 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.8125 15L8.91406 13.9425L2.99219 8.25H30V6.75H2.99219L8.91406 1.0575L7.8125 0L0 7.5L7.8125 15Z"
+        fill="#524B44"
+      />
+    </svg>
+  </div>
+);
+
+export default PrevArrow;

@@ -1,0 +1,263 @@
+.portfolioDetails_desc {
+  // margin-top: 88px;
+  // margin-bottom: 112px;
+  background-color: #ffffff;
+  width: calc(905px / 1440px * 100%);
+  padding-left: calc(205px / 1440px * 100%);
+  padding-top: 188px;
+  //
+  padding-bottom: calc(148px / 1440px * 100%);
+  height: 730px;
+  button {
+    padding: 15px 37px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 82px;
+  }
+}
+
+// .portfolio_complex_card_bg {
+//   background: unset;
+// }
+.portfolioDetails_blockOne {
+  // display: flex;
+  position: relative;
+}
+
+.portfolioDetails_blockOne .swiper-wrapper {
+}
+
+.portfolioDetails_slider {
+  position: absolute;
+  width: calc(735px / 1440px * 100%);
+  top: 108px;
+  right: 0;
+}
+
+.portfolioDetails_slide_item {
+  width: 100%;
+  height: 493px;
+  img {
+    width: 100%;
+    // height: 493px;
+  }
+}
+
+.portfolio_complex {
+  margin-top: 100px;
+  &_container {
+    position: relative;
+    padding-right: 0;
+  }
+}
+
+.complex_slider {
+  margin-top: 221px;
+  display: flex;
+}
+
+.complexSlider_mainImg {
+  width: 535px;
+  height: 502px;
+  z-index: 10;
+}
+
+.arrows {
+  position: absolute;
+  top: 121px;
+  left: calc(184px / 1440px * 100%);
+  z-index: 20;
+}
+
+.page {
+  position: absolute;
+  top: calc(121px - 43px);
+  right: calc(57px / 1440px * 100%);
+  z-index: 20;
+}
+.arrows_detail_blockOne {
+  position: absolute;
+  bottom: -53px;
+  left: 20px;
+}
+
+.page_detail_blockOne {
+  position: absolute;
+  top: 0px;
+  right: 57px;
+}
+.slider {
+  background-color: transparent;
+}
+.complexSlider_card {
+  width: 535px;
+  height: 502px;
+  display: flex;
+  z-index: 10;
+  flex-direction: column;
+  padding: 90px 98px 84px 100px;
+  justify-content: flex-start;
+
+  // margin-right: calc(435px / 1440px * 100%);
+
+  background: #ffffff;
+
+  position: relative;
+  z-index: 12;
+
+  h3 {
+    color: var(--color-text-heading);
+  }
+  p {
+    margin-top: 48px;
+  }
+
+  a {
+    padding: 16.5px 25px;
+    // font-weight: 400;
+    // font-size: 14px;
+    // line-height: 17px;
+    // /* identical to box height */
+    max-width: 147px;
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
+    // text-transform: uppercase;
+    margin-top: 54px;
+
+    /* gold orange accent */
+
+    // color: var(--color-primary-btn-outline);
+  }
+  &_blur {
+    position: absolute;
+    right: 0;
+
+    z-index: 1;
+    overflow: hidden;
+    top: -92px;
+    // width: 635px;
+    height: 560px;
+    img {
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      transform: scale(1.03);
+    }
+  }
+}
+
+.portfolioDetails_advantage {
+  background: linear-gradient(-90deg, #fff 55.9%, rgba(0, 0, 0, 0) 30%);
+  margin-top: 95px;
+  padding-top: 205px;
+  padding-bottom: 145px;
+  &_cards {
+    margin-top: 123px;
+  }
+}
+
+@media screen and (max-width: 1115px) {
+  .portfolioDetails_desc {
+    padding-top: 88px;
+    padding-bottom: 117px;
+    height: auto;
+  }
+
+  .portfolioDetails_advantage {
+    background: var(--color-primary-bg-main);
+  }
+  .portfolioDetails_slider {
+    position: relative;
+    width: 100%;
+    top: unset;
+    padding: 0 85px;
+    background-color: #fff;
+    // margin-top: ;
+    // width: calc(735px / 1440px * 100%);
+    // top: 108px;
+    // right: 0;
+  }
+  .arrows_detail_blockOne,
+  .page_detail_blockOne {
+    position: static;
+  }
+  .slider_utils {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 33px;
+  }
+  .portfolioDetails_desc {
+    width: 100%;
+  }
+
+  .portfolioDetails_slide_item {
+    height: 385px;
+  }
+
+  .complexSlider_card {
+    padding: 40px;
+    height: 357px;
+    width: 380px;
+    p {
+      margin-top: 23px;
+    }
+    a {
+      margin-top: 30px;
+    }
+  }
+  .complexSlider_card_blur {
+    width: 70%;
+  }
+  .complexSlider_mainImg {
+    height: 357px;
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .complex_slider {
+    margin-top: 138px;
+    display: flex;
+  }
+
+  .portfolioDetails_slider {
+    padding: 0 30px;
+  }
+  .complexSlider_card {
+    padding: 40px;
+    height: 357px;
+    width: 380px;
+    p {
+      margin-top: 23px;
+    }
+    a {
+      margin-top: 30px;
+    }
+  }
+  .complexSlider_card_blur {
+    display: none;
+  }
+
+  .complexSlider_mainImg {
+    display: none;
+  }
+
+  .portfolio_complex_container {
+    padding-left: 0;
+  }
+  .portfolio_complex_card_bg {
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-size: cover;
+  }
+
+  .page {
+    top: 86px;
+  }
+  .arrows {
+    top: 86px;
+  }
+}

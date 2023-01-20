@@ -1,0 +1,32 @@
+.blockSliderItem {
+  background-size: cover;
+  // background: 100% 100%;
+  background-repeat: no-repeat;
+  min-width: 270px;
+  height: 443px;
+  position: relative;
+}
+
+.blockSliderItem button {
+  color: #fff;
+  position: absolute;
+  border: 1px solid #fff;
+
+  font-family: var(--font-main-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 16.5px 86.5px;
+}

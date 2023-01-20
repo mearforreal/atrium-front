@@ -1,0 +1,87 @@
+.breadcumb {
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 15px;
+  padding-right: 0 !important;
+  &__container {
+    display: flex;
+    gap: 144px;
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 30px;
+  }
+  &__home {
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  ul {
+    display: flex;
+    gap: 50px;
+    text-transform: uppercase;
+  }
+  &__main {
+  }
+
+  &__mainBtn {
+    display: none;
+  }
+  &__current {
+    color: #bf8154;
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    &_dot {
+      width: 4px;
+      height: 4px;
+      background-color: #bf8154;
+    }
+  }
+}
+
+.breadcumb__main_nav {
+  ul {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .breadcumb {
+    &__container {
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .breadcumb__mainBtn {
+    display: block;
+    padding-top: 37px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: #fff;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      li {
+        padding: 7.5px 14.5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .breadcumb__main {
+    display: none;
+  }
+}
+
+// @media screen and (max-width: 500px) {
+// }
