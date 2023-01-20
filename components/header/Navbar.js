@@ -36,7 +36,7 @@ const Navbar = () => {
               </li>
 
               <li>
-                <a href={"/about"}>Tavros</a>
+                <a href={"/oversea"}>Tavros</a>
               </li>
 
               <li>
