@@ -32,39 +32,51 @@ const ContactView = ({ contactInfo }) => {
             className={footerStyles.footer_contact_content}
           >
             <ul className={footerStyles.footer_contact_content_left}>
-              <li>
-                <Image src={phone} alt="phone" />
-                <div
-                  style={{ display: "flex", flexDirection: "column", gap: 7 }}
-                >
-                  {contactInfo?.tel &&
-                    contactInfo?.tel?.map((item) => (
+              {contactInfo?.tel && (
+                <li>
+                  <Image src={phone} alt="phone" />
+                  <div
+                    style={{ display: "flex", flexDirection: "column", gap: 7 }}
+                  >
+                    {contactInfo?.tel?.map((item) => (
                       <span key={item?.tel} className="b2">
                         {item?.tel}
                       </span>
                     ))}
-                </div>
-              </li>
-              <li>
-                <Image src={mail} alt="mail" />
-                <span className="b2">{contactInfo?.email}</span>
-              </li>
-              <li>
-                <Image src={address} alt="address" />
-                <span className="b2">{contactInfo?.address}</span>
-              </li>
+                  </div>
+                </li>
+              )}
+              {contactInfo?.email && (
+                <li>
+                  <Image src={mail} alt="mail" />
+                  <span className="b2">{contactInfo?.email}</span>
+                </li>
+              )}
+              {contactInfo?.address && (
+                <li>
+                  <Image src={address} alt="address" />
+                  <span className="b2">{contactInfo?.address}</span>
+                </li>
+              )}
             </ul>
 
-            <div className={footerStyles.footer_contact_content_right}>
-              <Image src={time} alt="time" />
-              <div
-                style={{ gap: 9.31 }}
-                className={footerStyles.footer_contact_time}
-              >
-                <span className="b2">{contactInfo?.workingHour_weekdays}</span>
-                <span className="b2">{contactInfo?.workingHour_weekdends}</span>
+            {contactInfo?.workingHour_weekdays ||
+            contactInfo?.workingHour_weekdends ? (
+              <div className={footerStyles.footer_contact_content_right}>
+                <Image src={time} alt="time" />
+                <div
+                  style={{ gap: 9.31 }}
+                  className={footerStyles.footer_contact_time}
+                >
+                  <span className="b2">
+                    {contactInfo?.workingHour_weekdays}
+                  </span>
+                  <span className="b2">
+                    {contactInfo?.workingHour_weekdends}
+                  </span>
+                </div>
               </div>
-            </div>
+            ) : null}
           </div>
         </div>
       </div>
