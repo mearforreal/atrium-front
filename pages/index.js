@@ -92,11 +92,11 @@ export default function Home({ projectData, oversea, lateNews }) {
       </div>
 
       <div className="main_bg">
-        <div className="wow slideInRight" data-wow-offset="20">
+        <div className="wow slideInLeft" data-wow-offset="20">
           <OverseaProject />
         </div>
 
-        <div className="wow bounceInUp" data-wow-offset="20">
+        <div className="wow slideInLeft" data-wow-offset="20">
           {oversea?.length > 0 ? (
             <OverseaSlider isDark={false} oversea={oversea} />
           ) : (
@@ -114,10 +114,10 @@ export default function Home({ projectData, oversea, lateNews }) {
         )}
       </div>
 
-      <div className="wow slideInRight" data-wow-offset="20">
+      <div className="wow slideInLeft" data-wow-offset="20">
         {lateNews?.length > 0 ? <ActualNews lateNews={lateNews} /> : ""}
       </div>
-      <div className="wow slideInRight" data-wow-offset="20">
+      <div className="wow slideInLeft" data-wow-offset="20">
         <SendForm />
       </div>
 

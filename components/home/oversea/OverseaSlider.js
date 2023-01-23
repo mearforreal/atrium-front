@@ -107,7 +107,7 @@ const OverseaSlider = ({ oversea, isDark }) => {
                   <OverseaSliderItem
                     key={item.id}
                     item={item}
-                    img={PREFIX_IMG + item.oversea_images[0].img}
+                    img={PREFIX_IMG + item?.oversea_images[0]?.img}
                     current={index === 1}
                   />
                 </SwiperSlide>

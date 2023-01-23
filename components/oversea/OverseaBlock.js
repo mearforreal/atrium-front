@@ -14,14 +14,14 @@ const OverseaBlock = ({ item, index, sliderRef, handlePrev, handleNext }) => {
 
   const onNavPrev = (item) => {
     if (cardInfoIndex === 0) {
-      setCardInfoIndex(item?.oversea_images.length - 1);
+      setCardInfoIndex(item?.oversea_images?.length - 1);
     } else {
       setCardInfoIndex(cardInfoIndex - 1);
     }
   };
 
   const onNavNext = (item) => {
-    if (cardInfoIndex === item?.oversea_images.length - 1) {
+    if (cardInfoIndex === item?.oversea_images?.length - 1) {
       setCardInfoIndex(0);
     } else {
       setCardInfoIndex(cardInfoIndex + 1);

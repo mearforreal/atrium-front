@@ -15,7 +15,7 @@ const MoreNews = ({ moreNews }) => {
   const [page, setPage] = useState(1);
   return (
     <div className={styles.moreNews + " " + "moreNewsDetail"}>
-      <div className="slider_mobile">
+      <div className="slider_mobile" style={{ marginBottom: 40 }}>
         <div className={"arrows" + " " + styles.arrows}>
           <div
             className={styles.arrows_prev}
@@ -65,7 +65,7 @@ const MoreNews = ({ moreNews }) => {
         }}
         breakpoints={{
           805: {
-            slidesPerView: 3,
+            slidesPerView: 3.5,
           },
           500: {
             slidesPerView: 2,

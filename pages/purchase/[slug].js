@@ -7,6 +7,7 @@ import Breadcumb from "../../components/shared/Breadcumb";
 import Main from "../../components/portfolio/details/Main";
 import Advantages from "../../components/portfolio/details/Advantages";
 import Gallery from "../../components/portfolio/details/Gallery";
+import Location from "../../components/purchase/details/Location";
 import styles from "../../styles/purchase/PurchaseDetails.module.scss";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
@@ -87,11 +88,21 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
               style={{ display: "flex", flexDirection: "column", gap: 20 }}
               className={footerStyles.footer_contact_content}
             >
-              <p className="text_body text_body_white">
-                При 100% оплате и ипотеке — скидка от базовой цены. При
-                единовременной оплате все действия по приобретению будут
-                максимально быстрыми: Заключение и подписание ПДКП
-              </p>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "space-between",
+                }}
+              >
+                <p className="text_body text_body_white">
+                  {projectInfo.service_payment_oneRU}
+                </p>
+
+                <p className="text_body text_body_white">
+                  {projectInfo.service_payment_twoRU}
+                </p>
+              </div>
             </div>
           </div>
         </div>

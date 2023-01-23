@@ -35,7 +35,7 @@ const Advantages = ({ projectInfo }) => {
         >
           <SwiperSlide>
             <AdvantageItem
-              icon={"/assets/img/about/advantages/icon-" + (0 + 1) + ".svg"}
+              icon={"/assets/img/advantages/icon-" + (0 + 1) + ".svg"}
               title={"Расположение"}
               description={projectInfo.advantage_addressRU}
               additionaClass={"white_bg"}
@@ -43,25 +43,25 @@ const Advantages = ({ projectInfo }) => {
           </SwiperSlide>
           <SwiperSlide>
             <AdvantageItem
-              icon={"/assets/img/about/advantages/icon-" + (0 + 1) + ".svg"}
-              title={"Расположение"}
-              description={projectInfo.advantage_addressRU}
+              icon={"/assets/img/advantages/icon-" + (0 + 2) + ".svg"}
+              title={"стиль"}
+              description={projectInfo.advantage_styleRU}
               additionaClass={"white_bg"}
             />
           </SwiperSlide>
           <SwiperSlide>
             <AdvantageItem
-              icon={"/assets/img/about/advantages/icon-" + (0 + 1) + ".svg"}
-              title={"Расположение"}
-              description={projectInfo.advantage_addressRU}
+              icon={"/assets/img/advantages/icon-" + (0 + 3) + ".svg"}
+              title={"безопасность"}
+              description={projectInfo.advantage_securityRU}
               additionaClass={"grey_bg"}
             />
           </SwiperSlide>
           <SwiperSlide>
             <AdvantageItem
-              icon={"/assets/img/about/advantages/icon-" + (0 + 1) + ".svg"}
-              title={"Расположение"}
-              description={projectInfo.advantage_addressRU}
+              icon={"/assets/img/advantages/icon-" + (0 + 4) + ".svg"}
+              title={"архитектура"}
+              description={projectInfo.advantage_architectRU}
               additionaClass={"grey_bg"}
             />
           </SwiperSlide>
