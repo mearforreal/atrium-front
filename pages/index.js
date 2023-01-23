@@ -9,6 +9,8 @@ import Navbar from "../components/header/Navbar";
 import HeaderBanner from "../components/header/HeaderBanner";
 import OverseaProject from "../components/home/oversea/OverseaProject";
 import OverseaSlider from "../components/home/oversea/OverseaSlider";
+import BuildComplex from "../components/home/complex/BuildComplex";
+import Gallery from "../components/home/gallery/Gallery";
 
 import VirtualTour from "../components/home/virtualTour/VirtualTour";
 
@@ -78,7 +80,11 @@ export default function Home({ projectData, oversea, lateNews }) {
 
       <div className={styles.blockOne + " " + styles.block_container}>
         <div className="wow fadeInUp" data-wow-offset="20">
-          <BlockOneSlider projectData={projectData} />{" "}
+          {projectData?.length > 0 ? (
+            <BlockOneSlider projectData={projectData} />
+          ) : (
+            ""
+          )}
         </div>{" "}
         <div className="wow slideInLeft" data-wow-offset="20">
           <BlockOneText />
@@ -97,12 +103,19 @@ export default function Home({ projectData, oversea, lateNews }) {
             ""
           )}
         </div>
-        {/* <BuildComplex projectData={projectData} />
-        <Gallery projectData={projectData} /> */}
+        {projectData?.length > 0 ? (
+          <>
+            <BuildComplex projectData={projectData} />
+            <Gallery projectData={projectData} />
+            <VirtualTour projectData={projectData} />
+          </>
+        ) : (
+          ""
+        )}
       </div>
-      <VirtualTour projectData={projectData ? projectData : [0, 1, 2, 3, 4]} />
+
       <div className="wow slideInRight" data-wow-offset="20">
-        <ActualNews lateNews={lateNews ? lateNews : [0, 1, 2, 3, 4]} />
+        {lateNews?.length > 0 ? <ActualNews lateNews={lateNews} /> : ""}
       </div>
       <div className="wow slideInRight" data-wow-offset="20">
         <SendForm />

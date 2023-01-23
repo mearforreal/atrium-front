@@ -28,6 +28,15 @@
       flex-direction: column;
       gap: 50px;
       margin-top: 58px;
+      &_inner {
+        display: flex;
+        justify-content: space-between;
+        row-gap: 50px;
+        column-gap: 50px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
       input {
         border: transparent 1px solid;
         border-bottom: 1px solid var(--color-text-body-dark);
@@ -48,6 +57,7 @@
       }
       button {
         padding: 17.5px 130px;
+        width: max-content;
 
         font-style: normal;
         font-weight: 500;
@@ -63,6 +73,78 @@
         color: #ffffff;
       }
     }
+  }
+}
+
+@mixin rings($duration, $delay) {
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border: 2px solid #bf8154;
+  border-radius: 100%;
+  animation-name: ripple;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
+  z-index: -1;
+}
+
+.requestIcon {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  // bottom: 59px;
+  // right: 75px;
+  right: 5.56%;
+  bottom: 8.19%;
+  z-index: 30;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  -webkit-box-shadow: 5px 7px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 5px 7px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 5px 7px 8px 0px rgba(34, 60, 80, 0.2);
+  &::after {
+    @include rings(3s, 0s);
+  }
+
+  &::before {
+    @include rings(3s, 0.5s);
+  }
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(1.5, 1.5, 1);
+  }
+}
+.requestModal_main {
+  padding: 5% 2%;
+  h3 {
+    text-align: center;
+  }
+  button {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 }
 

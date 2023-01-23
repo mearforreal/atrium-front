@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import styles from "../../../styles/home/sendForm/SendForm.module.scss";
 import Image from "next/image";
 import map from "../../../assets/map.png";
 import { Map, Placemark } from "react-yandex-maps";
 import { DataContext } from "../../../context/DataContext";
-import { PREFIX_IMG } from "../../../config";
+import { PREFIX_API, PREFIX_IMG } from "../../../config";
+import ReactInputMask from "react-input-mask";
+import axios from "axios";
+import { showNotification } from "@mantine/notifications";
 
 // console.log(map);
 
@@ -21,15 +24,65 @@ const SendForm = () => {
     () => ({ center: [43.225254, 76.959614], zoom: 17.5 }),
     []
   );
+
+  const inputNameRef = useRef(null);
+  const inputTelRef = useRef(null);
+  const inputEmailRef = useRef(null);
+
+  const handleModelSubmit = (event) => {
+    event.preventDefault();
+
+    const requestModal = {
+      name: inputNameRef?.current?.value || "",
+      tel: inputTelRef?.current?.value || "",
+      email: inputEmailRef?.current?.value || "",
+    };
+    axios
+      .post(PREFIX_API + "request/send", requestModal)
+      .then(() => {
+        showNotification({
+          title: "Успешно",
+          message: "Запрос отправлен успешно!",
+          icon: <IconCheck size={18} />,
+          color: "teal",
+        });
+      })
+      .catch((e) => {
+        showNotification({
+          title: "Ошибка",
+          message: "Произошла неизвестная ошибка",
+          icon: <IconX size={18} />,
+          color: "red",
+        });
+      });
+  };
   return (
     <div className={styles.sendForm}>
-      <form className={styles.sendForm_form}>
+      <form
+        className={styles.sendForm_form}
+        onSubmit={(e) => handleModelSubmit(e)}
+      >
         <span className="caption caption_light">СВЯЖИТЕСЬ С НАМИ</span>
         <h3 className="h3">заполните форму</h3>
         <div className={styles.sendForm_form_group}>
-          <input type="text" placeholder="Ваше ФИО" required />
-          <input type="tel" placeholder="Номер телефона" required />
-          <input type="email" placeholder="E-mail" required />
+          <input
+            type="text"
+            ref={inputNameRef}
+            placeholder="Ваше ФИО"
+            required
+          />
+          <ReactInputMask
+            ref={inputTelRef}
+            placeholder="Номер телефона"
+            mask="+7(999) 999 99 99"
+            maskChar=" "
+          />
+          <input
+            type="email"
+            ref={inputEmailRef}
+            placeholder="E-mail"
+            required
+          />
           <button type="submit" className="btn_primary">
             отправить
           </button>
@@ -53,7 +106,7 @@ const SendForm = () => {
             options={{
               iconLayout: "default#image",
               iconImageHref: `${PREFIX_IMG + setting?.pointer}`,
-              iconImageSize: [32, 32],
+              iconImageSize: [64, 72],
             }}
             geometry={mapState.center}
           />

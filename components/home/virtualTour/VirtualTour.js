@@ -26,8 +26,9 @@ const VirtualTour = ({ projectData }) => {
             height="614"
             frameborder="0"
             allow="xr-spatial-tracking; gyroscope; accelerometer"
-            allowfullscreen
+            allowFullScreen
             scrolling="no"
+            // src="https://kuula.co/share/collection/79gfK?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
             src={`${
               projectData[findIndex(currentId)]?.virtualTour
             }?fs=1&vr=0&zoom=1&sd=1&thumbs=1&inst=ru`}

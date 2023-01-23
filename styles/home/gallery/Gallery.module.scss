@@ -1,6 +1,7 @@
 .gallery {
   margin-top: 396px;
   display: flex;
+  flex-direction: row-reverse;
   gap: 30px;
   position: relative;
   &_active {
@@ -58,11 +59,102 @@
 }
 .arrows {
   position: absolute;
-  bottom: -38.5rem;
-  right: -50rem;
+  bottom: -40.5rem;
+  right: 73px;
 }
-
+.page {
+  position: absolute;
+  left: -70rem;
+  bottom: -105px;
+}
 .homeGallery {
   img {
+  }
+}
+@media screen and (max-width: 1105px) {
+  .gallery_arrow_text_wrapper {
+    height: 100%;
+  }
+  .gallery_text {
+    width: 320px;
+    padding-top: 76px;
+    height: 416px;
+    padding-bottom: 140px;
+  }
+
+  .gallery_text_container {
+    margin-top: 56px;
+  }
+  .arrows {
+    right: 73px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .slider_utils {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+  }
+  .gallery {
+    margin-top: 107px;
+    display: block;
+  }
+
+  .homeGallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  .arrows {
+    position: static;
+  }
+  .page {
+    position: static;
+  }
+  .gallery_arrow_text_wrapper {
+    align-items: center;
+
+    margin-right: 0;
+  }
+
+  .gallery_text {
+    background-color: unset;
+    height: auto;
+    padding-bottom: 43px;
+    padding-top: 0;
+    &_container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      h6 {
+        width: max-content;
+        background-color: transparent;
+        border: 1px solid var(--color-primary-btn-outline);
+        color: var(--color-primary-btn-outline);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        padding: 7.5px 15px;
+        &:hover {
+          border: 0;
+          background-color: var(--color-primary-btn-outline);
+          color: #fff !important;
+        }
+      }
+    }
+  }
+  .gallery_active {
+    border: 0;
+    // background-color: var(--color-primary-btn-outline);
+    color: #fff !important;
+    background-color: var(--color-primary-btn-outline) !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .homeGallery img {
+    // width: 321px;
+    height: 276px;
   }
 }

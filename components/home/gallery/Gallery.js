@@ -24,6 +24,71 @@ const Gallery = ({ projectData }) => {
           <span className="page_total"> / 10</span>
         </div>
       </div> */}
+      <div className={styles.gallery_arrow_text_wrapper}>
+        <div className={styles.gallery_text}>
+          <div>
+            <span className="caption caption_light">О НАШИХ ЖК</span>
+            <h2 className="h2 h2_dark">галерея</h2>
+          </div>
+          <div className={styles.gallery_text_container}>
+            {projectData?.map((item) => (
+              <h6
+                onClick={() => {
+                  setCurrentId(item.id);
+                }}
+                className={
+                  "h6" +
+                  " " +
+                  (item.id === currentId ? styles.gallery_active : "")
+                }
+              >
+                {item.titleRU}
+              </h6>
+            ))}
+          </div>
+        </div>
+        {/* <div className={styles.gallery_arrows}>
+          <PrevArrow />
+          <NextArrow />
+        </div> */}
+      </div>
+      <Swiper
+        ref={sliderRef}
+        spaceBetween={30}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        breakpoints={{
+          1300: {
+            slidesPerView: 2,
+          },
+          990: {
+            slidesPerView: 1.5,
+          },
+          280: {
+            slidesPerView: 1,
+          },
+        }}
+        width={null}
+        // dir="ltr"
+        speed={900}
+        loop={true}
+        className={styles.homeGallery}
+        // effect={"fade"}
+        onSlideChange={(swiper) => {
+          setPage(swiper.realIndex + 1);
+        }}
+      >
+        {projectData[findIndex(currentId)]?.galleries[0]?.img?.map((item) => (
+          <SwiperSlide>
+            <Image
+              alt="gallery"
+              width={637}
+              height={625}
+              src={PREFIX_IMG + item}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <div className={"slider_utils wrapper " + styles.slider_utils}>
         <div className={"page" + " " + styles.page}>
           <span style={{ marginRight: 5 }} className="page_current">
@@ -65,61 +130,7 @@ const Gallery = ({ projectData }) => {
           </div>
         </div>
       </div>
-      <Swiper
-        ref={sliderRef}
-        spaceBetween={30}
-        centeredSlides={true}
-        slidesPerView={2}
-        width={null}
-        dir="ltr"
-        speed={900}
-        loop={true}
-        className={styles.homeGallery}
-        // effect={"fade"}
-        onSlideChange={(swiper) => {
-          setPage(swiper.realIndex + 1);
-        }}
-      >
-        {projectData[findIndex(currentId)]?.galleries[0]?.img?.map((item) => (
-          <SwiperSlide>
-            <Image
-              alt="gallery"
-              width={637}
-              height={625}
-              src={PREFIX_IMG + item}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
       {/* <img src="/assets/img/gallery/image_main.png" alt="image_main" /> */}
-      <div className={styles.gallery_arrow_text_wrapper}>
-        <div className={styles.gallery_text}>
-          <div>
-            <span className="caption">О НАШИХ ЖК</span>
-            <h2 className="h2 h2_dark">галерея</h2>
-          </div>
-          <div className={styles.gallery_text_container}>
-            {projectData?.map((item) => (
-              <h6
-                onClick={() => {
-                  setCurrentId(item.id);
-                }}
-                className={
-                  "h6" +
-                  " " +
-                  (item.id === currentId ? styles.gallery_active : "")
-                }
-              >
-                {item.titleRU}
-              </h6>
-            ))}
-          </div>
-        </div>
-        {/* <div className={styles.gallery_arrows}>
-          <PrevArrow />
-          <NextArrow />
-        </div> */}
-      </div>
     </div>
   );
 };

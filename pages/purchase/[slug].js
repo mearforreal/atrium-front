@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Room from "../../components/purchase/details/Room";
 import ContactView from "../../components/shared/ContactView";
 import Navbar from "../../components/header/Navbar";
@@ -12,6 +12,7 @@ import Footer from "../../components/footer/Footer";
 import axios from "axios";
 import { PREFIX_API, PREFIX_IMG } from "../../config";
 import footerStyles from "../../styles/footer/Footer.module.scss";
+import RequestPurchaseModal from "../../components/request/modal/RequestPurchaseModal";
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
@@ -49,8 +50,8 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
 const PurchaseDetails = ({ projectInfo, gallery_types }) => {
-  console.log(projectInfo);
   const breadcumbData = {
     current: {
       href: "/purchase",
@@ -58,6 +59,7 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
     },
     nav: [],
   };
+  const [opened, setOpened] = useState(null);
   return (
     <div>
       <div className={"header"}>
@@ -103,6 +105,7 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
           project: { titleRU: projectInfo.titleRU },
         }}
       />
+      <RequestPurchaseModal opened={opened} setOpened={setOpened} />
 
       <Footer />
     </div>

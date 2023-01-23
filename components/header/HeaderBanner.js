@@ -8,6 +8,8 @@ import nextArrow from "../../assets/header/next-arrow.svg";
 import prevArrow from "../../assets/header/prev-arrow.svg";
 import HeaderSliderItem from "./HeaderSliderItem";
 import { Swiper, SwiperSlide } from "swiper/react";
+import RequestMainModal from "../request/modal/RequestMainModal";
+import RequestIcon from "../request/RequestIcon";
 
 const slider_data = [
   { id: 1, img: "header-slider-", title: "Более 1500 довольных клиентов" },
@@ -18,6 +20,7 @@ const slider_data = [
 const HeaderBanner = ({ bgUrl, title, desc }) => {
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
+  const [opened, setOpened] = useState(false);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -59,7 +62,11 @@ const HeaderBanner = ({ bgUrl, title, desc }) => {
         <div className={styles.headerBanner__main_content}>
           <h5>{title}</h5>
           <p>{desc}</p>
-          <button type="button" className="btn_primary">
+          <button
+            type="button"
+            className="btn_primary"
+            onClick={() => setOpened(true)}
+          >
             Связаться с нами
           </button>
         </div>
@@ -121,9 +128,8 @@ const HeaderBanner = ({ bgUrl, title, desc }) => {
               }}
             >
               {slider_data?.map((item, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={item.id}>
                   <HeaderSliderItem
-                    key={item.id}
                     img={
                       "/assets/img/header-slider/" +
                       item.img +
@@ -138,6 +144,8 @@ const HeaderBanner = ({ bgUrl, title, desc }) => {
           </div>
         </div>
       </div>
+      <RequestMainModal opened={opened} setOpened={setOpened} />
+      <RequestIcon setOpened={setOpened} />
     </div>
   );
 };

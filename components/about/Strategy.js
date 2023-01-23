@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 import styles from "../../styles/about/strategy/Strategy.module.scss";
 import NextArrow from "../svg/NextArrow";
 import PrevArrow from "../svg/PrevArrow";
 import BlockSliderItem from "../shared/BlockSliderItem";
+import { PREFIX_IMG } from "../../config";
+import { Swiper, SwiperSlide } from "swiper/react";
 const data = [
   { id: 1, img: "image-", title: "elite life" },
   { id: 2, img: "image-", title: "kokjiek city" },
@@ -10,7 +12,19 @@ const data = [
   // { id: 4, img: "image-", title: "elite life" },
 ];
 
-const Strategy = () => {
+const Strategy = ({ projectData }) => {
+  const sliderRef = useRef(null);
+  const [page, setPage] = useState(1);
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
   return (
     <div className={styles.strategy}>
       {/* breadcrumbing */}
@@ -20,26 +34,66 @@ const Strategy = () => {
       <div className={styles.strategy_content}>
         <div className={styles.strategy_slider_container}>
           <div className={"arrows" + " " + styles.arrows}>
-            <PrevArrow />
-            <NextArrow />
+            <div onClick={handleNext}>
+              <PrevArrow />
+            </div>
+            <div onClick={handlePrev}>
+              <NextArrow />
+            </div>
           </div>
-          <div className={styles.strategy_slider}>
-            {data?.map((item, index) => (
-              <BlockSliderItem
-                key={item.id}
-                img={"/assets/img/blockOne/" + item.img + (index + 1) + ".png"}
-                additionalClass={
-                  styles.slider_item +
-                  " " +
-                  (index === data.length - 1
-                    ? styles.slider_item_current
-                    : styles.slider_item_non_current)
-                }
-              />
-            ))}
+          <div className={styles.strategy_slider + " " + "strategy_slider"}>
+            <Swiper
+              ref={sliderRef}
+              spaceBetween={55}
+              slidesPerView={"auto"}
+              speed={800}
+              loop={true}
+              centeredSlides={true}
+              breakpoints={{
+                900: {
+                  slidesPerView: 1.8,
+                },
+
+                600: {
+                  slidesPerView: 2,
+                },
+
+                280: {
+                  slidesPerView: 1,
+                },
+              }}
+              onSlideChange={(data) => {
+                setPage(data.realIndex + 1);
+              }}
+            >
+              {projectData?.map((item, index) => (
+                <SwiperSlide key={item.id}>
+                  <BlockSliderItem
+                    p={item.titleRU}
+                    link={"/portfolio/" + item.slug}
+                    img={PREFIX_IMG + item.bannerImage}
+                    // additionalClass={
+                    //   styles.blockOneSlider_item + " " + "blockOneSlider_item"
+                    // }
+
+                    additionalClass={
+                      styles.slider_item + " " + "slider_item_strategy"
+                      //  +
+                      // " " +
+                      // (index === data.length - 1
+                      //   ? styles.slider_item_current
+                      //   : styles.slider_item_non_current)
+                    }
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
           <div className={"page" + " " + styles.page}>
-            <span className="page_current">01 </span>
+            <span style={{ marginRight: 5 }} className="page_current">
+              {("0" + page).slice(-2)}
+            </span>
+
             <span className="page_total"> / 04</span>
           </div>
         </div>

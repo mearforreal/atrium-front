@@ -16,9 +16,17 @@
     }
   }
   &_img {
-    min-width: 465px;
-    min-height: 448px;
+    // min-width: 465px;
+    // min-height: 448px;
+    width: 400px;
+    height: 373px;
+    min-width: 0;
+    &_container {
+      position: relative;
+    }
     img {
+      width: 400px;
+      height: 373px;
       width: 100%;
       z-index: 10;
       position: relative;
@@ -32,6 +40,7 @@
 .arrows {
   margin-right: 120.03px;
   margin-left: 56.94px;
+  z-index: 50;
 }
 .ourValue_img_blur {
   position: absolute;
@@ -40,7 +49,7 @@
   background: rgba(14, 34, 73, 0.23) url("/assets/img/gallery/image_main.png");
   right: 0;
   filter: blur(2px);
-  bottom: 0;
+  bottom: -76px;
 }
 
 @media screen and (max-width: 1222px) {
@@ -81,12 +90,16 @@
 }
 
 @media screen and (max-width: 900px) {
+  .ourValue_img_blur {
+    bottom: 0px;
+  }
   .ourValue {
     flex-direction: column;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 111.2px;
     align-items: center;
+    min-width: 0;
     gap: 88px;
 
     &_description {
@@ -106,8 +119,9 @@
       width: 400px;
       height: 373px;
       position: relative;
-      display: flex;
+      display: block;
       flex-direction: column-reverse;
+      min-width: 0;
       margin-top: 10px;
       order: 3;
     }
@@ -117,7 +131,7 @@
     }
 
     .page {
-      margin-bottom: 72px;
+      margin-bottom: 88px;
     }
   }
   // .ourValue_img_blur {
@@ -129,7 +143,12 @@
 @media screen and (max-width: 444px) {
   .page {
     justify-content: flex-end;
+    margin-bottom: 88px;
+    position: absolute;
+    top: -9rem;
+    right: 30px;
   }
+
   .arrows {
     margin-right: auto;
     margin-left: 0;

@@ -5,9 +5,15 @@
   //   min-width: 270px;
   //   height: 443px;
   position: relative;
+  p {
+    text-transform: uppercase;
+    padding-top: 33px;
+    padding-left: 37px;
+    color: #ffffff;
+  }
 }
 
-.blockSliderItem button {
+.blockSliderItem a {
   color: #fff;
   position: absolute;
   border: 1px solid #fff;
@@ -29,6 +35,9 @@
   right: 0;
   background-color: transparent;
   padding: 16.5px 86.5px;
+  &:hover {
+    background-color: #bc6d41;
+  }
 }
 
 @media screen and (max-width: 1185px) {

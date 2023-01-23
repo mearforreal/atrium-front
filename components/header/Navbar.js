@@ -3,7 +3,7 @@ import styles from "../../styles/header/Navbar.module.scss";
 import logo from "../../assets/logo.svg";
 import Image from "next/image";
 import useScreen from "../../hooks/useScreen";
-import { Burger } from "@mantine/core";
+import { Burger, Popover } from "@mantine/core";
 import NavLink from "next/link";
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
@@ -15,6 +15,8 @@ const Navbar = () => {
   const screen = useScreen();
 
   const [opened, setOpened] = useState(false);
+
+  const [openedPopOver, setOpenedPopOver] = useState(false);
 
   let activeClassName = "underline";
   return (
@@ -32,11 +34,29 @@ const Navbar = () => {
           {screen.isDesktop ? (
             <>
               <li>
-                <a href={"/about"}>о нас</a>
-              </li>
-
-              <li>
-                <a href={"/oversea"}>Tavros</a>
+                <Popover
+                  opened={openedPopOver}
+                  onChange={setOpenedPopOver}
+                  position="bottom"
+                  withArrow
+                  shadow="md"
+                >
+                  <Popover.Target>
+                    <a
+                      onMouseEnter={() => setOpenedPopOver(true)}
+                      href={"/about"}
+                    >
+                      о нас
+                    </a>
+                  </Popover.Target>
+                  <Popover.Dropdown
+                    onMouseLeave={() => setOpenedPopOver(false)}
+                  >
+                    <a style={{ color: "#727272" }} href={"/oversea"}>
+                      Tavros
+                    </a>
+                  </Popover.Dropdown>
+                </Popover>
               </li>
 
               <li>
@@ -93,6 +113,16 @@ const Navbar = () => {
             <li>
               <NavLink href={"/"} className="h5">
                 главная
+              </NavLink>
+            </li>
+            <li>
+              <NavLink href={"/about"} className="h5">
+                о нас
+              </NavLink>
+            </li>
+            <li>
+              <NavLink href={"/oversea"} className="h5">
+                tavros
               </NavLink>
             </li>
             <li>

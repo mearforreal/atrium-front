@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import NextArrow from "../../svg/NextArrow";
 import PrevArrow from "../../svg/PrevArrow";
 import { PREFIX_IMG } from "../../../config";
+import Link from "next/link";
 
 const data = [
   { id: 1, img: "image-", title: "elite life" },
@@ -46,18 +47,65 @@ const BuildComplexSlider = ({ projectData }) => {
 
   return (
     <div className={styles.buildComplexSlider + " " + "buildComplexSlider"}>
-      <div className={styles.buildComplexSlider_card_current}>
-        <h3 className="h3">{projectData[cardInfoIndex]?.titleRU}</h3>
-        <p className="text_body">{projectData[cardInfoIndex]?.descRU}</p>
-        <button className="btn_outline">Подробнее</button>
+      <div className={styles.slider_utils + " " + "wrapper"}>
+        <div className={"page" + " " + styles.page}>
+          <span style={{ marginRight: 5 }} className="page_current">
+            {("0" + page).slice(-2)}
+          </span>
+
+          <span className="page_total"> / 04</span>
+        </div>
+
+        <div className={"arrows" + " " + styles.arrows}>
+          <div onClick={handlePrev}>
+            <PrevArrow />
+          </div>
+          <div onClick={handleNext}>
+            <NextArrow />
+          </div>
+        </div>
       </div>
+
+      <div
+        // style={{
+        //   backgroundImage: ` url(${
+        //     PREFIX_IMG + projectData[cardInfoIndex]?.bannerImage
+        //   })`,
+        // }}
+        className=""
+      >
+        <div className={styles.buildComplexSlider_card_current}>
+          <div className={styles.buildComplexSlider_card_container}>
+            <h3 className="h3">{projectData[cardInfoIndex]?.titleRU}</h3>
+            <p className="text_body">{projectData[cardInfoIndex]?.descRU}</p>
+            <Link
+              href={"/portfolio/" + projectData[cardInfoIndex]?.slug}
+              className="btn_outline"
+            >
+              Подробнее
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* 
       <div className={styles.buildComplexSlider_wrapper}> */}
+
       <>
         <Swiper
           ref={sliderRef}
           spaceBetween={55}
-          slidesPerView={1.5}
+          slidesPerView={"auto"}
+          className={styles.buildComplexSlider_swiper}
+          breakpoints={{
+            950: {
+              slidesPerView: 1.5,
+            },
+
+            280: {
+              slidesPerView: 1,
+            },
+          }}
           speed={900}
           loop={true}
           onInit={() => {
@@ -88,23 +136,6 @@ const BuildComplexSlider = ({ projectData }) => {
               </div>
             </SwiperSlide>
           ))}
-
-          <div className={"page" + " " + styles.page}>
-            <span style={{ marginRight: 5 }} className="page_current">
-              {("0" + page).slice(-2)}
-            </span>
-
-            <span className="page_total"> / 04</span>
-          </div>
-
-          <div className={"arrows" + " " + styles.arrows}>
-            <div onClick={handlePrev}>
-              <PrevArrow />
-            </div>
-            <div onClick={handleNext}>
-              <NextArrow />
-            </div>
-          </div>
         </Swiper>
       </>
 

@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 import styles from "../../styles/about/OurValue.module.scss";
 import Image from "next/image";
 import PrevArrow from "../svg/PrevArrow";
 import NextArrow from "../svg/NextArrow";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { PREFIX_IMG } from "../../config";
 
-const OurValue = () => {
+const OurValue = ({ projectData }) => {
+  const sliderRef = useRef(null);
+  const [page, setPage] = useState(1);
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const findIndex = (id) => {
+    let index = projectData.findIndex((item) => {
+      return item.id === id;
+    });
+    return index === -1 ? 0 : index;
+  };
+  const [currentId, setCurrentId] = useState(1);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
   return (
     <div className={styles.ourValue}>
       <div className={styles.ourValue_description}>
@@ -17,8 +39,27 @@ const OurValue = () => {
         </p>
       </div>
       <div className={styles.ourValue_img}>
-        <img src="/assets/img/gallery/image_main.png" alt="gallery" />
-        {/* <Image src={'/as'} /> */}
+        <Swiper
+          ref={sliderRef}
+          spaceBetween={0}
+          slidesPerView={1}
+          speed={800}
+          loop={true}
+          centeredSlides={true}
+          onSlideChange={(data) => {
+            setPage(data.realIndex + 1);
+            setCurrentId(data.realIndex);
+          }}
+        >
+          {projectData?.map((item, index) => (
+            <SwiperSlide key={item.id}>
+              <div className={styles.ourValue_img_container}>
+                <img src={PREFIX_IMG + item.bannerImage} alt="gallery" />
+                {/* <Image src={'/as'} /> */}
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
         <div className={"page" + " " + styles.page}>
           <span className="page_current">01&nbsp;</span>
@@ -26,11 +67,21 @@ const OurValue = () => {
         </div>
       </div>
       <div className={"arrows" + " " + styles.arrows}>
-        <PrevArrow />
-        <NextArrow />
+        <div onClick={handlePrev}>
+          <PrevArrow />
+        </div>
+        <div onClick={handleNext}>
+          <NextArrow />
+        </div>
       </div>
-
-      <div className={styles.ourValue_img_blur} />
+      <div
+        className={styles.ourValue_img_blur}
+        style={{
+          backgroundImage: `url("${
+            PREFIX_IMG + projectData[currentId].bannerImage
+          }")`,
+        }}
+      />
     </div>
   );
 };

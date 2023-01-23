@@ -6,7 +6,7 @@ import Strategy from "../../components/about/Strategy";
 import Missions from "../../components/about/Missions";
 import OurValue from "../../components/about/OurValue";
 import Advantages from "../../components/about/Advantages";
-const About = () => {
+const About = ({ projectData }) => {
   return (
     <div className="">
       <div className={"header"}>
@@ -19,9 +19,11 @@ const About = () => {
           bgUrl="/assets/bg/about.png"
         />
       </div>
-      <Strategy />
+      {projectData?.length > 0 ? <Strategy projectData={projectData} /> : ""}
+
       <Missions />
-      <OurValue />
+      {projectData?.length > 0 ? <OurValue projectData={projectData} /> : ""}
+
       <Advantages />
 
       <Footer />

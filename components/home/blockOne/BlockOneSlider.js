@@ -81,6 +81,8 @@ const BlockOneSlider = ({ projectData }) => {
           {projectData?.map((item, index) => (
             <SwiperSlide key={item.id}>
               <BlockSliderItem
+                p={item.titleRU}
+                link={"/portfolio/" + item.slug}
                 img={PREFIX_IMG + item.bannerImage}
                 additionalClass={
                   styles.blockOneSlider_item + " " + "blockOneSlider_item"

@@ -18,7 +18,7 @@ const VirtualTour = ({ link }) => {
             height="614"
             frameborder="0"
             allow="xr-spatial-tracking; gyroscope; accelerometer"
-            allowfullscreen
+            allowFullScreen
             scrolling="no"
             src={`${link}?fs=1&vr=0&zoom=1&sd=1&thumbs=1&inst=ru`}
           ></iframe>
