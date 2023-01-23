@@ -19,9 +19,10 @@ const Main = ({ projectInfo }) => {
   }, []);
 
   const findExternalImagesIndex = (index) => {
-    return projectInfo?.galleries.findIndex((gallery) => {
-      return gallery.id === index;
+    let indexImage = projectInfo?.galleries.findIndex((gallery) => {
+      return gallery?.gallery_type_id === index;
     });
+    return indexImage === -1 ? 0 : indexImage;
   };
 
   return (

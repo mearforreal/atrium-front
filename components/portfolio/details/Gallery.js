@@ -14,11 +14,13 @@ const Gallery = ({ projectInfo, gallery_types }) => {
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
   const [galleryTypeIndex, setGalleryTypeIndex] = useState(1);
+  console.log(projectInfo?.galleries);
   //todo
   const findExternalImagesIndex = (index) => {
-    return projectInfo?.galleries.findIndex((gallery) => {
-      return gallery.id === index;
+    let indexImage = projectInfo?.galleries.findIndex((gallery) => {
+      return gallery?.gallery_type_id === index;
     });
+    return indexImage === -1 ? 0 : indexImage;
   };
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
