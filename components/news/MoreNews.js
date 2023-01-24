@@ -79,7 +79,13 @@ const MoreNews = ({ moreNews, direction }) => {
       >
         {moreNews?.map((item) => (
           <SwiperSlide>
-            <div className={styles.moreNews_card}>
+            <div
+              className={
+                styles.moreNews_card +
+                " " +
+                (direction == "vertical" ? styles.moreNews_card_vertical : "")
+              }
+            >
               <Image
                 width={260}
                 height={287}

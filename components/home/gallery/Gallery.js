@@ -58,7 +58,13 @@ const Gallery = ({ projectData }) => {
         centeredSlides={true}
         slidesPerView={"auto"}
         breakpoints={{
-          1300: {
+          // 1920: {
+          //   slidesPerView: 3,
+          // },
+          // 1440: {
+          //   slidesPerView: 2.5,
+          // },
+          1335: {
             slidesPerView: 2,
           },
           990: {

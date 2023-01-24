@@ -35,7 +35,13 @@ const Main = ({ projectInfo }) => {
         <span className={`caption caption_light`}>О ПРОЕКТЕ</span>
         <h3 className="h3">{projectInfo?.titleRU}</h3>
         <p className="text_body">{projectInfo?.descRU}</p>
-        <button className="btn_outline">перейти на сайт проекта</button>
+        <a
+          href={projectInfo?.web_site_link}
+          target={"_blank"}
+          className="btn_outline"
+        >
+          перейти на сайт проекта
+        </a>
       </div>
 
       <div

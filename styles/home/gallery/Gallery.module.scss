@@ -66,11 +66,35 @@
   position: absolute;
   left: -70rem;
   bottom: -105px;
+
+  @media screen and (min-width: 900px) {
+    left: -40rem;
+    bottom: 0;
+  }
+
+  @media screen and (min-width: 1085px) {
+    left: -50rem;
+    bottom: 0;
+  }
+
+  @media screen and (min-width: 1335px) {
+    left: -60rem;
+    bottom: 0;
+  }
+  @media screen and (min-width: 1440px) {
+    left: -70rem;
+    bottom: 0;
+  }
+  @media screen and (min-width: 1607px) {
+    left: -80rem;
+    bottom: 0;
+  }
 }
 .homeGallery {
   img {
   }
 }
+
 @media screen and (max-width: 1105px) {
   .gallery_arrow_text_wrapper {
     height: 100%;

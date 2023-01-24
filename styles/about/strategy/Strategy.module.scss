@@ -17,6 +17,10 @@
     left: -29%;
     justify-content: flex-end;
     width: calc(465px + 205px);
+    @media screen and (min-width: 1440px) {
+      width: 800px;
+      left: -59%;
+    }
   }
 }
 

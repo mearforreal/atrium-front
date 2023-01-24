@@ -11,9 +11,16 @@ import PrevArrow from "../../svg/PrevArrow";
 import NextArrow from "../../svg/NextArrow";
 
 const Gallery = ({ projectInfo, gallery_types }) => {
+  console.log(projectInfo);
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
   const [galleryTypeIndex, setGalleryTypeIndex] = useState(1);
+
+  // const checkGalliesTypeExistes = (gallery_types, projectInfoGalleries) => {
+  //   gallery_types.filter((item) => {
+  //     item,
+  //   });
+  // };
 
   //todo
   const findExternalImagesIndex = (index) => {

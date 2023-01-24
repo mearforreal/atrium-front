@@ -26,7 +26,7 @@ const Strategy = ({ projectData }) => {
     sliderRef.current.swiper.slideNext();
   }, []);
   return (
-    <div className={styles.strategy}>
+    <div className={styles.strategy + " " + "main_container"}>
       {/* breadcrumbing */}
       <div className="breadcrumb"></div>
       {/* img */}
@@ -51,6 +51,9 @@ const Strategy = ({ projectData }) => {
               loop={true}
               centeredSlides={true}
               breakpoints={{
+                1440: {
+                  slidesPerView: 3,
+                },
                 900: {
                   slidesPerView: 1.8,
                 },

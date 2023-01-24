@@ -11,7 +11,7 @@ import Complex from "../../components/portfolio/Complex";
 
 const Portfolio = ({ projectData, oversea }) => {
   return (
-    <div className="">
+    <div className={"main_bg"}>
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

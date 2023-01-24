@@ -45,7 +45,7 @@ const About = ({ projectData }) => {
     });
     tl2.to(element.querySelector("#images"), {
       css: {
-        transform: "translateX(15%)",
+        transform: "translateX(30%)",
       },
       duration: 0.5,
     });
@@ -102,7 +102,7 @@ const About = ({ projectData }) => {
   }, []);
 
   return (
-    <div ref={aboutRef} className="">
+    <div ref={aboutRef} className="main_bg">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

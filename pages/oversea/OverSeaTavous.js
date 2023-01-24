@@ -60,16 +60,17 @@ const OverSeaTavous = ({ oversea }) => {
     return item;
   };
   return (
-    <div>
+    <div className="main_bg">
       {" "}
       <div className={"header"}>
         <Navbar />
-        <HeaderBanner 
-        title="tavros group"
+        <HeaderBanner
+          title="tavros group"
           desc={
             "Каждый инвестиционный проект группы «Таврос» – результат тесного сотрудничества с лучшими местными и международными брендами. Основным принципом работы компании является осуществление разнообразных инновационных проектов, отличающихся уникальностью и надежностью."
           }
-          bgUrl="/assets/bg/oversea.png"/>
+          bgUrl="/assets/bg/oversea.png"
+        />
       </div>
       <>
         <div

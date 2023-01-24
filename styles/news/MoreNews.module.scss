@@ -85,11 +85,19 @@
       // margin-right: auto;
       // width: min-content;
       img {
-        width: 315px;
-        height: 165px;
+        width: 370px;
+        height: 360px;
       }
+
       p {
         max-width: 214px;
+      }
+
+      &_vertical {
+        img {
+          width: 315px;
+          height: 165px;
+        }
       }
     }
   }

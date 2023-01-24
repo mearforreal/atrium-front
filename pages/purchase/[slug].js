@@ -62,7 +62,7 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
   };
 
   return (
-    <div>
+    <div className="main_bg">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

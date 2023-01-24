@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/partner/Partner.module.scss";
 import img1 from "../../assets/partner/tender/image1.png";
 import img2 from "../../assets/partner/tender/image2.png";
+import RequestMainModal from "../request/modal/RequestMainModal";
 
 const Tender = () => {
+  const [opened, setOpened] = useState(false);
   return (
     <div className={styles.partnerTender_wrapper}>
       <div
@@ -24,7 +26,9 @@ const Tender = () => {
             <br />
             <span>+7 (727) 390 00 67</span>
           </p>
-          <button className="btn_outline">заказать звонок</button>
+          <button onClick={() => setOpened(true)} className="btn_outline">
+            заказать звонок
+          </button>
         </div>
         <img src={img1.src} alt="image1" />
       </div>
@@ -45,10 +49,13 @@ const Tender = () => {
             реализовать свой потенциал, совершенствовать уже имеющиеся знания и
             навыки и участвовать в новых масштабных проектах
           </p>
-          <button className="btn_outline">заказать звонок</button>
+          <button onClick={() => setOpened(true)} className="btn_outline">
+            заказать звонок
+          </button>
         </div>
         <img src={img2.src} alt="image2" />
       </div>
+      <RequestMainModal opened={opened} setOpened={setOpened} />
     </div>
   );
 };

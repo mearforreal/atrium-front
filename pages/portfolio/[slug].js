@@ -49,7 +49,9 @@ export const getStaticProps = async (context) => {
     `${PREFIX_API}project/details/${context.params.slug}`
   );
 
-  const resGalleryTypes = await axios.get(`${PREFIX_API}galleryType/index`);
+  const resGalleryTypes = await axios.get(
+    `${PREFIX_API}project/gellertypes/elite-life`
+  );
 
   const projectInfo = await res.data;
 
@@ -68,7 +70,7 @@ const PortfolioDetails = ({ projectInfo, gallery_types }) => {
   // console.log(findExternalImagesIndex(1));
 
   return (
-    <div>
+    <div className={"main_bg"}>
       <div className={"header"}>
         <Navbar />
         <HeaderBanner

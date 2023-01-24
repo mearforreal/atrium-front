@@ -77,7 +77,7 @@ const OverseaSlider = ({ oversea, isDark }) => {
           spaceBetween={30}
           centeredSlides={false}
           slidesPerView="auto"
-          speed={900}
+          speed={1000}
           loop={true}
           width={null}
           className={
