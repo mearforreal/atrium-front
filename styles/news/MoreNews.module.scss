@@ -118,6 +118,13 @@
   .page {
     display: flex;
   }
+  .slider_mobile_vertical {
+    display: none;
+    .arrows,
+    .page {
+      display: none;
+    }
+  }
   .moreNews {
     &_card {
       img {

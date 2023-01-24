@@ -15,9 +15,20 @@ const MoreNews = ({ moreNews, direction }) => {
   const [page, setPage] = useState(1);
   return (
     <div className={styles.moreNews + " " + "moreNewsDetail"}>
-      {direction == "vertical" ? <h4 className="h4">другие новости</h4> : null}
+      {direction == "vertical" ? (
+        <h4 style={{ marginBottom: 40 }} className="h4">
+          другие новости
+        </h4>
+      ) : null}
 
-      <div className="slider_mobile" style={{ marginBottom: 40 }}>
+      <div
+        className={
+          "slider_mobile" +
+          " " +
+          (direction == "vertical" ? styles.slider_mobile_vertical : null)
+        }
+        style={{ marginBottom: 40 }}
+      >
         <div className={"arrows" + " " + styles.arrows}>
           <div
             className={styles.arrows_prev}
