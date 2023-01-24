@@ -68,7 +68,7 @@ const Purchase = ({ projectData }) => {
         className={styles.purchaseCard_container}
         style={{ marginTop: "35px" }}
       >
-        <div className="main_container">
+        <div className="">
           {projectData?.map((item, index) => (
             <PurchaseRow item={item} index={index} />
           ))}

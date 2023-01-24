@@ -104,7 +104,12 @@
 }
 
 .purchaseCard_wrapper .swiper-slide-prev {
-  opacity: 0;
+  opacity: 1;
+}
+
+.purchaseCard_wrapper .swiper-slide-active {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .overseaBlock_slider .swiper-wrapper {

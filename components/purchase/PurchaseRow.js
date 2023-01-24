@@ -55,8 +55,9 @@ const PurchaseRow = ({ item, index }) => {
           slidesPerView={"auto"}
           // width={600}
           breakpoints={{
-            600: {
-              slidesPerView: 2,
+            1660: {
+              slidesPerView: 1.8,
+              centeredSlides: false,
             },
             1349: {
               slidesPerView: 1.8,
@@ -66,11 +67,11 @@ const PurchaseRow = ({ item, index }) => {
               slidesPerView: 1.5,
             },
 
-            1192: {
-              slidesPerView: 1.3,
-            },
+            // 1192: {
+            //   slidesPerView: 1.3,
+            // },
 
-            800: {
+            953: {
               slidesPerView: 1.3,
             },
 

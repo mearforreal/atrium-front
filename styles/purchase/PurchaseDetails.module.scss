@@ -176,6 +176,7 @@
   }
   .roomInfoCard {
     margin-top: 0;
+    margin-bottom: 48px;
     button {
       padding: 14.5px 24.58px;
       width: auto;
@@ -189,6 +190,10 @@
     justify-content: center;
     width: 50%;
     background-color: #fff;
+    img {
+      width: 397.13px;
+      height: 322px;
+    }
   }
   .roomInfoCard_content {
     width: 70%;
