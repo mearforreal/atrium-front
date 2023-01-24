@@ -55,7 +55,19 @@ const Main = ({ projectInfo }) => {
               {("0" + page).slice(-2)}
             </span>
 
-            <span className="page_total"> / 04</span>
+            <span className="page_total">
+              {" "}
+              /{" "}
+              {(
+                `${
+                  projectInfo?.galleries[findExternalImagesIndex(1)]?.img
+                    ?.length < 9
+                    ? "0"
+                    : ""
+                }` +
+                projectInfo?.galleries[findExternalImagesIndex(1)]?.img?.length
+              ).slice(-2)}
+            </span>
           </div>
 
           <div className={"arrows" + " " + styles.arrows_detail_blockOne}>

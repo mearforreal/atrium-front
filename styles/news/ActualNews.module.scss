@@ -1,5 +1,10 @@
 .actualNews {
-  background-color: #ffffff;
+  background: linear-gradient(
+      -90deg,
+      var(--color-primary-bg-main) 50%,
+      rgba(0, 0, 0, 0) 50%
+    ),
+    #fff;
   padding-top: 64px;
 
   &__container {

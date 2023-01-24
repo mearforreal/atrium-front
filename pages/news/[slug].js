@@ -72,7 +72,7 @@ const NewsDetails = ({ newsInfo }) => {
   }, [width]);
 
   return (
-    <div>
+    <div className="main_bg">
       <div className={"header"}>
         <Navbar />
         <HeaderBannerNews

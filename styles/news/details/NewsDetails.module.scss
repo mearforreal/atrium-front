@@ -40,11 +40,11 @@
     &_blur {
       display: block;
       position: absolute;
-      top: 0;
+      top: -81px;
       left: 0;
       width: calc(705px / 1440px * 100%);
       height: 340px;
-      backdrop-filter: blur(5px);
+      filter: blur(5px);
     }
   }
   .newsDetails {
@@ -78,5 +78,18 @@
   .newsDetails_banner {
     width: 100%;
     height: 395px;
+  }
+
+  // .moreNews_card_vertical {
+
+  // }
+}
+
+@media screen and (min-width: 1440px) {
+  .newsDetails_banner {
+    position: relative;
+    &_blur {
+      width: calc(900px / 1440px * 100%);
+    }
   }
 }

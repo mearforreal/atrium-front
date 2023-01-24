@@ -94,9 +94,56 @@
       }
 
       &_vertical {
+        background-color: #fff;
+        padding: 0;
+        padding-bottom: 30px;
+        // gap: 30px;
         img {
           width: 315px;
           height: 165px;
+        }
+        p,
+        a {
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .arrows {
+    display: flex;
+  }
+  .page {
+    display: flex;
+  }
+  .moreNews {
+    &_card {
+      img {
+        width: 100%;
+      }
+
+      p {
+        max-width: 300px;
+        font-size: 17px;
+      }
+      a {
+        font-size: 17px;
+      }
+
+      &_vertical {
+        background-color: #fff;
+        padding: 0;
+        padding-bottom: 30px;
+        // gap: 30px;
+        img {
+          width: 315px;
+          height: 165px;
+        }
+        p,
+        a {
+          padding: 0 30px;
         }
       }
     }
