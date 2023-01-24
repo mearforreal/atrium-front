@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useContext, useRef, useState } from "react";
 
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
@@ -8,6 +8,7 @@ import nextArrow from "../../assets/header/next-arrow.svg";
 import prevArrow from "../../assets/header/prev-arrow.svg";
 import HeaderSliderItem from "./HeaderSliderItem";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { DataContext } from "../../context/DataContext";
 
 const slider_data = [
   { id: 1, img: "header-slider-", title: "Более 1500 довольных клиентов" },
@@ -16,6 +17,8 @@ const slider_data = [
   { id: 4, img: "header-slider-", title: "Построено 7 объектов" },
 ];
 const HeaderBannerNews = ({ bgUrl, title, desc }) => {
+  const data = useContext(DataContext);
+  let [setting, setSetting] = data;
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
 
@@ -34,14 +37,14 @@ const HeaderBannerNews = ({ bgUrl, title, desc }) => {
       <nav className={styles.header__social}>
         <ul>
           <li>
-            <a href={"qwe"}>
+            <a target={"_blank"} href={setting?.insta}>
               {" "}
               <Image alt="insta" src={insta} />
               {/* <img src={insta} alt="insta" />{" "} */}
             </a>
           </li>
           <li>
-            <a href={"qwe"}>
+            <a target={"_blank"} href={setting?.facebook}>
               <Image alt="facebook" src={facebook} />
             </a>
           </li>
@@ -50,13 +53,19 @@ const HeaderBannerNews = ({ bgUrl, title, desc }) => {
 
       <div
         className={styles.headerBanner__main}
-        style={{ backgroundImage: `url("${bgUrl}")` }}
+        style={{
+          backgroundImage: `linear-gradient(107.96deg, rgba(0, 3, 72, 0.35) 0%, rgba(65, 0, 0, 0.42) 100%), url("${bgUrl}")`,
+          backgroundSize: "100% 100%",
+        }}
       >
-        <hr className={[styles.hr_horizantal]} />
+        {/* <hr className={[styles.hr_horizantal]} /> */}
         <hr className={styles.hr_vertical} />
-        <div className={styles.headerBanner__main_content}>
+        <div
+          className={styles.headerBanner__main_content}
+          style={{ padding: "12% 2% 0% 5%" }}
+        >
           <h5>{title}</h5>
-          <p>{desc}</p>
+          <p style={{ borderBottom: "1px solid #fff" }}>{desc}</p>
           <button type="button" className="btn_primary">
             Связаться с нами
           </button>
@@ -104,15 +113,23 @@ const HeaderBannerNews = ({ bgUrl, title, desc }) => {
               spaceBetween={30}
               loop={true}
               // width={"auto"}
-              slidesPerView={1.7}
+              slidesPerView={"auto"}
+              breakpoints={{
+                465: {
+                  slidesPerView: 1.7,
+                },
+
+                280: {
+                  slidesPerView: 1,
+                },
+              }}
               onSlideChange={(swiper) => {
                 setPage(swiper.realIndex + 1);
               }}
             >
               {slider_data?.map((item, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={item.id}>
                   <HeaderSliderItem
-                    key={item.id}
                     img={
                       "/assets/img/header-slider/" +
                       item.img +

@@ -8,6 +8,7 @@ import styles from "../../styles/news/details/NewsDetails.module.scss";
 import axios from "axios";
 import { PREFIX_API, PREFIX_IMG } from "../../config";
 import HeaderBannerNews from "../../components/header/HeaderBannerNews";
+import Breadcumb from "../../components/shared/Breadcumb";
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
@@ -39,6 +40,14 @@ export const getStaticProps = async (context) => {
   };
 };
 
+const breadcumbData = {
+  current: {
+    href: "/news",
+    title: "Новости",
+  },
+  nav: [],
+};
+
 const NewsDetails = ({ newsInfo }) => {
   // const router = useRouter();
   // const { id } = router.query;
@@ -46,10 +55,14 @@ const NewsDetails = ({ newsInfo }) => {
     <div>
       <div className={"header"}>
         <Navbar />
-        <HeaderBannerNews bgUrl={PREFIX_IMG + newsInfo.news.img} />
+        <HeaderBannerNews
+          title={newsInfo?.news.titleRU}
+          bgUrl={PREFIX_IMG + newsInfo.news.img}
+        />
       </div>
+      <Breadcumb current={breadcumbData.current} />
       <div className={styles.newsDetails_container}>
-        <NewsDetailsComponent newsdetail={newsInfo?.news} />
+        <NewsDetailsComponent news={newsInfo?.news} />
         <MoreNews moreNews={newsInfo?.more_news} />
       </div>
 

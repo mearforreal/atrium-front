@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useContext, useRef, useState } from "react";
 
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
@@ -10,6 +10,7 @@ import HeaderSliderItem from "./HeaderSliderItem";
 import { Swiper, SwiperSlide } from "swiper/react";
 import RequestMainModal from "../request/modal/RequestMainModal";
 import RequestIcon from "../request/RequestIcon";
+import { DataContext } from "../../context/DataContext";
 
 const slider_data = [
   { id: 1, img: "header-slider-", title: "Более 1500 довольных клиентов" },
@@ -18,6 +19,9 @@ const slider_data = [
   { id: 4, img: "header-slider-", title: "Построено 7 объектов" },
 ];
 const HeaderBanner = ({ bgUrl, title, desc }) => {
+  const data = useContext(DataContext);
+  let [setting, setSetting] = data;
+
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
   const [opened, setOpened] = useState(false);
@@ -37,14 +41,14 @@ const HeaderBanner = ({ bgUrl, title, desc }) => {
       <nav className={styles.header__social}>
         <ul>
           <li>
-            <a href={"qwe"}>
+            <a target={"_blank"} href={setting?.insta}>
               {" "}
               <Image alt="insta" src={insta} />
               {/* <img src={insta} alt="insta" />{" "} */}
             </a>
           </li>
           <li>
-            <a href={"qwe"}>
+            <a target={"_blank"} href={setting?.facebook}>
               <Image alt="facebook" src={facebook} />
             </a>
           </li>

@@ -110,7 +110,7 @@
     right: 0;
     z-index: 10;
     &_social {
-      margin-top: 64.67px;
+      // margin-top: 64.67px;
       display: flex;
       gap: 31.33px;
       img {
@@ -126,6 +126,7 @@
       align-items: center;
       gap: 35px;
       height: 100%;
+      margin-top: 8%;
       a {
         text-transform: uppercase;
         font-weight: 400;

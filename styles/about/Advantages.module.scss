@@ -12,11 +12,19 @@
 }
 
 .advantageItem {
-  max-width: 370px;
-  padding: 59.57px 46px 55px 47px;
-  display: grid;
-  place-items: center;
+  width: 270px;
+  height: 370px;
+  // padding: 59.57px 46px 55px 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  padding: 51px 33px 50px 33px;
   gap: 20px;
+  img {
+    width: 50px;
+    height: 40px;
+  }
   h6 {
     color: var(--color-text-body);
   }
@@ -36,5 +44,9 @@
   background-color: var(--color-primary-bg-main);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 610px) {
+  .advantageItem {
+    width: 100%;
+    height: 290px;
+  }
 }

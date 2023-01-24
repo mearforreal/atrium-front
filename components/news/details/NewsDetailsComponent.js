@@ -1,12 +1,30 @@
 import React from "react";
 import Heading from "../../shared/Heading";
 import styles from "../../../styles/news/details/NewsDetails.module.scss";
+import { PREFIX_IMG } from "../../../config";
 
-const NewsDetailsComponent = () => {
+const NewsDetailsComponent = ({ news }) => {
   return (
     <div className={styles.newsDetails}>
-      <img
-        src={"/assets/img/home/complex/image-1.png"}
+      <div
+        style={{
+          backgroundImage: `linear-gradient(0deg, rgba(37, 78, 156, 0.16), rgba(37, 78, 156, 0.16)),url(${
+            PREFIX_IMG + news.img
+          })`,
+          backgroundSize: "100% 100%",
+        }}
+        //  /
+        className={styles.newsDetails_banner_blur}
+        alt="newsDetails_banner"
+      />
+      <div
+        style={{
+          backgroundImage: `linear-gradient(0deg, rgba(37, 78, 156, 0.16), rgba(37, 78, 156, 0.16)),url(${
+            PREFIX_IMG + news.img
+          })`,
+          backgroundSize: "100% 100%",
+        }}
+        //  /
         className={styles.newsDetails_banner}
         alt="newsDetails_banner"
       />

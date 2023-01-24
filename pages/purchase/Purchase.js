@@ -57,6 +57,7 @@ const cardBg = (index) => {
   if (index === 3) {
     data = { bg: "#293F8C", isDarkBg: false };
   }
+
   return data;
 };
 const Purchase = ({ projectData }) => {
@@ -92,6 +93,11 @@ const Purchase = ({ projectData }) => {
         {projectData?.map((item, index) => (
           <div key={index}>
             <div
+              style={{
+                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${
+                  PREFIX_IMG + item.bannerImage
+                })`,
+              }}
               className={
                 styles.purchaseCard_wrapper + " " + "purchaseCard_wrapper"
               }
@@ -106,9 +112,31 @@ const Purchase = ({ projectData }) => {
                 className={styles.purchase_slider_wraper}
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={1.5}
+                slidesPerView={"auto"}
+                // width={600}
+                breakpoints={{
+                  1349: {
+                    slidesPerView: 1.8,
+                  },
+
+                  1200: {
+                    slidesPerView: 1.5,
+                  },
+
+                  1192: {
+                    slidesPerView: 1.3,
+                  },
+
+                  800: {
+                    slidesPerView: 1.3,
+                  },
+
+                  280: {
+                    slidesPerView: 1,
+                  },
+                }}
                 ref={sliderRef}
-                spaceBetween={0}
+                spaceBetween={50}
                 speed={900}
                 loop={true}
                 onSlideChange={(swiper) => {
@@ -129,7 +157,9 @@ const Purchase = ({ projectData }) => {
                 ))}
               </Swiper>
 
-              <div className={"page" + " " + styles.page}>
+              <div
+                className={"page" + " " + styles.page + " " + styles.page_index}
+              >
                 <span style={{ marginRight: 5 }} className="page_current">
                   {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
                 </span>

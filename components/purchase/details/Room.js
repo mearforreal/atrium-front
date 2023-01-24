@@ -4,9 +4,12 @@ import styles from "../../../styles/purchase/PurchaseDetails.module.scss";
 import Image from "next/image";
 import { DataContext } from "../../../context/DataContext";
 import { PREFIX_IMG } from "../../../config";
+import RequestPurchaseModal from "../../request/modal/RequestPurchaseModal";
 
 const Room = ({ room_types }) => {
-  const [contactCurrentId, setContactCurrentId] = useState(1);
+  // console.log(room_types);
+  const [opened, setOpened] = useState(null);
+  const [contactCurrentId, setContactCurrentId] = useState(room_types[0].id);
   const handleRoomNavClick = (id) => {
     setContactCurrentId(id);
   };
@@ -19,8 +22,9 @@ const Room = ({ room_types }) => {
     });
   };
   return (
-    <div className="wrapper">
-      <div className={styles.breadcumb__mainBtn}>
+    //
+    <div className={styles.breadcumb__mainBtn}>
+      <div className={"" + " " + styles.wrapper}>
         <ul>
           {room_types &&
             room_types?.map((item, index) => (
@@ -70,21 +74,35 @@ const Room = ({ room_types }) => {
                 <div className={styles.roomInfoCard_content_price}>
                   <p className="caption text_body_dark">от</p>
 
-                  <span className="h3 breadcumb_active">
-                    {Math.floor(room?.price)} ₸{" "}
-                  </span>
+                  {Math.floor(room?.price) != 0 ? (
+                    <span className="h3 breadcumb_active">
+                      {Math.floor(room?.price)} ₸{" "}
+                    </span>
+                  ) : (
+                    <span
+                      // style={{ textTransform: "capitalize" }}
+                      className="h3 breadcumb_active"
+                    >
+                      Уточнить в отделе продаж
+                    </span>
+                  )}
                 </div>
 
                 <p className="h6 text_body_dark">
                   ≈ $ {Math.floor(room?.price / setting?.currency)}
                 </p>
-                <button className="btn_outline">оставить заявку</button>
+                <button onClick={() => setOpened(true)} className="btn_outline">
+                  оставить заявку
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
+      <RequestPurchaseModal opened={opened} setOpened={setOpened} />
     </div>
+
+    //
   );
 };
 

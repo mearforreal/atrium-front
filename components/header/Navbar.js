@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../../styles/header/Navbar.module.scss";
 import logo from "../../assets/logo.svg";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import { Burger, Popover } from "@mantine/core";
 import NavLink from "next/link";
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
+import { DataContext } from "../../context/DataContext";
 
 const Navbar = () => {
   let activeStyle = {
@@ -17,6 +18,9 @@ const Navbar = () => {
   const [opened, setOpened] = useState(false);
 
   const [openedPopOver, setOpenedPopOver] = useState(false);
+
+  const data = useContext(DataContext);
+  let [setting, setSetting] = data;
 
   let activeClassName = "underline";
   return (
@@ -152,14 +156,14 @@ const Navbar = () => {
             </li>
             <div className={styles.mobileMenu_social}>
               <li>
-                <a href={"qwe"}>
+                <a target={"_blank"} href={setting?.insta}>
                   {" "}
                   <Image alt="insta" src={insta} />
                   {/* <img src={insta} alt="insta" />{" "} */}
                 </a>
               </li>
               <li>
-                <a href={"qwe"}>
+                <a target={"_blank"} href={setting?.facebook}>
                   <Image alt="facebook" src={facebook} />
                 </a>
               </li>

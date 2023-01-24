@@ -68,7 +68,11 @@ const RequestMainModal = ({ opened, setOpened }) => {
               maskChar=" "
             />
 
-            <button type="submit" className="btn_primary">
+            <button
+              style={{ width: "100%" }}
+              type="submit"
+              className="btn_primary"
+            >
               отправить
             </button>
           </div>

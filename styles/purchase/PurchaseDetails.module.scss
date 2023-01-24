@@ -32,8 +32,11 @@
 .roomInfoCard {
   margin-top: 48px;
   button {
-    padding: 14.5px 62px;
+    padding: 14.5px 10%;
+
     width: 100%;
+    text-transform: uppercase;
+    margin-top: 62px;
   }
 }
 
@@ -41,6 +44,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 55px;
+  gap: 10px;
   padding-bottom: 62px;
   background-color: #fff;
   span {
@@ -50,8 +54,79 @@
   //   p {
   //   }
 }
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 68px;
+  padding-left: 60px;
+  padding-right: 60px;
+  gap: 52.64px;
+}
+
+.nearLocation_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+
+  &__time {
+    display: flex;
+    align-items: flex-end;
+    gap: 9.86px;
+    margin-bottom: 23.84px;
+    p {
+      color: #bf8154;
+    }
+  }
+  &__adress {
+    p {
+      font-size: 14px;
+      margin-top: 0;
+    }
+    margin-bottom: 6.84px;
+  }
+  &__distance {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    gap: 13.15px;
+    hr {
+      flex: 1;
+      border: none;
+      border-bottom: 1px dashed #727272;
+    }
+    p {
+      margin-top: 0;
+    }
+    &_metric {
+      display: flex;
+    }
+  }
+}
+
+.nearLocation {
+  background-color: var(--color-primary-bg-main);
+  padding-top: 82px;
+  padding-bottom: 119.85px;
+}
 
 @media screen and (min-width: 650px) {
+  .nearLocation {
+    padding-top: 0;
+  }
+  .wrapper {
+    padding-bottom: 188.73px;
+  }
+
+  // .nearLocation_item {
+  //   width: 25%;
+  //   flex-wrap: wrap;
+  // }
+
+  .advantages_bg {
+    background: var(--color-primary-bg-main);
+  }
   .breadcumb__mainBtn {
     background-color: #f8f8f8;
 
@@ -116,7 +191,7 @@
     background-color: #fff;
   }
   .roomInfoCard_content {
-    width: 50%;
+    width: 70%;
     span {
       margin-top: 0;
       margin-bottom: 0;

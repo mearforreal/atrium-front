@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     gap: 27.82px;
-    // padding: 30px;
-    width: 320px;
+    padding: 30px;
+    width: 100%;
     // margin-left: auto;
     // margin-right: auto;
     // width: min-content;
@@ -39,5 +39,10 @@
 @media screen and (min-width: 1250px) {
   .moreNews {
     padding: 0 135px;
+  }
+  .moreNews {
+    &_card {
+      padding: 0;
+    }
   }
 }

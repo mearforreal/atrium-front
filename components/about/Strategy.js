@@ -46,6 +46,7 @@ const Strategy = ({ projectData }) => {
               ref={sliderRef}
               spaceBetween={55}
               slidesPerView={"auto"}
+              width={null}
               speed={800}
               loop={true}
               centeredSlides={true}

@@ -97,7 +97,7 @@ export default function Home({ projectData, oversea, lateNews }) {
         </div>
 
         <div className="wow slideInLeft" data-wow-offset="20">
-          {oversea?.length > 0 ? (
+          {oversea.overseaProjects?.length > 0 ? (
             <OverseaSlider isDark={false} oversea={oversea} />
           ) : (
             ""

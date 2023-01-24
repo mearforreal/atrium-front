@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 export const getStaticProps = async (context) => {
   // Fetching data from jsonplaceholder.
   const res = await axios.get(
-    `${PREFIX_API}project/details/${context.params.slug}`
+    `${PREFIX_API}project/purachse/details/${context.params.slug}`
   );
 
   const resGalleryTypes = await axios.get(`${PREFIX_API}galleryType/index`);
@@ -60,7 +60,7 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
     },
     nav: [],
   };
-  const [opened, setOpened] = useState(null);
+
   return (
     <div>
       <div className={"header"}>
@@ -75,7 +75,9 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
 
       <Main projectInfo={projectInfo} />
 
-      <Advantages projectInfo={projectInfo} />
+      <div className={styles.advantages_bg}>
+        <Advantages projectInfo={projectInfo} />
+      </div>
 
       <Gallery projectInfo={projectInfo} gallery_types={gallery_types} />
 
@@ -108,15 +110,17 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
         </div>
       </div>
 
-      <Room room_types={projectInfo.room_types} />
-      {/* <Location /> */}
+      <Room room_types={projectInfo?.room_types} />
+      {projectInfo?.near_locations.length > 0 && (
+        <Location near_locations={projectInfo?.near_locations} />
+      )}
+
       <ContactView
         contactInfo={{
-          ...projectInfo.contact,
-          project: { titleRU: projectInfo.titleRU },
+          ...projectInfo?.contact,
+          project: { titleRU: projectInfo?.titleRU },
         }}
       />
-      <RequestPurchaseModal opened={opened} setOpened={setOpened} />
 
       <Footer />
     </div>

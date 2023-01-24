@@ -99,6 +99,8 @@
 .purchaseCard_wrapper .swiper-slide {
   width: fit-content;
   transition: 0.5s;
+  display: flex;
+  align-items: flex-end;
 }
 
 .purchaseCard_wrapper .swiper-slide-prev {
@@ -273,7 +275,7 @@
   }
 }
 
-@media screen and (min-width: 1185px) {
+@media screen and (min-width: 900px) {
   .strategy_slider {
     // .swiper-wrapper {
     //   align-items: center;

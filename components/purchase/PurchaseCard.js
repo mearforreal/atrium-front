@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styles from "../../styles/purchase/Purchase.module.scss";
 import Link from "next/link";
 import { DataContext } from "../../context/DataContext";
+import { numberWithCommas } from "../../utils/DateUtils";
 
 const PurchaseCard = ({ data, isDarkBg, bg }) => {
   const settingContext = useContext(DataContext);
@@ -25,12 +26,28 @@ const PurchaseCard = ({ data, isDarkBg, bg }) => {
           <div className={styles.purchaseCard_content_info}>
             <p className={`text_body`}>Цена/ м2</p>
             {/* от 1 100 000 ₸ ≈  $2 320 */}
-            <span className="text_body">
-              от {Math.floor(data?.room_types[0]?.rooms[0]?.price)} ₸ ≈{" "}
-              {`$ ${Math.floor(
-                data?.room_types[0]?.rooms[0]?.price / setting?.currency
-              )}`}
-            </span>
+            {data?.room_types[0]?.rooms[0]?.price ? (
+              <span className="text_body">
+                {" "}
+                от{" "}
+                {numberWithCommas(
+                  Math.floor(data?.room_types[0]?.rooms[0]?.price)
+                )}{" "}
+                ₸ ≈{" "}
+                {`$ ${numberWithCommas(
+                  Math.floor(
+                    data?.room_types[0]?.rooms[0]?.price / setting?.currency
+                  )
+                )}`}
+              </span>
+            ) : (
+              <span
+                style={{ textTransform: "capitalize" }}
+                className="text_body"
+              >
+                уточнить в отделе продаж
+              </span>
+            )}
           </div>
           <div className={styles.purchaseCard_content_info}>
             <p className="text_body">Адрес</p>
@@ -39,7 +56,7 @@ const PurchaseCard = ({ data, isDarkBg, bg }) => {
         </div>
         <Link
           href={`/purchase/${data.slug}`}
-          className={`btn_outline ${data?.isDarkBg ? "" : "btn_outline_light"}`}
+          className={`btn_outline ${isDarkBg ? "" : " btn_outline_light"}`}
         >
           Подробнее
         </Link>

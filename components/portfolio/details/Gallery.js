@@ -14,7 +14,7 @@ const Gallery = ({ projectInfo, gallery_types }) => {
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
   const [galleryTypeIndex, setGalleryTypeIndex] = useState(1);
-  console.log(projectInfo?.galleries);
+
   //todo
   const findExternalImagesIndex = (index) => {
     let indexImage = projectInfo?.galleries.findIndex((gallery) => {

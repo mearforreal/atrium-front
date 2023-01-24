@@ -6,7 +6,11 @@
   width: 100%;
   height: 270px;
   margin-bottom: 63px;
+  &_blur {
+  }
 }
+
+// newsDetails_banner_blur
 
 @media screen and (min-width: 630px) {
   .newsDetails {

@@ -21,10 +21,10 @@ const Footer = ({ bgDark }) => {
           <Image src={logo} className={styles.footer_logo_img} alt="logo" />
 
           <div className={styles.footer_social}>
-            <a href={setting?.insta}>
+            <a target={"_blank"} href={setting?.insta}>
               <Image src={insta} alt="insta" />
             </a>
-            <a href={setting?.facebook}>
+            <a target={"_blank"} href={setting?.facebook}>
               <Image src={facebook} alt="facebook" />
             </a>
           </div>
