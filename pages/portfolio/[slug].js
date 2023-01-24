@@ -50,7 +50,7 @@ export const getStaticProps = async (context) => {
   );
 
   const resGalleryTypes = await axios.get(
-    `${PREFIX_API}project/gellertypes/elite-life`
+    `${PREFIX_API}project/gellertypes/${context.params.slug}`
   );
 
   const projectInfo = await res.data;

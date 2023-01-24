@@ -37,7 +37,9 @@ export const getStaticProps = async (context) => {
     `${PREFIX_API}project/purachse/details/${context.params.slug}`
   );
 
-  const resGalleryTypes = await axios.get(`${PREFIX_API}galleryType/index`);
+  const resGalleryTypes = await axios.get(
+    `${PREFIX_API}project/gellertypes/${context.params.slug}`
+  );
 
   const projectInfo = await res.data;
 

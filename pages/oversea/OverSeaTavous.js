@@ -72,7 +72,7 @@ const OverSeaTavous = ({ oversea }) => {
           bgUrl="/assets/bg/oversea.png"
         />
       </div>
-      <>
+      <div className="">
         <div
           className={
             "wrapper d-flex breadcumb_wrapper " + breadcumbStyles.breadcumb
@@ -140,11 +140,15 @@ const OverSeaTavous = ({ oversea }) => {
             ))}
           </ul>
         </div>
-      </>
-      <div className={styles.oversea}>
-        {oversea?.overseaProjects.filter(filterProject)?.map((item, index) => (
-          <OverseaBlock item={item} sliderRef={sliderRef} index={index} />
-        ))}
+      </div>
+      <div className="main_container">
+        <div className={styles.oversea}>
+          {oversea?.overseaProjects
+            .filter(filterProject)
+            ?.map((item, index) => (
+              <OverseaBlock item={item} sliderRef={sliderRef} index={index} />
+            ))}
+        </div>
       </div>
       <Footer />
     </div>
