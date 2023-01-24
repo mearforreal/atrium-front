@@ -5,6 +5,7 @@ import Image from "next/image";
 import { DataContext } from "../../../context/DataContext";
 import { PREFIX_IMG } from "../../../config";
 import RequestPurchaseModal from "../../request/modal/RequestPurchaseModal";
+import { numberWithCommas } from "../../../utils/DateUtils";
 
 const Room = ({ room_types }) => {
   // console.log(room_types);
@@ -76,7 +77,7 @@ const Room = ({ room_types }) => {
 
                   {Math.floor(room?.price) != 0 ? (
                     <span className="h3 breadcumb_active">
-                      {Math.floor(room?.price)} ₸{" "}
+                      {numberWithCommas(Math.floor(room?.price))} ₸{" "}
                     </span>
                   ) : (
                     <span
@@ -89,7 +90,10 @@ const Room = ({ room_types }) => {
                 </div>
 
                 <p className="h6 text_body_dark">
-                  ≈ $ {Math.floor(room?.price / setting?.currency)}
+                  ≈ ${" "}
+                  {numberWithCommas(
+                    Math.floor(room?.price / setting?.currency)
+                  )}
                 </p>
                 <button onClick={() => setOpened(true)} className="btn_outline">
                   оставить заявку
