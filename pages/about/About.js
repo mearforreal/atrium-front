@@ -45,7 +45,7 @@ const About = ({ projectData }) => {
     });
     tl2.to(element.querySelector("#images"), {
       css: {
-        transform: "translateX(30%)",
+        transform: "translateX(25%)",
       },
       duration: 0.5,
     });

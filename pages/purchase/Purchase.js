@@ -74,7 +74,7 @@ const Purchase = ({ projectData }) => {
     sliderRef.current.swiper.slideNext();
   }, []);
   return (
-    <div className="main_bg">
+    <div className=" main_bg">
       <div className={"header"}>
         <Navbar />
         <HeaderBanner
@@ -90,91 +90,94 @@ const Purchase = ({ projectData }) => {
         className={styles.purchaseCard_container}
         style={{ marginTop: "35px" }}
       >
-        {projectData?.map((item, index) => (
-          <div key={index}>
-            <div
-              style={{
-                backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${
-                  PREFIX_IMG + item.bannerImage
-                })`,
-              }}
-              className={
-                styles.purchaseCard_wrapper + " " + "purchaseCard_wrapper"
-              }
-            >
-              <PurchaseCard
-                data={item}
-                bg={cardBg(index).bg}
-                isDarkBg={cardBg(index).isDarkBg}
-              />
-
-              <Swiper
-                className={styles.purchase_slider_wraper}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={"auto"}
-                // width={600}
-                breakpoints={{
-                  1349: {
-                    slidesPerView: 1.8,
-                  },
-
-                  1200: {
-                    slidesPerView: 1.5,
-                  },
-
-                  1192: {
-                    slidesPerView: 1.3,
-                  },
-
-                  800: {
-                    slidesPerView: 1.3,
-                  },
-
-                  280: {
-                    slidesPerView: 1,
-                  },
-                }}
-                ref={sliderRef}
-                spaceBetween={50}
-                speed={900}
-                loop={true}
-                onSlideChange={(swiper) => {
-                  setPage(swiper.realIndex + 1);
-                }}
-              >
-                {item?.galleries[0]?.img?.map((img) => (
-                  <SwiperSlide key={img.id}>
-                    <div className={styles.purchase_slider_item}>
-                      <Image
-                        width="600"
-                        height="522"
-                        src={PREFIX_IMG + img}
-                        alt="slider"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-
+        <div className="main_container">
+          {projectData?.map((item, index) => (
+            <div key={index}>
               <div
-                className={"page" + " " + styles.page + " " + styles.page_index}
+                style={{
+                  backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${
+                    PREFIX_IMG + item.bannerImage
+                  })`,
+                }}
+                className={
+                  styles.purchaseCard_wrapper + " " + "purchaseCard_wrapper"
+                }
               >
-                <span style={{ marginRight: 5 }} className="page_current">
-                  {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
-                </span>
+                <PurchaseCard
+                  data={item}
+                  bg={cardBg(index).bg}
+                  isDarkBg={cardBg(index).isDarkBg}
+                />
 
-                <span className="page_total">
-                  {" "}
-                  /{" "}
-                  {(
-                    `${item?.galleries[0]?.img?.length < 9 ? "0" : ""}` +
-                    item?.galleries[0]?.img?.length
-                  ).slice(-2)}
-                </span>
-              </div>
+                <Swiper
+                  className={styles.purchase_slider_wraper}
+                  grabCursor={true}
+                  centeredSlides={true}
+                  slidesPerView={"auto"}
+                  // width={600}
+                  breakpoints={{
+                    1349: {
+                      slidesPerView: 1.8,
+                    },
 
-              {/* <div className={"arrows" + " " + styles.arrows}>
+                    1200: {
+                      slidesPerView: 1.5,
+                    },
+
+                    1192: {
+                      slidesPerView: 1.3,
+                    },
+
+                    800: {
+                      slidesPerView: 1.3,
+                    },
+
+                    280: {
+                      slidesPerView: 1,
+                    },
+                  }}
+                  ref={sliderRef}
+                  spaceBetween={50}
+                  speed={900}
+                  loop={true}
+                  onSlideChange={(swiper) => {
+                    setPage(swiper.realIndex + 1);
+                  }}
+                >
+                  {item?.galleries[0]?.img?.map((img) => (
+                    <SwiperSlide key={img.id}>
+                      <div className={styles.purchase_slider_item}>
+                        <Image
+                          width="600"
+                          height="522"
+                          src={PREFIX_IMG + img}
+                          alt="slider"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
+                <div
+                  className={
+                    "page" + " " + styles.page + " " + styles.page_index
+                  }
+                >
+                  <span style={{ marginRight: 5 }} className="page_current">
+                    {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
+                  </span>
+
+                  <span className="page_total">
+                    {" "}
+                    /{" "}
+                    {(
+                      `${item?.galleries[0]?.img?.length < 9 ? "0" : ""}` +
+                      item?.galleries[0]?.img?.length
+                    ).slice(-2)}
+                  </span>
+                </div>
+
+                {/* <div className={"arrows" + " " + styles.arrows}>
                 <div onClick={handlePrev}>
                   <PrevArrow />
                 </div>
@@ -182,12 +185,13 @@ const Purchase = ({ projectData }) => {
                   <NextArrow />
                 </div>
               </div> */}
-              {/* <Swiper slidesPerView={4} spaceBetween={30}>
+                {/* <Swiper slidesPerView={4} spaceBetween={30}>
         
       </Swiper> */}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <Footer />
