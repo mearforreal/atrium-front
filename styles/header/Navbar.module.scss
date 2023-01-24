@@ -6,6 +6,20 @@
   justify-content: space-between;
 }
 
+.active {
+  // color: #bc6d41 !important;
+  display: flex;
+  align-items: center;
+
+  &:after {
+    content: "";
+    margin-left: 9px;
+    width: 4px;
+    height: 4px;
+    background-color: #bf8154;
+  }
+}
+
 /* .navbar__top ul {
 } */
 

@@ -15,8 +15,8 @@ export const formateDate = (date) => {
   ];
 
   const d = new Date(date);
-  console.log(d);
-  return d.getDay() + " " + monthNames[d.getMonth()] + " " + d.getFullYear();
+
+  return d.getDate() + " " + monthNames[d.getMonth()] + " " + d.getFullYear();
 };
 
 export function numberWithCommas(x) {

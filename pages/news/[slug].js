@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Navbar from "../../components/header/Navbar";
 import HeaderBanner from "../../components/header/HeaderBanner";
 import Footer from "../../components/footer/Footer";
@@ -9,6 +9,7 @@ import axios from "axios";
 import { PREFIX_API, PREFIX_IMG } from "../../config";
 import HeaderBannerNews from "../../components/header/HeaderBannerNews";
 import Breadcumb from "../../components/shared/Breadcumb";
+import { useViewportSize } from "@mantine/hooks";
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
@@ -51,6 +52,25 @@ const breadcumbData = {
 const NewsDetails = ({ newsInfo }) => {
   // const router = useRouter();
   // const { id } = router.query;
+
+  const { width } = useViewportSize();
+  const [direction, setDirection] = useState("vertical");
+
+  // function getDirection() {
+  //   var windowWidth = window.innerWidth;
+  //   var direction = window.innerWidth < 1200 ? "horizontal" : "vertical";
+
+  //   return direction;
+  // }
+
+  const getDeviceType = useMemo(() => {
+    if (width < 1200) {
+      setDirection("horizontal");
+    } else {
+      setDirection("vertical");
+    }
+  }, [width]);
+
   return (
     <div>
       <div className={"header"}>
@@ -63,7 +83,9 @@ const NewsDetails = ({ newsInfo }) => {
       <Breadcumb current={breadcumbData.current} />
       <div className={styles.newsDetails_container}>
         <NewsDetailsComponent news={newsInfo?.news} />
-        <MoreNews moreNews={newsInfo?.more_news} />
+        <>
+          <MoreNews moreNews={newsInfo?.more_news} direction={direction} />
+        </>
       </div>
 
       <Footer />

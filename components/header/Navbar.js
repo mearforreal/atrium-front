@@ -8,6 +8,7 @@ import NavLink from "next/link";
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
 import { DataContext } from "../../context/DataContext";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   let activeStyle = {
@@ -21,6 +22,8 @@ const Navbar = () => {
 
   const data = useContext(DataContext);
   let [setting, setSetting] = data;
+
+  const router = useRouter();
 
   let activeClassName = "underline";
   return (
@@ -46,29 +49,54 @@ const Navbar = () => {
                   shadow="md"
                 >
                   <Popover.Target>
-                    <a
+                    <NavLink
+                      className={
+                        router.pathname == "/about" ? styles.active : ""
+                      }
                       onMouseEnter={() => setOpenedPopOver(true)}
                       href={"/about"}
                     >
                       о нас
-                    </a>
+                    </NavLink>
                   </Popover.Target>
                   <Popover.Dropdown
                     onMouseLeave={() => setOpenedPopOver(false)}
                   >
-                    <a style={{ color: "#727272" }} href={"/oversea"}>
+                    <NavLink
+                      className={
+                        router.pathname == "/oversea" ? styles.active : ""
+                      }
+                      style={{ color: "#727272" }}
+                      href={"/oversea"}
+                    >
                       Tavros
-                    </a>
+                    </NavLink>
                   </Popover.Dropdown>
                 </Popover>
               </li>
 
               <li>
-                <a href={"/portfolio"}>Портфолио</a>
+                <NavLink
+                  className={
+                    router.pathname.startsWith("/portfolio")
+                      ? styles.active
+                      : ""
+                  }
+                  href={"/portfolio"}
+                >
+                  Портфолио
+                </NavLink>
               </li>
 
               <li>
-                <a href={"/purchase"}>Приобрести</a>
+                <NavLink
+                  className={
+                    router.pathname.startsWith("/purchase") ? styles.active : ""
+                  }
+                  href={"/purchase"}
+                >
+                  Приобрести
+                </NavLink>
               </li>
             </>
           ) : (
@@ -90,13 +118,28 @@ const Navbar = () => {
             <>
               {" "}
               <li>
-                <a href={"/news"}>Новости</a>
+                <NavLink
+                  className={router.pathname == "/news" ? styles.active : ""}
+                  href={"/news"}
+                >
+                  Новости
+                </NavLink>
               </li>
               <li>
-                <a href={"/partner"}>Сотрудничество</a>
+                <NavLink
+                  className={router.pathname == "/partner" ? styles.active : ""}
+                  href={"/partner"}
+                >
+                  Сотрудничество
+                </NavLink>
               </li>
               <li>
-                <a href={"/contact"}>контакты</a>
+                <NavLink
+                  className={router.pathname == "/contact" ? styles.active : ""}
+                  href={"/contact"}
+                >
+                  контакты
+                </NavLink>
               </li>
             </>
           ) : (
@@ -115,57 +158,95 @@ const Navbar = () => {
         <div className={styles.mobileMenu}>
           <ul>
             <li>
-              <NavLink href={"/"} className="h5">
+              <NavLink
+                className={`h5 ${router.pathname == "/" ? styles.active : ""}`}
+                href={"/"}
+              >
                 главная
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/about"} className="h5">
+              <NavLink
+                href={"/about"}
+                className={`h5 ${
+                  router.pathname == "/about" ? styles.active : ""
+                }`}
+              >
                 о нас
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/oversea"} className="h5">
+              <NavLink
+                href={"/oversea"}
+                className={`h5 ${
+                  router.pathname == "/oversea" ? styles.active : ""
+                }`}
+              >
                 tavros
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/portfolio"} className="h5">
+              <NavLink
+                href={"/portfolio"}
+                className={`h5 ${
+                  router.pathname.startsWith("/portfolio") ? styles.active : ""
+                }`}
+              >
                 портфолио
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/purchase"} className="h5">
+              <NavLink
+                href={"/purchase"}
+                className={`h5 ${
+                  router.pathname.startsWith("/purchase") ? styles.active : ""
+                }`}
+              >
                 приобрести
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/news"} className="h5">
+              <NavLink
+                href={"/news"}
+                className={`h5 ${
+                  router.pathname == "/news" ? styles.active : ""
+                }`}
+              >
                 новости
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/partner"} className="h5">
+              <NavLink
+                href={"/partner"}
+                className={`h5 ${
+                  router.pathname == "/partner" ? styles.active : ""
+                }`}
+              >
                 сотрудничество
               </NavLink>
             </li>
             <li>
-              <NavLink href={"/contact"} className="h5">
+              <NavLink
+                href={"/contact"}
+                className={`h5 ${
+                  router.pathname == "/contact" ? styles.active : ""
+                }`}
+              >
                 контакты
               </NavLink>
             </li>
             <div className={styles.mobileMenu_social}>
               <li>
-                <a target={"_blank"} href={setting?.insta}>
+                <NavLink target={"_blank"} href={setting?.insta}>
                   {" "}
                   <Image alt="insta" src={insta} />
                   {/* <img src={insta} alt="insta" />{" "} */}
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a target={"_blank"} href={setting?.facebook}>
+                <NavLink target={"_blank"} href={setting?.facebook}>
                   <Image alt="facebook" src={facebook} />
-                </a>
+                </NavLink>
               </li>
             </div>
           </ul>

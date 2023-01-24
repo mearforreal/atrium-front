@@ -9,12 +9,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { PREFIX_IMG } from "../../config";
 import Link from "next/link";
 
-const MoreNews = ({ moreNews }) => {
+const MoreNews = ({ moreNews, direction }) => {
   const sliderRef = useRef(null);
 
   const [page, setPage] = useState(1);
   return (
     <div className={styles.moreNews + " " + "moreNewsDetail"}>
+      <h4 className="h4">другие новости</h4>
       <div className="slider_mobile" style={{ marginBottom: 40 }}>
         <div className={"arrows" + " " + styles.arrows}>
           <div
@@ -60,12 +61,13 @@ const MoreNews = ({ moreNews }) => {
         speed={900}
         loop={true}
         width={null}
+        direction={!!direction ? direction : "horizontal"}
         onSlideChange={(swiper) => {
           setPage(swiper.realIndex + 1);
         }}
         breakpoints={{
           805: {
-            slidesPerView: 3.5,
+            slidesPerView: 3,
           },
           500: {
             slidesPerView: 2,
