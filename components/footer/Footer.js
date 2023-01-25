@@ -9,62 +9,66 @@ import facebook from "../../assets/footer/facebook.svg";
 import time from "../../assets/footer/time.svg";
 import Image from "next/image";
 import { DataContext } from "../../context/DataContext";
+import Link from "next/link";
 
 const Footer = ({ bgDark }) => {
   const data = useContext(DataContext);
   let [setting, setSetting] = data;
+
+  const d = new Date();
 
   return (
     <div className={bgDark ? styles.footer_dark : styles.footer}>
       <div className={styles.footer_info}>
         <div className={styles.footer_logo}>
           <Image src={logo} className={styles.footer_logo_img} alt="logo" />
-
           <div className={styles.footer_social}>
-            <a target={"_blank"} href={setting?.insta}>
+            <Link target={"_blank"} href={setting?.insta ?? ""}>
               <Image src={insta} alt="insta" />
-            </a>
-            <a target={"_blank"} href={setting?.facebook}>
+            </Link>
+            <Link target={"_blank"} href={setting?.facebook ?? ""}>
               <Image src={facebook} alt="facebook" />
-            </a>
-          </div>
-          <p>Сайт разработан студией Web Marketing</p>
+            </Link>
+          </div>{" "}
+          <Link target={"_blank"} href={"https://web-marketing.kz"}>
+            <p> Сайт разработан студией Web Marketing</p>
+          </Link>
         </div>
         <div className={styles.footer_nav}>
           <p className="footer_header">Навигация</p>
           <div className={styles.footer_nav_content}>
             <ul className={styles.footer_nav_content_left}>
               <li>
-                <a className="b2" href="/">
+                <Link className="b2" href="/purchase">
                   Приобрести
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="b2" href="/">
+                <Link className="b2" href="/partner">
                   Сотрудничесвто
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="b2" href="/">
+                <Link className="b2" href="#">
                   Политика конфиденциальности
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className={styles.footer_nav_content_right}>
               <li>
-                <a className="b2" href="/">
+                <Link className="b2" href="/about">
                   О нас
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="b2" href="/">
+                <Link className="b2" href="/portfolio">
                   Портфолио
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="b2" href="/">
+                <Link className="b2" href="/news">
                   Новости
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,7 +110,7 @@ const Footer = ({ bgDark }) => {
         </div>
       </div>
       <div className={styles.footer_copyright}>
-        <p>© 2021 Copyright by Atrium Plus</p>
+        <p>© {d.getFullYear()} Copyright by Atrium Plus</p>
       </div>
     </div>
   );

@@ -295,12 +295,18 @@
 
   .hr {
     &_horizantal {
-      top: 196px;
+      top: 151px;
       left: 0;
       width: 260px;
     }
     &_vertical {
       display: none;
+    }
+
+    &_horizantal_home {
+      top: 196px;
+      left: 0;
+      width: 260px;
     }
   }
 }
