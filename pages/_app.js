@@ -19,10 +19,11 @@ function Loading() {
   useEffect(() => {
     console.log(router.isReady);
     const handleStart = (url) => url !== router.asPath && setLoading(true);
-    const handleComplete = (url) => url === router.asPath && setLoading(false);
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 5000);
+    const handleComplete = (url) =>
+      url === router.asPath &&
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -37,7 +38,9 @@ function Loading() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
     }
   }, []);
 
