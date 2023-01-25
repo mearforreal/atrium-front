@@ -18,7 +18,7 @@ const slider_data = [
   { id: 3, img: "header-slider-", title: "Строим 4 ЖК" },
   { id: 4, img: "header-slider-", title: "Построено 7 объектов" },
 ];
-const HeaderBanner = ({ bgUrl, title, desc, is_home }) => {
+const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
   const data = useContext(DataContext);
   let [setting, setSetting] = data;
 
@@ -70,7 +70,7 @@ const HeaderBanner = ({ bgUrl, title, desc, is_home }) => {
         />
         <hr className={styles.hr_vertical} />
         <div className={styles.headerBanner__main_content}>
-          <h5>{title}</h5>
+          <h5 style={!!titleSize ? { fontSize: titleSize } : null}>{title}</h5>
           <p>{desc}</p>
           <button
             type="button"

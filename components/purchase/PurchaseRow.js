@@ -87,8 +87,8 @@ const PurchaseRow = ({ item, index }) => {
             setPage(swiper.realIndex + 1);
           }}
         >
-          {item?.galleries[0]?.img?.map((img) => (
-            <SwiperSlide key={img.id}>
+          {item?.galleries[0]?.img?.map((img, index) => (
+            <SwiperSlide key={index}>
               <div className={styles.purchase_slider_item}>
                 <Image
                   width="600"

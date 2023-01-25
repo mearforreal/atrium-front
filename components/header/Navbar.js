@@ -49,28 +49,47 @@ const Navbar = () => {
                   shadow="md"
                 >
                   <Popover.Target>
-                    <NavLink
+                    <span
                       className={
                         router.pathname == "/about" ? styles.active : ""
                       }
                       onMouseEnter={() => setOpenedPopOver(true)}
-                      href={"/about"}
                     >
                       о нас
-                    </NavLink>
+                    </span>
                   </Popover.Target>
                   <Popover.Dropdown
                     onMouseLeave={() => setOpenedPopOver(false)}
                   >
-                    <NavLink
-                      className={
-                        router.pathname == "/oversea" ? styles.active : ""
-                      }
-                      style={{ color: "#727272" }}
-                      href={"/oversea"}
-                    >
-                      Tavros
-                    </NavLink>
+                    <ul className={styles.about_popover}>
+                      <li>
+                        {" "}
+                        <NavLink
+                          className={
+                            router.pathname == "/about" ? styles.active : ""
+                          }
+                          style={{
+                            color: "#727272",
+                            textTransform: "capitalize",
+                          }}
+                          href={"/about"}
+                        >
+                          Артриум Плюс
+                        </NavLink>
+                      </li>
+                      <li>
+                        {" "}
+                        <NavLink
+                          className={
+                            router.pathname == "/oversea" ? styles.active : ""
+                          }
+                          style={{ color: "#727272" }}
+                          href={"/oversea"}
+                        >
+                          TAVROS
+                        </NavLink>
+                      </li>
+                    </ul>
                   </Popover.Dropdown>
                 </Popover>
               </li>

@@ -6,6 +6,8 @@ import axios from "axios";
 import { PREFIX_API } from "../../../config";
 import { IconCheck, IconX } from "@tabler/icons";
 import { showNotification } from "@mantine/notifications";
+import SuccessModal from "./SuccessModal";
+import { openModal } from "@mantine/modals";
 
 const RequestMainModal = ({ opened, setOpened }) => {
   const inputNameRef = useRef(null);
@@ -21,12 +23,15 @@ const RequestMainModal = ({ opened, setOpened }) => {
     axios
       .post(PREFIX_API + "request/send", requestModal)
       .then(() => {
-        showNotification({
-          title: "Успешно",
-          message: "Запрос отправлен успешно!",
-          icon: <IconCheck size={18} />,
-          color: "teal",
+        openModal({
+          title: "",
+          children: (
+            <>
+              <SuccessModal />
+            </>
+          ),
         });
+        setOpened(false);
       })
       .catch((e) => {
         showNotification({

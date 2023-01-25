@@ -12,8 +12,10 @@ const Gallery = ({ projectData }) => {
     let index = projectData.findIndex((item) => {
       return item.id === id;
     });
+
     return index === -1 ? 0 : index;
   };
+
   const [currentId, setCurrentId] = useState(1);
   return (
     <div className={styles.gallery + " " + "home_gallery"}>

@@ -69,6 +69,18 @@
   text-transform: uppercase;
 }
 
+.link404 {
+  width: 250px;
+  padding: 17.5px 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  font-family: var(--font-main-family);
+  text-transform: uppercase;
+  width: max-content;
+}
+
 .headerBanner__main hr {
   position: absolute;
 }

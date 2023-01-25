@@ -96,7 +96,7 @@ const OverSeaTavous = ({ oversea }) => {
             <div className={breadcumbStyles.breadcumb__main}>
               <ul>
                 <li onClick={() => handleSubNavClick(0)}>
-                  <span className={currentId === 0 && "breadcumb_active"}>
+                  <span className={currentId === 0 ? "breadcumb_active" : null}>
                     ВСЕ
                   </span>
                   {/* <Link href={item?.href || ""}> {item?.title} </Link> */}
@@ -124,7 +124,9 @@ const OverSeaTavous = ({ oversea }) => {
               className={currentId === 0 ? "btn_primary" : "btn_outline"}
               onClick={() => handleSubNavClick(0)}
             >
-              <span className={currentId === 0 && "breadcumb_active"}>ВСЕ</span>
+              <span className={currentId === 0 ? "breadcumb_active" : null}>
+                ВСЕ
+              </span>
               {/* <Link href={item?.href || ""}> {item?.title} </Link> */}
             </li>
             {oversea?.overseaTypes?.map((item, index) => (

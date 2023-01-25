@@ -90,7 +90,7 @@ const MoreNews = ({ moreNews, direction }) => {
         }}
       >
         {moreNews?.map((item) => (
-          <SwiperSlide>
+          <SwiperSlide key={item.id}>
             <div
               className={
                 styles.moreNews_card +

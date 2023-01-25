@@ -17,8 +17,6 @@ const SendForm = () => {
   const data = useContext(DataContext);
   let [setting, setSetting] = data;
 
-  console.log(setting);
-
   const mapState = React.useMemo(
     // 43.225254, 76.959614
     () => ({ center: [43.225254, 76.959614], zoom: 17.5 }),

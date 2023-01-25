@@ -20,12 +20,11 @@ const Breadcumb = ({ current, nav }) => {
         </div>
         <div className={styles.breadcumb__main}>
           <ul>
-            {nav &&
-              nav?.map((item) => (
-                <li>
-                  <Link href={item?.href || ""}> {item?.title} </Link>
-                </li>
-              ))}
+            {nav?.map((item) => (
+              <li>
+                <Link href={item?.href || ""}> {item?.title} </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

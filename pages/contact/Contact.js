@@ -93,7 +93,7 @@ const Contact = ({ contactData }) => {
                     >
                       <span
                         className={
-                          item.id === contactCurrentId && "breadcumb_active"
+                          item.id === contactCurrentId ? "breadcumb_active" : ""
                         }
                       >
                         {!!item?.project?.titleRU

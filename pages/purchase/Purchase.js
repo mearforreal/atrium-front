@@ -70,7 +70,7 @@ const Purchase = ({ projectData }) => {
       >
         <div className="">
           {projectData?.map((item, index) => (
-            <PurchaseRow item={item} index={index} />
+            <PurchaseRow key={item.id} item={item} index={index} />
           ))}
         </div>
       </div>

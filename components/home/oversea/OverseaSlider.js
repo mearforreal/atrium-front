@@ -103,7 +103,7 @@ const OverseaSlider = ({ oversea, isDark }) => {
         >
           {oversea?.overseaProjects
             ? oversea?.overseaProjects?.map((item, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={item.id}>
                   <OverseaSliderItem
                     key={item.id}
                     item={item}
