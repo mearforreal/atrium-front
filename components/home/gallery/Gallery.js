@@ -35,6 +35,7 @@ const Gallery = ({ projectData }) => {
           <div className={styles.gallery_text_container}>
             {projectData?.map((item) => (
               <h6
+                key={item?.id}
                 onClick={() => {
                   setCurrentId(item.id);
                 }}
@@ -86,16 +87,18 @@ const Gallery = ({ projectData }) => {
           setPage(swiper.realIndex + 1);
         }}
       >
-        {projectData[findIndex(currentId)]?.galleries[0]?.img?.map((item) => (
-          <SwiperSlide>
-            <Image
-              alt="gallery"
-              width={637}
-              height={625}
-              src={PREFIX_IMG + item}
-            />
-          </SwiperSlide>
-        ))}
+        {projectData[findIndex(currentId)]?.galleries[0]?.img?.map(
+          (item, index) => (
+            <SwiperSlide key={index + "s"}>
+              <Image
+                alt="gallery"
+                width={637}
+                height={625}
+                src={PREFIX_IMG + item}
+              />
+            </SwiperSlide>
+          )
+        )}
       </Swiper>
       <div className={"slider_utils wrapper " + styles.slider_utils}>
         <div className={"page" + " " + styles.page}>

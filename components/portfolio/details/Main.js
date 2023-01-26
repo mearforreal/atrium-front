@@ -105,8 +105,8 @@ const Main = ({ projectInfo }) => {
           }}
         >
           {projectInfo?.galleries[findExternalImagesIndex(1)]?.img?.map(
-            (item) => (
-              <SwiperSlide key={item.id}>
+            (item, index) => (
+              <SwiperSlide key={index + "main"}>
                 <div
                   className={
                     styles.portfolioDetails_slide_item +

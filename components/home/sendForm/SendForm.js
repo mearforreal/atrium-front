@@ -92,7 +92,7 @@ const SendForm = () => {
           src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac9269153e329953e27f19b7edc4e21e237ada349e51d42802da993b117e831b8&amp;source=constructor"
           width="735"
           height="589"
-          frameborder="0"
+          frameBorder="0"
         ></iframe> */}
         <Map
           width={"100%"}

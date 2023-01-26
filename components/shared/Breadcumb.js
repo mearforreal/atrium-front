@@ -21,7 +21,7 @@ const Breadcumb = ({ current, nav }) => {
         <div className={styles.breadcumb__main}>
           <ul>
             {nav?.map((item) => (
-              <li>
+              <li key={item?.href}>
                 <Link href={item?.href || ""}> {item?.title} </Link>
               </li>
             ))}

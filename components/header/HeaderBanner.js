@@ -48,13 +48,13 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
     sliderRef.current.swiper.slideNext();
   }, []);
 
-  const videoRef = useRef(null);
+  // const videoRef = useRef(null);
 
-  useEffect(() => {
-    if (!!videoRef.current) {
-      videoRef.current.play();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!!videoRef.current) {
+  //     videoRef.current.play();
+  //   }
+  // }, []);
 
   return (
     <div className={styles.headerBanner}>
@@ -176,7 +176,7 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
         {is_home ? (
           <>
             <div className={styles.headerBanner__video}> </div>
-            <video ref={videoRef} autoplay muted loop id="myVideo">
+            <video autoPlay muted loop id="myVideo">
               <source src={"/assets/elit.mp4"} type="video/mp4" />
             </video>
           </>

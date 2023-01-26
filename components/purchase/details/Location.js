@@ -15,7 +15,7 @@ const Location = ({ near_locations }) => {
       />
       <div className={styles.location}>
         {near_locations?.map((item) => (
-          <NearLocationItem item={item} />
+          <NearLocationItem item={item} key={item.id} />
         ))}
       </div>
     </div>

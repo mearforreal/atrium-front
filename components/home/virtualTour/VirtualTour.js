@@ -24,7 +24,7 @@ const VirtualTour = ({ projectData }) => {
           <iframe
             width="100%"
             height="614"
-            frameborder="0"
+            frameBorder="0"
             allow="xr-spatial-tracking; gyroscope; accelerometer"
             allowFullScreen
             scrolling="no"
@@ -36,7 +36,7 @@ const VirtualTour = ({ projectData }) => {
         </div>
         <ul className={styles.tour3dView_options}>
           {projectData?.map((item) => (
-            <li>
+            <li key={item.id}>
               <h6
                 onClick={() => {
                   setCurrentId(item.id);

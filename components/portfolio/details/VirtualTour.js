@@ -16,7 +16,7 @@ const VirtualTour = ({ link }) => {
           <iframe
             width="100%"
             height="614"
-            frameborder="0"
+            frameBorder="0"
             allow="xr-spatial-tracking; gyroscope; accelerometer"
             allowFullScreen
             scrolling="no"

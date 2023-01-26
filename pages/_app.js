@@ -17,7 +17,6 @@ function Loading() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(router.isReady);
     const handleStart = (url) => url !== router.asPath && setLoading(true);
     const handleComplete = (url) =>
       url === router.asPath &&

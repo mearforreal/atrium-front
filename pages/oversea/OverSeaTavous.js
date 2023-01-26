@@ -104,7 +104,9 @@ const OverSeaTavous = ({ oversea }) => {
                 {oversea?.overseaTypes?.map((item) => (
                   <li key={item.id} onClick={() => handleSubNavClick(item.id)}>
                     <span
-                      className={item.id === currentId && "breadcumb_active"}
+                      className={
+                        item.id === currentId ? "breadcumb_active" : ""
+                      }
                     >
                       {item?.titleRU}
                     </span>
@@ -149,7 +151,12 @@ const OverSeaTavous = ({ oversea }) => {
           {oversea?.overseaProjects
             .filter(filterProject)
             ?.map((item, index) => (
-              <OverseaBlock item={item} sliderRef={sliderRef} index={index} />
+              <OverseaBlock
+                key={item?.id}
+                item={item}
+                sliderRef={sliderRef}
+                index={index}
+              />
             ))}
         </div>
       </div>

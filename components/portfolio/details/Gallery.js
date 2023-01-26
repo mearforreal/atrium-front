@@ -11,7 +11,6 @@ import PrevArrow from "../../svg/PrevArrow";
 import NextArrow from "../../svg/NextArrow";
 
 const Gallery = ({ projectInfo, gallery_types }) => {
-  console.log(projectInfo);
   const sliderRef = useRef(null);
   const [page, setPage] = useState(1);
   const [galleryTypeIndex, setGalleryTypeIndex] = useState(1);
@@ -62,8 +61,9 @@ const Gallery = ({ projectInfo, gallery_types }) => {
       </div>
       <div className={styles.gallery_images}>
         <ul className={navStyles.subNav}>
-          {gallery_types?.map((item) => (
+          {gallery_types?.map((item, index) => (
             <li
+              key={index + "img_gallery"}
               className={
                 item.id === galleryTypeIndex ? navStyles.subNav_active : ""
               }
@@ -127,8 +127,8 @@ const Gallery = ({ projectInfo, gallery_types }) => {
         >
           {projectInfo?.galleries[
             findExternalImagesIndex(galleryTypeIndex)
-          ]?.img?.map((item) => (
-            <SwiperSlide key={item.id}>
+          ]?.img?.map((item, index) => (
+            <SwiperSlide key={index + "img"}>
               <div
                 className={
                   styles.gallery_slider_item + " " + "gallery_slider_item"
