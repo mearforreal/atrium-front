@@ -51,7 +51,9 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    videoRef.current.play();
+    if (!!videoRef.current) {
+      videoRef.current.play();
+    }
   }, []);
 
   return (
