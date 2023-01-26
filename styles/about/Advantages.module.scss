@@ -2,18 +2,22 @@
   background: linear-gradient(-90deg, #fff 55.9%, rgba(0, 0, 0, 0) 30%),
     var(--color-primary-bg-main);
   // height: 805px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // gap: 30px;
   align-items: center;
   justify-content: center;
   padding-top: 10%;
   padding-bottom: 10%;
+
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 270px);
 }
 
 .advantageItem {
   width: 270px;
-  height: 370px;
+  height: 100%;
   // padding: 59.57px 46px 55px 47px;
   display: flex;
   flex-direction: column;
@@ -44,9 +48,13 @@
   background-color: var(--color-primary-bg-main);
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 1000px) {
+  .advantages {
+    grid-template-columns: repeat(auto-fill, 270px);
+    // ma: 0 35px;
+  }
   .advantageItem {
     width: 100%;
-    height: 290px;
+    // height: 290px;
   }
 }
