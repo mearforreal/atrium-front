@@ -100,7 +100,7 @@ const Gallery = ({ projectData }) => {
       <div className={"slider_utils wrapper " + styles.slider_utils}>
         <div className={"page" + " " + styles.page}>
           <span style={{ marginRight: 5 }} className="page_current">
-            {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
+            {(`${page <= 9 ? "0" : ""}` + page).slice(-2)}
           </span>
 
           <span className="page_total">
@@ -108,7 +108,8 @@ const Gallery = ({ projectData }) => {
             /{" "}
             {(
               `${
-                projectData[findIndex(currentId)]?.galleries[0]?.img?.length < 9
+                projectData[findIndex(currentId)]?.galleries[0]?.img?.length <=
+                9
                   ? "0"
                   : ""
               }` + projectData[findIndex(currentId)]?.galleries[0]?.img?.length

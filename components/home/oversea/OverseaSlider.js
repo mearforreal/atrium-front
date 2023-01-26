@@ -19,23 +19,23 @@ const OverseaSlider = ({ oversea, isDark }) => {
   return (
     <div
       className={
-        styles.overseaSlider + " " + isDark === true
-          ? styles.overseaSlider_dark
-          : ""
+        styles.overseaSlider +
+        " " +
+        (isDark === true ? styles.overseaSlider_dark : "")
       }
     >
       <div className={styles.overseaSlider__pagination}>
         <div className={"slider_utils wrapper " + styles.slider_utils}>
           <div className={"page" + " " + styles.page}>
             <span style={{ marginRight: 5 }} className="page_current">
-              {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
+              {(`${page <= 9 ? "0" : ""}` + page).slice(-2)}
             </span>
 
             <span className="page_total">
               {" "}
               /{" "}
               {(
-                `${oversea?.overseaProjects?.length < 9 ? "0" : ""}` +
+                `${oversea?.overseaProjects?.length <= 9 ? "0" : ""}` +
                 oversea?.overseaProjects?.length
               ).slice(-2)}
             </span>

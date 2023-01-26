@@ -61,7 +61,7 @@ const Main = ({ projectInfo }) => {
               {(
                 `${
                   projectInfo?.galleries[findExternalImagesIndex(1)]?.img
-                    ?.length < 9
+                    ?.length <= 9
                     ? "0"
                     : ""
                 }` +

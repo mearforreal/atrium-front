@@ -79,7 +79,7 @@ const Gallery = ({ projectInfo, gallery_types }) => {
         <div className={styles.slider_utils + " " + "wrapper"}>
           <div className={"page" + " " + styles.page}>
             <span style={{ marginRight: 5 }} className="page_current">
-              {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
+              {(`${page <= 9 ? "0" : ""}` + page).slice(-2)}
             </span>
 
             <span className="page_total">
@@ -89,7 +89,7 @@ const Gallery = ({ projectInfo, gallery_types }) => {
                 `${
                   projectInfo?.galleries[
                     findExternalImagesIndex(galleryTypeIndex)
-                  ]?.img.length < 9
+                  ]?.img.length <= 9
                     ? "0"
                     : ""
                 }` +

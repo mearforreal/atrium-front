@@ -61,14 +61,14 @@ const OverseaBlock = ({ item, index, sliderRef, handlePrev, handleNext }) => {
 
         <div className={"page" + " " + styles.page}>
           <span style={{ marginRight: 5 }} className="page_current">
-            {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
+            {(`${page <= 9 ? "0" : ""}` + page).slice(-2)}
           </span>
 
           <span className="page_total">
             {" "}
             /{" "}
             {(
-              `${item?.oversea_images?.length < 9 ? "0" : ""}` +
+              `${item?.oversea_images?.length <= 9 ? "0" : ""}` +
               item?.oversea_images?.length
             ).slice(-2)}
           </span>

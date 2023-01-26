@@ -103,14 +103,14 @@ const PurchaseRow = ({ item, index }) => {
 
         <div className={"page" + " " + styles.page + " " + styles.page_index}>
           <span style={{ marginRight: 5 }} className="page_current">
-            {(`${page < 9 ? "0" : ""}` + page).slice(-2)}
+            {(`${page <= 9 ? "0" : ""}` + page).slice(-2)}
           </span>
 
           <span className="page_total">
             {" "}
             /{" "}
             {(
-              `${item?.galleries[0]?.img?.length < 9 ? "0" : ""}` +
+              `${item?.galleries[0]?.img?.length <= 9 ? "0" : ""}` +
               item?.galleries[0]?.img?.length
             ).slice(-2)}
           </span>
