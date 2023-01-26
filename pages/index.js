@@ -74,7 +74,7 @@ export default function Home({ projectData, oversea, lateNews }) {
           desc={
             "Строительная компания Atrium Plus является частью инвестиционного проекта корпорации «TAVROS GROUP» основанной в 2009 году."
           }
-          bgUrl="/assets/bg/bg1.png"
+          bgUrl=""
           is_home={true}
         />
       </div>

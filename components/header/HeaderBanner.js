@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import insta from "../../assets/instagram.svg";
 import facebook from "../../assets/facebook.svg";
@@ -11,6 +17,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import RequestMainModal from "../request/modal/RequestMainModal";
 import RequestIcon from "../request/RequestIcon";
 import { DataContext } from "../../context/DataContext";
+
+// import dynamic from "next/dynamic";
+
+// const elitLife = dynamic(() => import("../../assets/elit.mp4"), {
+//   loading: () => "Loading...",
+// });
 
 const slider_data = [
   { id: 1, img: "header-slider-", title: "Более 1500 довольных клиентов" },
@@ -34,6 +46,12 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
+  }, []);
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    videoRef.current.play();
   }, []);
 
   return (
@@ -153,6 +171,16 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
             </Swiper>
           </div>
         </div>
+        {is_home ? (
+          <>
+            <div className={styles.headerBanner__video}> </div>
+            <video ref={videoRef} autoplay muted loop id="myVideo">
+              <source src={"/assets/elit.mp4"} type="video/mp4" />
+            </video>
+          </>
+        ) : (
+          ""
+        )}
       </div>
       <RequestMainModal opened={opened} setOpened={setOpened} />
       <RequestIcon setOpened={setOpened} />

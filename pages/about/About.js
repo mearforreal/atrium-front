@@ -106,7 +106,7 @@ const About = ({ projectData }) => {
       <div className={"header"}>
         <Navbar />
         <HeaderBanner
-          title="О НАС."
+          title="О НАС"
           desc={
             "Строительная компания Atrium Plus является частью инвестиционного проекта корпорации «TAVROS GROUP» основанной в 2009 году."
           }

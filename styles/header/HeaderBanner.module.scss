@@ -16,6 +16,30 @@
   flex: 1;
   position: relative;
   height: 727px;
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+  }
+}
+
+.headerBanner__video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    107.96deg,
+    rgba(0, 3, 75, 0.35) 0%,
+    rgba(55, 16, 16, 0.42) 100%
+  );
+  background-size: 4px 4px;
+  z-index: 2;
 }
 
 .headerBanner__main_content {
@@ -23,9 +47,11 @@
   flex-direction: column;
   padding-left: 183px;
   padding-top: 210px;
+  z-index: 10;
 }
 
 .headerBanner__main_content h5 {
+  z-index: 10;
   font-family: var(--font-second-family);
   font-style: normal;
   font-weight: 400;
@@ -55,6 +81,7 @@
   line-height: 22px;
   margin-bottom: 68px;
   color: #fff;
+  z-index: 10;
   font-family: var(--font-main-family);
 }
 
@@ -66,6 +93,7 @@
   line-height: 20px;
   /* identical to box height */
   font-family: var(--font-main-family);
+  z-index: 10;
   text-transform: uppercase;
 }
 
@@ -91,6 +119,7 @@
     border: 1px solid transparent;
     border-top: 1px solid #fff;
     width: calc(864px / 1338px * 100%);
+    z-index: 10;
   }
   &_vertical {
     top: 0px;
@@ -98,6 +127,7 @@
     border: 1px solid transparent;
     border-left: 1px solid #fff;
     height: 170px;
+    z-index: 10;
   }
 }
 
@@ -106,6 +136,7 @@
   right: 0;
   width: calc(230px + 230px + 30px);
   bottom: 31px;
+  z-index: 10;
   &__top {
     display: flex;
     margin-left: 35px;
