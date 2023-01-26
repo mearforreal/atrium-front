@@ -9,9 +9,11 @@
 .tourViewWrapper {
   margin-top: 105px;
   padding-left: 165px;
+  padding-right: 165px;
   display: flex;
   gap: 70px;
   align-items: center;
+  flex-direction: column-reverse;
 }
 .tour3dView_details_wrapper {
   margin-top: 172px;
@@ -23,8 +25,8 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   // width: 900px;
-  width: calc(900px / 1440px * 100%);
-  height: 490px;
+  width: 100%;
+  height: 600px;
   iframe {
     height: inherit;
   }
@@ -34,8 +36,10 @@
   }
   &_options {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
+    flex-wrap: wrap;
+    padding: 0 30px;
 
     h6 {
       color: #cdcdcd;
@@ -53,6 +57,7 @@
 @media screen and (max-width: 1000px) {
   .tourViewWrapper {
     padding-left: 85px;
+    padding-right: 85px;
     gap: 5%;
   }
 }
@@ -60,6 +65,7 @@
 @media screen and (max-width: 850px) {
   .tourViewWrapper {
     padding-left: 0;
+    padding-right: 0;
     gap: 5%;
     flex-direction: column-reverse;
   }
@@ -82,7 +88,7 @@
 
   .tour3dView {
     width: 100%;
-    height: 280px;
+    height: 435px;
     padding-bottom: 30px;
     &_options {
       display: flex;
