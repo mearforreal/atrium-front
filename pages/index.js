@@ -76,6 +76,7 @@ export default function Home({ projectData, oversea, lateNews }) {
           }
           bgUrl=""
           is_home={true}
+          is_two_line={true}
         />
       </div>
 

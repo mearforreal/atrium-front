@@ -30,7 +30,7 @@ const slider_data = [
   { id: 3, img: "header-slider-", title: "Строим 4 ЖК" },
   { id: 4, img: "header-slider-", title: "Построено 7 объектов" },
 ];
-const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
+const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home,is_two_line }) => {
   const data = useContext(DataContext);
   let [setting, setSetting] = data;
 
@@ -85,7 +85,7 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home }) => {
           className={
             styles.hr_horizantal +
             " " +
-            (is_home ? styles.hr_horizantal_home : null)
+            (is_two_line ? styles.hr_horizantal_home : null)
           }
         />
         <hr className={styles.hr_vertical} />
