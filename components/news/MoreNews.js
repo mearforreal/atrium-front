@@ -104,7 +104,7 @@ const MoreNews = ({ moreNews, direction }) => {
                 src={PREFIX_IMG + item.img}
                 alt="bg"
               />
-              <p>Начато строительство нового ЖК комфорт класса Kokjiek city</p>
+              <p>{item.titleRU}</p>
               <Link href={"/news/" + item.id} className="caption caption_light">
                 Подробнее <img src={moreArrow.src} alt="img" />
               </Link>
