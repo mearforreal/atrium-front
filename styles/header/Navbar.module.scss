@@ -4,6 +4,8 @@
 .navbar__top {
   display: flex;
   justify-content: space-between;
+  z-index: 15;
+  position: relative;
 }
 
 .active {
@@ -133,7 +135,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 11;
     &_social {
       // margin-top: 64.67px;
       display: flex;
