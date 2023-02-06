@@ -18,7 +18,7 @@ const Custom404 = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <div>
+    <div className={styles.custom404}>
       <div className={"header"}>
         <Navbar />
         <div className={styles.headerBanner}>
@@ -43,14 +43,13 @@ const Custom404 = () => {
             className={styles.headerBanner__main}
             style={{
               backgroundImage: `linear-gradient(107.96deg, rgba(0, 3, 72, 0.35) 0%, rgba(65, 0, 0, 0.42) 100%), url("/assets/bg/404.png")`,
-              backgroundSize: "100% 100%",
             }}
           >
-            <hr style={{ top: 262 }} className={[styles.hr_horizantal]} />
+            {/* <hr style={{ top: 300 }} className={[styles.hr_horizantal]} /> */}
             <hr className={styles.hr_vertical} />
             <div
               className={styles.headerBanner__main_content}
-              style={{ padding: "12% 2% 0% 5%" }}
+              // style={{ padding: "12% 2% 0% 5%" }}
             >
               <h5 style={{ fontSize: 100 }}>404</h5>
               <p>

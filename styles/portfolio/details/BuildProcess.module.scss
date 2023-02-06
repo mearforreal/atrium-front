@@ -1,0 +1,52 @@
+.buildProcess {
+  &_container {
+    display: flex;
+  }
+}
+
+.buildProcess_header {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 93px;
+}
+
+.buildProcess_card_main {
+  padding: 26px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buildProcess_card {
+  max-width: 270px;
+  height: 425px;
+  background-color: #fff;
+
+  img {
+    width: 100%;
+  }
+
+  &_title {
+    margin-bottom: 26px;
+  }
+  &_caption {
+    margin-bottom: 31px;
+  }
+
+  button {
+    padding: 16.5px 25px;
+    width: 131px;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .buildProcess_header {
+    margin-bottom: 50px;
+    justify-content: flex-end;
+  }
+}

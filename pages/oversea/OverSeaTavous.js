@@ -18,7 +18,7 @@ import { PREFIX_IMG } from "../../config";
 
 const breadcumbData = {
   current: {
-    href: "/porfolio",
+    href: "/portfolio",
     title: "портфолио",
   },
   nav: [],

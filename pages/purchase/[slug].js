@@ -14,6 +14,7 @@ import axios from "axios";
 import { PREFIX_API, PREFIX_IMG } from "../../config";
 import footerStyles from "../../styles/footer/Footer.module.scss";
 import RequestPurchaseModal from "../../components/request/modal/RequestPurchaseModal";
+import BuildProcess from "../../components/portfolio/details/BuildProcess";
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
@@ -79,6 +80,10 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
 
         <Main projectInfo={projectInfo} />
 
+        {projectInfo?.infrastructures?.length > 0 ? (
+          <Infrastructure infrastructures={projectInfo?.infrastructures} />
+        ) : null}
+
         <div className={styles.advantages_bg}>
           <Advantages projectInfo={projectInfo} />
         </div>
@@ -118,6 +123,10 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
         {projectInfo?.near_locations.length > 0 && (
           <Location near_locations={projectInfo?.near_locations} />
         )}
+
+        {projectInfo?.build_process?.length > 0 ? (
+          <BuildProcess build_process={projectInfo?.build_process} />
+        ) : null}
 
         <ContactView
           contactInfo={{

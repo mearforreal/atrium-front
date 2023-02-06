@@ -100,6 +100,7 @@
   p {
     text-transform: uppercase;
     padding: 16px 34px;
+    flex: 1;
   }
   &_more {
     // display: flex;
@@ -126,7 +127,8 @@
   }
   .overseaSlider_Item_current_img_more {
     // align-items: center;
-    width: max-content;
+    width: 396px;
+    justify-content: center;
     a {
       display: none;
     }

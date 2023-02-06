@@ -18,10 +18,13 @@ import Gallery from "../../components/portfolio/details/Gallery";
 import VirtualTour from "../../components/portfolio/details/VirtualTour";
 import Main from "../../components/portfolio/details/Main";
 import Advantages from "../../components/portfolio/details/Advantages";
+import Location from "../../components/purchase/details/Location";
+import Infrastructure from "../../components/portfolio/details/Infrastructure";
+import BuildProcess from "../../components/portfolio/details/BuildProcess";
 
 const breadcumbData = {
   current: {
-    href: "/porfolio",
+    href: "/portfolio",
     title: "портфолио",
   },
   nav: [],
@@ -67,7 +70,7 @@ export const getStaticProps = async (context) => {
 };
 
 const PortfolioDetails = ({ projectInfo, gallery_types }) => {
-  // console.log(findExternalImagesIndex(1));
+  console.log(projectInfo);
 
   return (
     <div className={"main_bg"}>
@@ -83,9 +86,24 @@ const PortfolioDetails = ({ projectInfo, gallery_types }) => {
 
       <Main projectInfo={projectInfo} />
 
+      {projectInfo?.infrastructures?.length > 0 ? (
+        <Infrastructure infrastructures={projectInfo?.infrastructures} />
+      ) : null}
+
       <Advantages projectInfo={projectInfo} />
 
       <Gallery projectInfo={projectInfo} gallery_types={gallery_types} />
+
+      {projectInfo?.build_process?.length > 0 ? (
+        <BuildProcess build_process={projectInfo?.build_process} />
+      ) : null}
+
+      {projectInfo?.near_locations?.length > 0 && (
+        <Location
+          near_locations={projectInfo?.near_locations}
+          map_location={projectInfo?.map_location}
+        />
+      )}
       <VirtualTour link={projectInfo?.virtualTour} />
 
       <Footer bgDark={true} />

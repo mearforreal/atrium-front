@@ -100,7 +100,7 @@
 }
 
 .link404 {
-  width: 250px;
+  // width: 250px;
   padding: 17.5px 30px;
   font-weight: 500;
   font-size: 16px;
@@ -109,6 +109,12 @@
   font-family: var(--font-main-family);
   text-transform: uppercase;
   width: max-content;
+}
+
+.custom404 {
+  .headerBanner__main {
+    height: 100%;
+  }
 }
 
 .headerBanner__main hr {
@@ -291,6 +297,15 @@
 }
 
 @media screen and (max-width: 510px) {
+  .custom404 {
+    .headerBanner__main {
+      height: 100vh;
+    }
+  }
+  .link404 {
+    // width: 250px;
+    padding: 17.5px 20px;
+  }
   .headerBanner__main {
     padding-left: 43px;
     padding-right: 30px;

@@ -35,6 +35,14 @@ const Main = ({ projectInfo }) => {
         <span className={`caption caption_light`}>О ПРОЕКТЕ</span>
         <h3 className="h3">{projectInfo?.titleRU}</h3>
         <p className="text_body">{projectInfo?.descRU}</p>
+        <div className={styles.project_index}>
+          {projectInfo?.project_index?.map((item) => (
+            <div className={styles.project_index_container}>
+              <p className="h3">{item?.number}</p>
+              <span className="text_body text_body_dark">{item?.titleRU}</span>
+            </div>
+          ))}
+        </div>
         <a
           href={projectInfo?.web_site_link}
           target={"_blank"}

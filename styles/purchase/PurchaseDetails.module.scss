@@ -10,6 +10,43 @@
   //   }
 }
 
+.fullMap {
+  display: flex;
+  justify-content: center;
+  img {
+    max-width: 1440px;
+    width: 100%;
+  }
+}
+
+.halfMap {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  img {
+    max-width: 1440px;
+    width: 60%;
+  }
+}
+.map_location_metrics {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px #727272 dashed;
+    padding-bottom: 9px;
+    span {
+      color: #524b44;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
 .breadcumb__mainBtn {
   display: block;
   padding-top: 37px;

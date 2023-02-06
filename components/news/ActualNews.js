@@ -23,10 +23,10 @@ const ActualNews = ({ lateNews }) => {
             <Link
               href={"/news/" + lateNews[0]?.id ?? ""}
               style={{
-                backgroundImage: `linear-gradient(0deg,
-                rgba(37, 42, 70, 0.35),
-                rgba(37, 42, 70, 0.35)
-              ),
+                  backgroundImage: `linear-gradient(0deg,
+                  rgba(37, 42, 70, 0.35),
+                  rgba(37, 42, 70, 0.35)
+                ),
               url("${PREFIX_IMG + lateNews[0]?.img ?? ""}")`,
               }}
               className={styles.actualNews__leftContainer_top_news}
