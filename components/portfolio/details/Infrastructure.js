@@ -3,7 +3,7 @@ import styles from "../../../styles/portfolio/details/Infac.module.scss";
 import { PREFIX_IMG } from "../../../config";
 
 const Infrastructure = ({ infrastructures }) => {
-  console.log(infrastructures[0].indicators);
+  //console.log(infrastructures[0].indicators);
   return (
     <div className={styles.infrastructures_wrapper + " " + "wrapper"}>
       {infrastructures?.map((item) => (
