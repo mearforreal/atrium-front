@@ -70,7 +70,7 @@ export const getStaticProps = async (context) => {
 };
 
 const PortfolioDetails = ({ projectInfo, gallery_types }) => {
-  console.log(projectInfo);
+  //console.log(projectInfo);
 
   return (
     <div className={"main_bg"}>

@@ -33,7 +33,7 @@ const BuildProcess = ({ build_process }) => {
         thumbnail: PREFIX_IMG + item,
       };
     });
-    console.log(newImgaes);
+    //console.log(newImgaes);
     setOpenGallery({
       open: true,
       images: newImgaes,

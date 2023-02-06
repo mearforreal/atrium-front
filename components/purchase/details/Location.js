@@ -6,7 +6,7 @@ import { PREFIX_IMG } from "../../../config";
 import Image from "next/image";
 
 const Location = ({ near_locations, map_location }) => {
-  console.log(map_location?.metrics);
+  //console.log(map_location?.metrics);
   return (
     <>
       <div className={styles.nearLocation}>

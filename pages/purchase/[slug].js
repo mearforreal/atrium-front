@@ -15,6 +15,7 @@ import { PREFIX_API, PREFIX_IMG } from "../../config";
 import footerStyles from "../../styles/footer/Footer.module.scss";
 import RequestPurchaseModal from "../../components/request/modal/RequestPurchaseModal";
 import BuildProcess from "../../components/portfolio/details/BuildProcess";
+import Infrastructure from "../../components/portfolio/details/Infrastructure";
 
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
