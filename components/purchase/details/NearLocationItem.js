@@ -15,7 +15,7 @@ const NearLocationItem = ({ item }) => {
         <p className="text_body text_body_dark">{item?.addressRU}</p>
       </div>
       <div className={styles.nearLocation_item__distance}>
-        <Image
+        <img
           width={16}
           height={16}
           src={item?.onFoot ? Foot : Car}

@@ -30,7 +30,16 @@ const slider_data = [
   { id: 3, img: "header-slider-", title: "Строим 4 ЖК" },
   { id: 4, img: "header-slider-", title: "Построено 7 объектов" },
 ];
-const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home,is_two_line }) => {
+const HeaderBanner = ({
+  titleSize,
+  bgUrl,
+  title,
+  desc,
+  is_home,
+  is_two_line,
+  is_video,
+  video_url,
+}) => {
   const data = useContext(DataContext);
   let [setting, setSetting] = data;
 
@@ -63,13 +72,13 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home,is_two_line }) =>
           <li>
             <a target={"_blank"} href={setting?.insta}>
               {" "}
-              <Image alt="insta" src={insta} />
+              <img alt="insta" src={insta} />
               {/* <img src={insta} alt="insta" />{" "} */}
             </a>
           </li>
           <li>
             <a target={"_blank"} href={setting?.facebook}>
-              <Image alt="facebook" src={facebook} />
+              <img alt="facebook" src={facebook} />
             </a>
           </li>
         </ul>
@@ -104,7 +113,7 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home,is_two_line }) =>
           <div className={styles.headerBanner__sliders__top}>
             <div className={styles.headerBanner__sliders__arrows}>
               <div onClick={() => handlePrev()}>
-                <Image
+                <img
                   src={prevArrow}
                   alt="prevArrow"
                   className={styles.headerBanner__sliders__arrows_prev}
@@ -112,7 +121,7 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home,is_two_line }) =>
               </div>
 
               <div onClick={() => handleNext()}>
-                <Image
+                <img
                   src={nextArrow}
                   alt="nextArrow"
                   className={styles.headerBanner__sliders__arrows_next}
@@ -173,11 +182,14 @@ const HeaderBanner = ({ titleSize, bgUrl, title, desc, is_home,is_two_line }) =>
             </Swiper>
           </div>
         </div>
-        {is_home ? (
+        {/*   is_video,
+  video_url, */}
+        {is_video ? (
           <>
             <div className={styles.headerBanner__video}> </div>
             <video autoPlay muted loop id="myVideo">
-              <source src={"/assets/elit.mp4"} type="video/mp4" />
+              <source src={video_url} type="video/mp4" />
+              {/* <source src={"/assets/elit.mp4"} type="video/mp4" /> */}
             </video>
           </>
         ) : (

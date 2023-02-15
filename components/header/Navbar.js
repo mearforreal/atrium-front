@@ -126,7 +126,7 @@ const Navbar = () => {
         <ul className={styles.navbar__top__right}>
           <li>
             <NavLink href={"/"}>
-              <Image
+              <img
                 src={logo}
                 alt="logo"
                 className={opened ? styles.navbar__top__logo : ""}
@@ -258,13 +258,13 @@ const Navbar = () => {
               <li>
                 <NavLink target={"_blank"} href={setting?.insta}>
                   {" "}
-                  <Image alt="insta" src={insta} />
+                  <img alt="insta" src={insta} />
                   {/* <img src={insta} alt="insta" />{" "} */}
                 </NavLink>
               </li>
               <li>
                 <NavLink target={"_blank"} href={setting?.facebook}>
-                  <Image alt="facebook" src={facebook} />
+                  <img alt="facebook" src={facebook} />
                 </NavLink>
               </li>
             </div>

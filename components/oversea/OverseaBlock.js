@@ -119,7 +119,7 @@ const OverseaBlock = ({ item, index, sliderRef, handlePrev, handleNext }) => {
             <SwiperSlide className={styles.slider} key={item.id}>
               <div className={styles.overseaBlock_container}>
                 <div className={styles.overseaBlock_img}>
-                  <Image
+                  <img
                     alt="oversea"
                     width={480}
                     height={502}

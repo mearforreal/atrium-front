@@ -21,6 +21,7 @@ import axios from "axios";
 import { PREFIX_API } from "../config";
 import { ActualNews } from "../components/news";
 import { useEffect } from "react";
+import videoBanner from "../assets/video/elit.mp4";
 
 import dynamic from "next/dynamic";
 // const DynamicComponentWithNoSSR = dynamic(
@@ -77,6 +78,8 @@ export default function Home({ projectData, oversea, lateNews }) {
           }
           bgUrl=""
           is_home={true}
+          is_video={true}
+          video_url={videoBanner}
           is_two_line={true}
         />
       </div>

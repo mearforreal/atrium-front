@@ -39,13 +39,13 @@ const HeaderBannerNews = ({ bgUrl, title, desc }) => {
           <li>
             <a target={"_blank"} href={setting?.insta}>
               {" "}
-              <Image alt="insta" src={insta} />
+              <img alt="insta" src={insta} />
               {/* <img src={insta} alt="insta" />{" "} */}
             </a>
           </li>
           <li>
             <a target={"_blank"} href={setting?.facebook}>
-              <Image alt="facebook" src={facebook} />
+              <img alt="facebook" src={facebook} />
             </a>
           </li>
         </ul>
@@ -74,7 +74,7 @@ const HeaderBannerNews = ({ bgUrl, title, desc }) => {
           <div className={styles.headerBanner__sliders__top}>
             <div className={styles.headerBanner__sliders__arrows}>
               <div onClick={() => handlePrev()}>
-                <Image
+                <img
                   src={prevArrow}
                   alt="prevArrow"
                   className={styles.headerBanner__sliders__arrows_prev}
@@ -82,7 +82,7 @@ const HeaderBannerNews = ({ bgUrl, title, desc }) => {
               </div>
 
               <div onClick={() => handleNext()}>
-                <Image
+                <img
                   src={nextArrow}
                   alt="nextArrow"
                   className={styles.headerBanner__sliders__arrows_next}

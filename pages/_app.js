@@ -47,7 +47,7 @@ function Loading() {
     loading && (
       <div className="spinner-wrapper">
         <div className="spinner">
-          <img src={logoWhite.src} alt="logoWhites" />
+          <img src={logoWhite} alt="logoWhites" />
         </div>
       </div>
     )

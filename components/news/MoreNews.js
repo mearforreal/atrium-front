@@ -98,7 +98,7 @@ const MoreNews = ({ moreNews, direction }) => {
                 (direction == "vertical" ? styles.moreNews_card_vertical : "")
               }
             >
-              <Image
+              <img
                 width={260}
                 height={287}
                 src={PREFIX_IMG + item.img}

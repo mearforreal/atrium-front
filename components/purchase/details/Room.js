@@ -51,7 +51,7 @@ const Room = ({ room_types }) => {
         {room_types[findIndex(contactCurrentId)]?.rooms?.map((room) => (
           <div key={room?.id} className={styles.roomInfoCard}>
             <div className={styles.roomInfoCard_wrapper}>
-              <Image
+              <img
                 alt="room"
                 width={260}
                 height={208}

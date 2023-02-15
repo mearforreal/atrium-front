@@ -34,7 +34,7 @@ const ContactView = ({ contactInfo }) => {
             <ul className={footerStyles.footer_contact_content_left}>
               {contactInfo?.tel && (
                 <li>
-                  <Image src={phone} alt="phone" />
+                  <img src={phone} alt="phone" />
                   <div
                     style={{ display: "flex", flexDirection: "column", gap: 7 }}
                   >
@@ -48,13 +48,13 @@ const ContactView = ({ contactInfo }) => {
               )}
               {contactInfo?.email && (
                 <li>
-                  <Image src={mail} alt="mail" />
+                  <img src={mail} alt="mail" />
                   <span className="b2">{contactInfo?.email}</span>
                 </li>
               )}
               {contactInfo?.address && (
                 <li>
-                  <Image src={address} alt="address" />
+                  <img src={address} alt="address" />
                   <span className="b2">{contactInfo?.address}</span>
                 </li>
               )}
@@ -63,7 +63,7 @@ const ContactView = ({ contactInfo }) => {
             {contactInfo?.workingHour_weekdays ||
             contactInfo?.workingHour_weekdends ? (
               <div className={footerStyles.footer_contact_content_right}>
-                <Image src={time} alt="time" />
+                <img src={time} alt="time" />
                 <div
                   style={{ gap: 9.31 }}
                   className={footerStyles.footer_contact_time}

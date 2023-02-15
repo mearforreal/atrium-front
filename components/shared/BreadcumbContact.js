@@ -12,7 +12,7 @@ const BreadcumbContact = ({ current, nav, isButton }) => {
         <div className={styles.breadcumb__container}>
           <div className={styles.breadcumb__left}>
             <div className={styles.breadcumb__home}>
-              <Image src={backArrow} alt="backArrow" />
+              <img src={backArrow} alt="backArrow" />
               <Link href={"/"}> главная </Link>
             </div>
             <span className={styles.breadcumb__current}>

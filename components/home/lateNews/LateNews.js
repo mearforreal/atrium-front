@@ -22,7 +22,7 @@ const LateNews = () => {
       <div className={styles.lateNews_container}>
         <div className={styles.lateNews_header_more}>
           <p>Все новости</p>
-          <Image width={9.32} height={11.25} src={moreArrow} />
+          <img width={9.32} height={11.25} src={moreArrow} />
         </div>
 
         <div className={styles.lateNews_blocks}>

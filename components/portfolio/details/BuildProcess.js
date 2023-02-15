@@ -103,7 +103,7 @@ const BuildProcess = ({ build_process }) => {
         opened={openGallery.open}
         onClose={() => setOpenGallery({ open: false, images: [] })}
       >
-        <ImageGallery items={openGallery.images} />
+        <imgGallery items={openGallery.images} />
         {/* Modal content */}
       </Modal>
     </div>

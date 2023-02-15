@@ -122,7 +122,7 @@ const Main = ({ projectInfo }) => {
                     "portfolioDetails_slide_item"
                   }
                 >
-                  <Image
+                  <img
                     width="532"
                     height="493"
                     src={PREFIX_IMG + item}

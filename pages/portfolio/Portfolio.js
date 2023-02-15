@@ -8,6 +8,7 @@ import HeaderBanner from "../../components/header/HeaderBanner";
 import { PREFIX_API } from "../../config";
 import axios from "axios";
 import Complex from "../../components/portfolio/Complex";
+import videoBanner from "../../assets/video/portfolio.mp4";
 
 const Portfolio = ({ projectData, oversea }) => {
   return (
@@ -19,7 +20,9 @@ const Portfolio = ({ projectData, oversea }) => {
           desc={
             "Строительная компания Atrium Plus является частью инвестиционного проекта корпорации «TAVROS GROUP» основанной в 2009 году."
           }
-          bgUrl="/assets/bg/portfolio.png"
+          bgUrl=""
+          is_video={true}
+          video_url={videoBanner}
         />
       </div>
       <div className="">

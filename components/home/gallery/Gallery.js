@@ -90,7 +90,7 @@ const Gallery = ({ projectData }) => {
         {projectData[findIndex(currentId)]?.galleries[0]?.img?.map(
           (item, index) => (
             <SwiperSlide key={index + "s"}>
-              <Image
+              <img
                 alt="gallery"
                 width={637}
                 height={625}

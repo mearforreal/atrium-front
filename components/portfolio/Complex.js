@@ -65,7 +65,7 @@ const Complex = ({ projectData }) => {
                     styles.portfolio_complex_container
                   }
                 >
-                  <Image
+                  <img
                     src={PREFIX_IMG + item.bannerImage}
                     width={535}
                     height={501}
@@ -93,7 +93,7 @@ const Complex = ({ projectData }) => {
                   </div>
 
                   <div className={styles.complexSlider_card_blur}>
-                    <Image
+                    <img
                       width={635}
                       height={560}
                       alt="slide"
