@@ -8,7 +8,6 @@ import HeaderBanner from "../../components/header/HeaderBanner";
 import { PREFIX_API } from "../../config";
 import axios from "axios";
 import Complex from "../../components/portfolio/Complex";
-import videoBanner from "../../assets/video/portfolio.mp4";
 
 const Portfolio = ({ projectData, oversea }) => {
   //
@@ -23,7 +22,9 @@ const Portfolio = ({ projectData, oversea }) => {
           }
           bgUrl=""
           is_video={true}
-          video_url={videoBanner}
+          video_url={
+            "//cdn-cf-east.streamable.com/video/mp4/xofriq.mp4?Expires=1676709600&Signature=XlpIcfTtjuGSCrM6bYDI8iZC2-v1EaGyyHrCAceI69cvk11uAQpFnhdL9J8M0KAP4MF5Zlsp2L9kAjN9RuEI6tnW06UFJh-dylsRf2EQKUT0M0M-Ik3n1BADV5faXyxXHpm7dCzCeu5CPc6eIsWL9uBtcNAxkRg27O9jW5cu3q2k3~M26w3pNg7tzZJQuC9nZkVAW-TDSRbLJ7t4GRLTGOCatfYSAtad2e0xT6zn~idO1NH9k72N3BRKcrj5Jr-5~-jMYc2qf~FLFwWfIQHGLLytVJcUmMjPt4GnXDfUZWXuGH0I239r3MwRVEfSEniWMksI-IxswDC0z7wjbbbnfQ__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ"
+          }
         />
       </div>
       <div className="">
