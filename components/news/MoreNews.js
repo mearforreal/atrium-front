@@ -98,7 +98,7 @@ const MoreNews = ({ moreNews, direction }) => {
                 (direction == "vertical" ? styles.moreNews_card_vertical : "")
               }
             >
-              <img
+              <Image
                 width={260}
                 height={287}
                 src={PREFIX_IMG + item.img}
@@ -106,7 +106,7 @@ const MoreNews = ({ moreNews, direction }) => {
               />
               <p>{item.titleRU}</p>
               <Link href={"/news/" + item.id} className="caption caption_light">
-                Подробнее <img src={moreArrow.src} alt="img" />
+                Подробнее <Image src={moreArrow} alt="img" />
               </Link>
             </div>
           </SwiperSlide>

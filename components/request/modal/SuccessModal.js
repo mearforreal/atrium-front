@@ -8,7 +8,7 @@ const SuccessModal = () => {
       <p className="text_body text_body_dark">
         Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.
       </p>
-      <img src={check.src} alt="check" />
+      <Image src={check} alt="check" />
     </div>
   );
 };

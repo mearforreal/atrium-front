@@ -21,13 +21,13 @@ const Footer = ({ bgDark }) => {
     <div className={bgDark ? styles.footer_dark : styles.footer}>
       <div className={styles.footer_info}>
         <div className={styles.footer_logo}>
-          <img src={logo} className={styles.footer_logo_img} alt="logo" />
+          <Image src={logo} className={styles.footer_logo_img} alt="logo" />
           <div className={styles.footer_social}>
             <Link target={"_blank"} href={setting?.insta ?? ""}>
-              <img src={insta} alt="insta" />
+              <Image src={insta} alt="insta" />
             </Link>
             <Link target={"_blank"} href={setting?.facebook ?? ""}>
-              <img src={facebook} alt="facebook" />
+              <Image src={facebook} alt="facebook" />
             </Link>
           </div>{" "}
           <Link target={"_blank"} href={"https://web-marketing.kz"}>
@@ -78,7 +78,7 @@ const Footer = ({ bgDark }) => {
           <div className={styles.footer_contact_content}>
             <ul className={styles.footer_contact_content_left}>
               <li>
-                <img src={phone} alt="phone" />
+                <Image src={phone} alt="phone" />
                 <div
                   style={{ display: "flex", flexDirection: "column", gap: 7 }}
                 >
@@ -90,17 +90,17 @@ const Footer = ({ bgDark }) => {
                 </div>
               </li>
               <li>
-                <img src={mail} alt="mail" />
+                <Image src={mail} alt="mail" />
                 <span className="b2">{setting?.email}</span>
               </li>
               <li>
-                <img src={address} alt="address" />
+                <Image src={address} alt="address" />
                 <span className="b2">{setting?.address}</span>
               </li>
             </ul>
 
             <div className={styles.footer_contact_content_right}>
-              <img src={time} alt="time" />
+              <Image src={time} alt="time" />
               <div className={styles.footer_contact_time}>
                 <span className="b2">{setting?.workingHour_weekdays}</span>
                 <span className="b2">{setting?.workingHour_weekdends}</span>

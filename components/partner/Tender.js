@@ -4,6 +4,7 @@ import img1 from "../../assets/partner/tender/image1.png";
 import img2 from "../../assets/partner/tender/image2.png";
 import RequestMainModal from "../request/modal/RequestMainModal";
 import Heading from "../shared/Heading";
+import Image from "next/image";
 
 const Tender = () => {
   const [opened, setOpened] = useState(false);
@@ -31,7 +32,7 @@ const Tender = () => {
             заказать звонок
           </button>
         </div>
-        <img src={img1.src} alt="image1" />
+        <Image src={img1} alt="image1" />
       </div>
       <div style={{ marginTop: 163, marginBottom: 143 }} className="heading">
         <div>
@@ -70,7 +71,7 @@ const Tender = () => {
             заказать звонок
           </button>
         </div>
-        <img src={img2.src} alt="image2" />
+        <Image src={img2} alt="image2" />
       </div>
       <RequestMainModal opened={opened} setOpened={setOpened} />
     </div>

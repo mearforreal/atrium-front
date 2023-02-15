@@ -172,7 +172,7 @@ const Layout = ({ children }) => {
           <Navbar width={{ sm: 300 }} p="md">
             <Navbar.Section grow>
               <Group className={classes.header} position="apart">
-                <img src={logo} alt="logo" />
+                <Image src={logo} alt="logo" />
                 {/* <Code sx={{ fontWeight: 700 }}>v3.1.2</Code> */}
               </Group>
               {links}

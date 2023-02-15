@@ -72,7 +72,7 @@ const Contact = ({ contactData }) => {
           <div className={breadcumbStyles.breadcumb__container}>
             <div className={breadcumbStyles.breadcumb__left}>
               <div className={breadcumbStyles.breadcumb__home}>
-                <img src={backArrow} alt="backArrow" />
+                <Image src={backArrow} alt="backArrow" />
                 <Link href={"/"}> главная </Link>
               </div>
               <span className={breadcumbStyles.breadcumb__current}>

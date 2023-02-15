@@ -171,7 +171,7 @@ const About = ({ projectData }) => {
                   : ""
               }
             >
-              <img
+              <Image
                 className={
                   index === 1
                     ? missionStyles.missions_image_current

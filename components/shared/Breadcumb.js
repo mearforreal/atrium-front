@@ -10,7 +10,7 @@ const Breadcumb = ({ current, nav }) => {
       <div className={""}>
         <div className={styles.breadcumb__left}>
           <div className={styles.breadcumb__home}>
-            <img src={backArrow} alt="backArrow" />
+            <Image src={backArrow} alt="backArrow" />
             <Link href={"/"}> главная </Link>
           </div>
           <span className={styles.breadcumb__current}>

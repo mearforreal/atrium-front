@@ -55,7 +55,7 @@ const OurValue = ({ projectData }) => {
             <SwiperSlide key={item.id}>
               <div className={styles.ourValue_img_container}>
                 <img src={PREFIX_IMG + item.bannerImage} alt="gallery" />
-                {/* <img src={'/as'} /> */}
+                {/* <Image src={'/as'} /> */}
               </div>
             </SwiperSlide>
           ))}

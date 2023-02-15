@@ -134,7 +134,7 @@ const Gallery = ({ projectInfo, gallery_types }) => {
                   styles.gallery_slider_item + " " + "gallery_slider_item"
                 }
               >
-                <img
+                <Image
                   width="930"
                   height="545"
                   src={PREFIX_IMG + item}

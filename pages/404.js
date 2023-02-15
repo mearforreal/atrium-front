@@ -27,13 +27,13 @@ const Custom404 = () => {
               <li>
                 <a target={"_blank"} href={setting?.insta}>
                   {" "}
-                  <img alt="insta" src={insta} />
-                  {/* <img src={insta} alt="insta" />{" "} */}
+                  <Image alt="insta" src={insta} />
+                  {/* <Image src={insta} alt="insta" />{" "} */}
                 </a>
               </li>
               <li>
                 <a target={"_blank"} href={setting?.facebook}>
-                  <img alt="facebook" src={facebook} />
+                  <Image alt="facebook" src={facebook} />
                 </a>
               </li>
             </ul>

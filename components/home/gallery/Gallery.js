@@ -142,7 +142,7 @@ const Gallery = ({ projectData }) => {
           </div>
         </div>
       </div>
-      {/* <img src="/assets/img/gallery/image_main.png" alt="image_main" /> */}
+      {/* <Image src="/assets/img/gallery/image_main.png" alt="image_main" /> */}
     </div>
   );
 };

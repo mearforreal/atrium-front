@@ -10,6 +10,7 @@ import { ModalsProvider } from "@mantine/modals";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import logoWhite from "../assets/logo_white.svg";
+import Image from "next/image";
 
 function Loading() {
   const router = useRouter();
@@ -47,7 +48,7 @@ function Loading() {
     loading && (
       <div className="spinner-wrapper">
         <div className="spinner">
-          <img src={logoWhite} alt="logoWhites" />
+          <Image src={logoWhite} alt="logoWhites" />
         </div>
       </div>
     )

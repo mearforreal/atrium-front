@@ -90,7 +90,7 @@ const PurchaseRow = ({ item, index }) => {
           {item?.galleries[0]?.img?.map((img, index) => (
             <SwiperSlide key={index}>
               <div className={styles.purchase_slider_item}>
-                <img
+                <Image
                   width="600"
                   height="522"
                   src={PREFIX_IMG + img}

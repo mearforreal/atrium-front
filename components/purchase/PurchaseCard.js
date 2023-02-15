@@ -61,7 +61,7 @@ const PurchaseCard = ({ data, isDarkBg, bg }) => {
           Подробнее
         </Link>
       </div>
-      {/* <img src="" alt="" /> */}
+      {/* <Image src="" alt="" /> */}
     </>
   );
 };

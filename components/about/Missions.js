@@ -48,7 +48,7 @@ const Missions = () => {
             key={item.id}
             className={missionStyles.missions_images_container}
           >
-            <img
+            <Image
               className={
                 index === 1
                   ? missionStyles.missions_image_current

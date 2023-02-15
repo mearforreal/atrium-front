@@ -109,7 +109,7 @@ const SendForm = () => {
             geometry={mapState.center}
           />
         </Map>
-        {/* <img src={map.src} alt="map" /> */}
+        {/* <Image src={map} alt="map" /> */}
       </div>
     </div>
   );

@@ -70,7 +70,7 @@ const BuildProcess = ({ build_process }) => {
           {build_process.map((process) => (
             <SwiperSlide key={process?.id}>
               <div className={styles.buildProcess_card}>
-                <img src={PREFIX_IMG + process?.img[0]} alt="process_img" />
+                <Image src={PREFIX_IMG + process?.img[0]} alt="process_img" />
                 <div className={styles.buildProcess_card_main}>
                   <div className={styles.buildProcess_card_title}>
                     <p className="text text_heading">
@@ -103,7 +103,7 @@ const BuildProcess = ({ build_process }) => {
         opened={openGallery.open}
         onClose={() => setOpenGallery({ open: false, images: [] })}
       >
-        <imgGallery items={openGallery.images} />
+        <ImageGallery items={openGallery.images} />
         {/* Modal content */}
       </Modal>
     </div>
