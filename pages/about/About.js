@@ -9,6 +9,7 @@ import Advantages from "../../components/about/Advantages";
 import missionStyles from "../../styles/about/Missions.module.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 // import videoBanner from "../../assets/video/elit.mp4";
 // import gsap from "gsap/all";
 // import gsap from "gsap";
@@ -171,7 +172,7 @@ const About = ({ projectData }) => {
                   : ""
               }
             >
-              <Image
+              <img
                 className={
                   index === 1
                     ? missionStyles.missions_image_current
