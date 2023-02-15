@@ -9,7 +9,7 @@ import Advantages from "../../components/about/Advantages";
 import missionStyles from "../../styles/about/Missions.module.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import videoBanner from "../../assets/video/about.mp4";
+import videoBanner from "../../assets/video/elit.mp4";
 // import gsap from "gsap/all";
 // import gsap from "gsap";
 const data = [
