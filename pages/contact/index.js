@@ -14,6 +14,7 @@ export const getStaticProps = async () => {
     props: {
       contactData,
     },
+    revalidate: 10,
   };
 };
 const Index = ({ contactData }) => {

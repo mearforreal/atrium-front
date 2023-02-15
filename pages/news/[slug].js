@@ -38,6 +38,7 @@ export const getStaticProps = async (context) => {
     props: {
       newsInfo,
     },
+    revalidate: 10,
   };
 };
 

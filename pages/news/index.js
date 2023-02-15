@@ -15,6 +15,7 @@ export const getStaticProps = async () => {
       lateNews,
       moreNews,
     },
+    revalidate: 10,
   };
 };
 

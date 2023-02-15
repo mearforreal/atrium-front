@@ -47,6 +47,7 @@ export const getStaticProps = async () => {
       oversea,
       lateNews,
     },
+    revalidate: 10,
   };
 };
 

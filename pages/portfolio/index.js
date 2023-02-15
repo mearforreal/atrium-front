@@ -16,11 +16,12 @@ export const getStaticProps = async () => {
       projectData,
       oversea,
     },
+    revalidate: 10,
   };
 };
 
 const PortfolioIndex = ({ projectData, oversea }) => {
-  return  <Portfolio projectData={projectData} oversea={oversea} />;
+  return <Portfolio projectData={projectData} oversea={oversea} />;
 };
 
 export default PortfolioIndex;

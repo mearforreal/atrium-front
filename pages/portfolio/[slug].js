@@ -66,6 +66,7 @@ export const getStaticProps = async (context) => {
       projectInfo,
       gallery_types,
     },
+    revalidate: 10,
   };
 };
 
