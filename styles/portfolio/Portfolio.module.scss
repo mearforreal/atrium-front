@@ -35,6 +35,8 @@
   gap: 30px;
 
   margin-top: 32px;
+  width: fit-content;
+  flex-wrap: wrap;
   &_container {
     display: flex;
     gap: 10px;
