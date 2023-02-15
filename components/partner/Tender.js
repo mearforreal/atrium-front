@@ -3,6 +3,7 @@ import styles from "../../styles/partner/Partner.module.scss";
 import img1 from "../../assets/partner/tender/image1.png";
 import img2 from "../../assets/partner/tender/image2.png";
 import RequestMainModal from "../request/modal/RequestMainModal";
+import Heading from "../shared/Heading";
 
 const Tender = () => {
   const [opened, setOpened] = useState(false);
@@ -32,6 +33,22 @@ const Tender = () => {
         </div>
         <img src={img1.src} alt="image1" />
       </div>
+      <div style={{ marginTop: 163, marginBottom: 143 }} className="heading">
+        <div>
+          <span className={`caption caption_light`}>для соискателей</span>
+          <h2 style={{ maxWidth: 388 }} className={`h2 h2_dark`}>
+            Присоеденяйтеськ команде atrium
+          </h2>
+        </div>
+        <p style={{ maxWidth: 537 }} className={`text_body h2_dark`}>
+          Строительная компания «Atrium Plus» - динамично развивающаяся
+          компания, обладающая значительными перспективами на рынке
+          недвижимости. Мы всегда рады новым лицам, стремящихся сделать свой
+          город лучше. Нашим сотрудникам мы предлагаем комфортные условия труда
+          и пространство, где каждый сможет проявить все свои умения и опыт.
+        </p>
+      </div>
+
       <div
         className={
           styles.partnerTender_container +

@@ -7,6 +7,7 @@ import styles from "../../styles/partner/Partner.module.scss";
 import Main from "../../components/partner/Main";
 import SendForm from "../../components/home/sendForm/SendForm";
 import Tender from "../../components/partner/Tender";
+import Heading from "../../components/shared/Heading";
 const breadcumbData = {
   current: {
     href: "/partner",
@@ -29,6 +30,7 @@ const Partner = () => {
       </div>
       <Breadcumb current={breadcumbData.current} />
       <Main />
+
       <Tender />
       <SendForm />
       <Footer />
