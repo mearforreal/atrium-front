@@ -70,7 +70,7 @@ const BuildProcess = ({ build_process }) => {
           {build_process.map((process) => (
             <SwiperSlide key={process?.id}>
               <div className={styles.buildProcess_card}>
-                <Image src={PREFIX_IMG + process?.img[0]} alt="process_img" />
+                <img src={PREFIX_IMG + process?.img[0]} alt="process_img" />
                 <div className={styles.buildProcess_card_main}>
                   <div className={styles.buildProcess_card_title}>
                     <p className="text text_heading">

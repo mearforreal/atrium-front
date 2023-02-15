@@ -8,7 +8,7 @@ const Infrastructure = ({ infrastructures }) => {
     <div className={styles.infrastructures_wrapper + " " + "wrapper"}>
       {infrastructures?.map((item) => (
         <div key={item.id} className={styles.infrastructure}>
-          <Image
+          <img
             className={styles.infrastructure_map}
             src={PREFIX_IMG + item.img}
             alt="img"
