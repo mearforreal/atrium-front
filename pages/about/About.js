@@ -10,6 +10,7 @@ import missionStyles from "../../styles/about/Missions.module.scss";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
+import { PREFIX } from "../../config";
 // import videoBanner from "../../assets/video/elit.mp4";
 // import gsap from "gsap/all";
 // import gsap from "gsap";
@@ -114,9 +115,7 @@ const About = ({ projectData }) => {
           }
           bgUrl=""
           is_video={true}
-          video_url={
-            "//cdn-cf-east.streamable.com/video/mp4/8biwki.mp4?Expires=1676709540&Signature=Rb4z34LPElUZULL0x-1t-9eLxknmn6dsEyHuZzB0zoN1E7uNOKFESAzW6I3JOZ-ZDYdZpXJx4nSpZto4ydXmKt5HQcHXNLNF~VntWstnMGV2WG1Y~hr6j~-PihWUixKdOsX96-E~JY995o5hyIx6i73qid456MhFGXafow~hRTbbHhFcgGHf6Uy5E8N9qu~8ZRXscZniiL4-2vQ-oEHo9stSY5iWhF56R85am5g9bLS05KliIhkqbFK8i-hbepfcsUg~TTf~H8GRHh2oyFjBVOgT~~p2cwh3Lta-0JFfPc5KEvvom2KOEQQRwKtX92qkrprmBTOmYqKcPIKSsa969g__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ"
-          }
+          video_url={PREFIX + "about_video.mp4"}
         />
       </div>
       {projectData?.length > 0 ? <Strategy projectData={projectData} /> : ""}

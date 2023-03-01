@@ -18,7 +18,7 @@ import SendForm from "../components/home/sendForm/SendForm";
 import Footer from "../components/footer/Footer";
 import axios from "axios";
 
-import { PREFIX_API } from "../config";
+import { PREFIX, PREFIX_API } from "../config";
 import { ActualNews } from "../components/news";
 import { useEffect } from "react";
 // import videoBanner from "../assets/video/elit.mp4";
@@ -79,9 +79,7 @@ export default function Home({ projectData, oversea, lateNews }) {
           bgUrl=""
           is_home={true}
           is_video={true}
-          video_url={
-            "https://cdn-cf-east.streamable.com/video/mp4/r3glrt.mp4?Expires=1676708880&Signature=K0OBMXqJfmfyuuTUL6sCC6GWi7V~EA8fMFmAt8iYJexLUOkHcavH2gP05fINJZYIOUMcqiMOQ1j~eNIlq7b7vaCevRI4HqKT4AtEjcpJAChVN5M2n2TWfxZMrmlzW7A-FFDELThh0HGBMEN0g2~7SfEYdON9wAkA0GHoFprG1uEcswrVLqmLOdLwKWsOwBUackrULN7JgQeWHR4e-7vcgCuzHrxpbi-BgMGWRbCxlqzSLKSxfeuxyoUTJ7J1nrulJWishVXm~tp7ycMw0qyFzmncWiX4pX42TjBL-EGaMaY9N~iDtE6x38xG8y5AWkUzt-bv8a4ubxOXMd0wERRMMA__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ"
-          }
+          video_url={PREFIX + "home_video.mp4"}
           is_two_line={true}
         />
       </div>

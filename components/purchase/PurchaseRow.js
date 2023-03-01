@@ -56,15 +56,16 @@ const PurchaseRow = ({ item, index }) => {
           // width={600}
           breakpoints={{
             1660: {
-              slidesPerView: 1.8,
+              slidesPerView: 2,
               centeredSlides: false,
             },
-            1349: {
-              slidesPerView: 1.8,
+            1450: {
+              slidesPerView: 2,
+              centeredSlides: false,
             },
 
             1200: {
-              slidesPerView: 1.5,
+              slidesPerView: 1.8,
             },
 
             // 1192: {
@@ -91,8 +92,8 @@ const PurchaseRow = ({ item, index }) => {
             <SwiperSlide key={index}>
               <div className={styles.purchase_slider_item}>
                 <Image
-                  width="600"
-                  height="522"
+                  width="500"
+                  height="422"
                   src={PREFIX_IMG + img}
                   alt="slider"
                 />
