@@ -1,5 +1,6 @@
 .OverseaProject {
   padding-top: 191px;
+  // margin-top: 195px;
   p {
     max-width: 400px;
   }
@@ -111,6 +112,10 @@
 }
 
 @media screen and (max-width: 734px) {
+  .OverseaProject {
+    margin-top: 0;
+  }
+
   .overseaSlider__pagination {
     margin-top: 87px;
   }

@@ -249,6 +249,9 @@
 }
 
 @media screen and (max-width: 745px) {
+  .complexSlider_card {
+    min-height: auto;
+  }
   .complex_slider {
     margin-top: 138px;
     display: flex;
@@ -273,6 +276,7 @@
     padding: 40px;
     height: auto;
     width: 380px;
+    justify-content: center;
     p {
       margin-top: 23px;
     }

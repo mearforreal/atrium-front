@@ -4,10 +4,7 @@ import Heading from "../../shared/Heading";
 
 const OverseaProject = ({ isDark }) => {
   return (
-    <div
-      className={styles.OverseaProject}
-      style={{ paddingTop: "101px", marginTop: 195 }}
-    >
+    <div className={styles.OverseaProject}>
       <Heading
         isDarkBg={isDark}
         caption={"НАШИ ПРОЕКТЫ"}
