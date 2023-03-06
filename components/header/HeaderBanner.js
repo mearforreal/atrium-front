@@ -154,6 +154,9 @@ const HeaderBanner = ({
               // width={"auto"}
               slidesPerView={"auto"}
               breakpoints={{
+                1500: {
+                  slidesPerView: 3,
+                },
                 465: {
                   slidesPerView: 1.7,
                 },

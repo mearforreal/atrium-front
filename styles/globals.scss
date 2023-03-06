@@ -63,6 +63,10 @@ h6,
 span {
   cursor: default;
 }
+
+img {
+  object-fit: cover;
+}
 .wrapper {
   padding-left: 135px;
   padding-right: 135px;
@@ -285,7 +289,7 @@ span {
   font-family: var(--font-main-family);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   max-width: 400px;
   margin-top: 54px;
