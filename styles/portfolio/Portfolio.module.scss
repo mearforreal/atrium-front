@@ -119,13 +119,14 @@
   background-color: transparent;
 }
 .complexSlider_card {
-  width: 535px;
+  // width: 535px;
   // height: 502px;
   display: flex;
   z-index: 10;
   flex-direction: column;
   padding: 90px 98px 84px 100px;
   justify-content: flex-start;
+  min-height: 560px;
 
   // margin-right: calc(435px / 1440px * 100%);
 
@@ -167,13 +168,14 @@
     top: -92px;
     // width: 635px;
     width: 50vw;
-    height: 55vh;
+    height: 650px;
     img {
       filter: blur(5px);
       -webkit-filter: blur(5px);
       transform: scale(1.03);
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 }
