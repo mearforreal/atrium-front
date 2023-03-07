@@ -123,7 +123,10 @@ const PurchaseDetails = ({ projectInfo, gallery_types }) => {
 
         <Room room_types={projectInfo?.room_types} />
         {projectInfo?.near_locations.length > 0 && (
-          <Location near_locations={projectInfo?.near_locations} />
+          <Location
+            projectTitle={projectInfo?.titleRU}
+            near_locations={projectInfo?.near_locations}
+          />
         )}
 
         {projectInfo?.build_process?.length > 0 ? (
