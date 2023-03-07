@@ -72,12 +72,12 @@ const BuildProcess = ({ build_process }) => {
               <div className={styles.buildProcess_card}>
                 <img src={PREFIX_IMG + process?.img[0]} alt="process_img" />
                 <div className={styles.buildProcess_card_main}>
-                  <div className={styles.buildProcess_card_title}>
+                  {/* <div className={styles.buildProcess_card_title}>
                     <p className="text text_heading">
                       {process?.week_from} - {process?.week_to}{" "}
                     </p>
                     <p className="text">Недели строительства</p>
-                  </div>
+                  </div> */}
                   <div className={styles.buildProcess_card_caption}>
                     <p className="text text_body_dark">{process?.periodRU}</p>
                     <span className="caption text_body_dark">
