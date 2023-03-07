@@ -18,11 +18,11 @@ const Advantages = ({ projectInfo }) => {
       >
         <Swiper
           breakpoints={{
-            1220: {
+            1600: {
               slidesPerView: 4,
             },
 
-            1026: {
+            1100: {
               slidesPerView: 3,
             },
 
