@@ -25,8 +25,11 @@ const PurchaseCard = ({ data, isDarkBg, bg }) => {
         >
           <div className={styles.purchaseCard_content_info}>
             <p className={`text_body`}>Цена/ м2</p>
+            <span style={{ textTransform: "capitalize" }} className="text_body">
+              уточнить в отделе продаж
+            </span>
             {/* от 1 100 000 ₸ ≈  $2 320 */}
-            {data?.room_types[0]?.rooms[0]?.price ? (
+            {/* {data?.room_types[0]?.rooms[0]?.price ? (
               <span className="text_body">
                 {" "}
                 от{" "}
@@ -47,7 +50,7 @@ const PurchaseCard = ({ data, isDarkBg, bg }) => {
               >
                 уточнить в отделе продаж
               </span>
-            )}
+            )} */}
           </div>
           <div className={styles.purchaseCard_content_info}>
             <p className="text_body">Адрес</p>
