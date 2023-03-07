@@ -8,7 +8,7 @@ const Advantages = ({ projectInfo }) => {
   return (
     <div className={styles.portfolioDetails_advantage}>
       <Heading
-        h2={"ПрЕИМУЩСЕТВА"}
+        h2={"ПрЕИМУЩЕСТВА"}
         caption={"О ПРОЕКТЕ"}
         isDarkBg={false}
         p={projectInfo.advantage_desc_RU}

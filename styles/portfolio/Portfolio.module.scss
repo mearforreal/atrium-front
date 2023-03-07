@@ -60,6 +60,9 @@
   width: calc(735px / 1440px * 100%);
   top: 108px;
   right: 0;
+  @media screen and (max-width: 1500px) {
+    width: calc(625px / 1440px * 100%);
+  }
 }
 
 .portfolioDetails_slide_item {
