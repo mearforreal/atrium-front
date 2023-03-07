@@ -9,7 +9,7 @@ const VirtualTour = ({ link }) => {
         isDarkBg={true}
         caption="О НАШИХ ЖК"
         h2="Виртуальная экскурсия"
-        p="ПОВТОРЕНИЕ ТЕКСТА. Наша традиция - строить качественные дома, а наша цель - комфорт и хорошее настроение наших клиентов. "
+        p=""
       />
       <div className={"wrapper" + " " + styles.tour3dView_details_wrapper}>
         <div className={styles.tour3dView + " " + styles.tour3dView_details}>

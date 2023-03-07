@@ -39,8 +39,7 @@ const Complex = ({ projectData }) => {
           isDarkBg={false}
           caption={"О НАШЕЙ КОМПАНИИ"}
           h2="наши жилые комплексы"
-          p="ПОВТОРЕНИЕ ТЕКСТА Наша традиция - строить качественные дома, а наша
-    цель - комфорт и хорошее настроение наших клиентов."
+          p=""
         />
         <div className={"wrapper" + " " + styles.portfolio_complex_container}>
           <Swiper
