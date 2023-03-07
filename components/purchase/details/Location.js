@@ -5,7 +5,7 @@ import NearLocationItem from "./NearLocationItem";
 import { PREFIX_IMG } from "../../../config";
 import Image from "next/image";
 
-const Location = ({ near_locations, map_location }) => {
+const Location = ({ near_locations, map_location, projectTitle }) => {
   //console.log(map_location?.metrics);
   return (
     <>

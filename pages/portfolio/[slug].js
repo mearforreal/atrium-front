@@ -101,6 +101,7 @@ const PortfolioDetails = ({ projectInfo, gallery_types }) => {
 
       {projectInfo?.near_locations?.length > 0 && (
         <Location
+          projectTitle={projectInfo?.titleRU}
           near_locations={projectInfo?.near_locations}
           map_location={projectInfo?.map_location}
         />
