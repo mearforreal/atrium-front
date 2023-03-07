@@ -13,9 +13,7 @@ const ActualNews = ({ lateNews }) => {
         isDarkBg={false}
         caption="ПОСЛЕДНИЕ НОВОСТИ"
         h2={"АКТУАЛЬНЫЕ НОВОСТИ"}
-        p={
-          "Наша традиция - строить качественные дома, а наша цель - комфорт и хорошее настроение наших клиентов. "
-        }
+        p={""}
       />
       <div className={styles.actualNews__container}>
         <div className={styles.actualNews__leftContainer}>
@@ -23,7 +21,7 @@ const ActualNews = ({ lateNews }) => {
             <Link
               href={"/news/" + lateNews[0]?.id ?? ""}
               style={{
-                  backgroundImage: `linear-gradient(0deg,
+                backgroundImage: `linear-gradient(0deg,
                   rgba(37, 42, 70, 0.35),
                   rgba(37, 42, 70, 0.35)
                 ),
