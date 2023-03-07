@@ -47,7 +47,7 @@ const Gallery = ({ projectInfo, gallery_types }) => {
           <h2 className={`h2 h2_dark`}>ГАЛЕРЕЯ</h2>
         </div>
         <div className="two_paragraph_text">
-          <p className={`text_body h2_dark`}>
+          {/* <p className={`text_body h2_dark`}>
             Этот четырех-ступенчатый текст - “текст-рыба”. Опишите здесь кратко
             ЖК. Желательно не слишком длинно. Этот текст - прямое продолжение
             прошлого текста, который находится слева.
@@ -56,7 +56,7 @@ const Gallery = ({ projectInfo, gallery_types }) => {
             Этот четырех-ступенчатый текст - “текст-рыба”. Опишите здесь кратко
             ЖК. Желательно не слишком длинно. Этот текст - прямое продолжение
             прошлого текста, который находится слева.
-          </p>
+          </p> */}
         </div>
       </div>
       <div className={styles.gallery_images}>
