@@ -3,7 +3,7 @@ import styles from "../../../styles/home/virtualTour/VirtualTour.module.scss";
 import Heading from "../../shared/Heading";
 
 const VirtualTour = ({ link }) => {
-  return (
+  return !!link ? (
     <div className={styles.virtualTour}>
       <Heading
         isDarkBg={true}
@@ -25,7 +25,7 @@ const VirtualTour = ({ link }) => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default VirtualTour;

@@ -73,7 +73,9 @@ const Room = ({ room_types }) => {
                   Цена:
                 </p>
                 <div className={styles.roomInfoCard_content_price}>
-                  <p className="caption text_body_dark">от</p>
+                  {Math.floor(room?.price) != 0 ? (
+                    <p className="caption text_body_dark">от</p>
+                  ) : null}
 
                   {Math.floor(room?.price) != 0 ? (
                     <span className="h3 breadcumb_active">
@@ -90,9 +92,9 @@ const Room = ({ room_types }) => {
                 </div>
 
                 <p className="h6 text_body_dark">
-                  ≈ ${" "}
+                  {Math.floor(room?.price) != 0 ? <> ≈ $ </> : ""}
                   {numberWithCommas(
-                    Math.floor(room?.price / setting?.currency)
+                    Math.floor(room?.price / setting?.currency) || ""
                   )}
                 </p>
                 <button onClick={() => setOpened(true)} className="btn_outline">

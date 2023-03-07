@@ -35,24 +35,26 @@ const VirtualTour = ({ projectData }) => {
           ></iframe>
         </div>
         <ul className={styles.tour3dView_options}>
-          {projectData?.map((item) => (
-            <li key={item.id}>
-              <h6
-                onClick={() => {
-                  setCurrentId(item.id);
-                }}
-                className={
-                  "h6" +
-                  " " +
-                  (item.id === currentId
-                    ? styles.tour3dView_options_active
-                    : "")
-                }
-              >
-                {item.titleRU}
-              </h6>
-            </li>
-          ))}
+          {projectData?.map((item) =>
+            !!item?.virtualTour ? (
+              <li key={item.id}>
+                <h6
+                  onClick={() => {
+                    setCurrentId(item.id);
+                  }}
+                  className={
+                    "h6" +
+                    " " +
+                    (item.id === currentId
+                      ? styles.tour3dView_options_active
+                      : "")
+                  }
+                >
+                  {item.titleRU}
+                </h6>
+              </li>
+            ) : null
+          )}
         </ul>
       </div>
     </div>
