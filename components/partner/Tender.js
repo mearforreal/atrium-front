@@ -38,7 +38,7 @@ const Tender = () => {
         <div>
           <span className={`caption caption_light`}>для соискателей</span>
           <h2 style={{ maxWidth: 388 }} className={`h2 h2_dark`}>
-            Присоеденяйтеськ команде atrium
+            Присоединяйтесь к команде atrium
           </h2>
         </div>
         <p style={{ maxWidth: 537 }} className={`text_body h2_dark`}>
