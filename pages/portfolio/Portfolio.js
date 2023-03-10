@@ -29,7 +29,7 @@ const Portfolio = ({ projectData, oversea }) => {
         <Complex projectData={projectData} />
         <div
           className="bg_dark"
-          style={{ paddingBottom: "200px", marginTop: 90 }}
+          style={{ paddingBottom: "150px", marginTop: 90 }}
         >
           <OverseaProject isDark={true} />
           <OverseaSlider oversea={oversea} isDark={true} />
