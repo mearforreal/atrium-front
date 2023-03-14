@@ -62,7 +62,24 @@ const BuildProcess = ({ build_process }) => {
       <div className={styles.buildProcess_container + " " + "main_container"}>
         <Swiper
           ref={sliderRef}
-          spaceBetween={0}
+          breakpoints={{
+            1600: {
+              slidesPerView:
+                build_process.length > 4 ? 4 : build_process.length,
+            },
+
+            1100: {
+              slidesPerView: build_process.length,
+            },
+
+            610: {
+              slidesPerView: 2,
+            },
+
+            280: {
+              slidesPerView: 1,
+            },
+          }}
           slidesPerView={"auto"}
           speed={800}
           loop={true}
